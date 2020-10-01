@@ -1,0 +1,28 @@
+{
+  "name": "drmartens",
+  "version": "1.0.0",
+  "description": "DrMartens Filmmakers Series Content for Hybirs CMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/work-with-supply/drmartens.git"
+  },
+  "author": "AJ Austinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/work-with-supply/drmartens/issues"
+  },
+  "homepage": "https://github.com/work-with-supply/drmartens#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-inject-string": "^1.1.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
