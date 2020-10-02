@@ -39,6 +39,8 @@ h3 {
 	width: 100%;
 	height: 100%;
 	z-index: 0;
+	overflow: hidden;
+	max-height: 660px;
 }
 	.fm-hero-video {
 		position: relative;
@@ -155,14 +157,26 @@ h3 {
 	}
 
 	a.fm-video-thumbnail {
-		background-image: url("http://fpoimg.com/301x168?text=VideoThumbnai");
-		background-size: cover;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		width: 301px;
-		height: 168px;
+		min-width: 108px;
+		min-height: 61px;
+		padding-top: 56.26%;
+		width: 100%;
+		box-sizing: content-box;
+	}
+
+	.fm-video-thumbnail iframe, 
+	.fm-video-thumbnail object,
+	.fm-video-thumbnail embed {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
 	}
 
 	.fm-video-thumbnail-new-tag {
@@ -175,7 +189,7 @@ h3 {
 		color: rgb(25, 28, 29); 
 		padding: 3px 5px; 
 		position: absolute;
-		top: 10px;
+		top: 40px;
 		left: 10px;
 	}
 
@@ -188,6 +202,11 @@ h3 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -25px 0px 0px -25px;
+		z-index: 1;
 	}
 
 	.fm-episodes-collection {
@@ -197,9 +216,9 @@ h3 {
 	}
 
 	.fm-episodes-item {
-		width: 301px;
 		margin-right: 20px;
 		position: relative;
+		flex-grow: 1;
 	}
 
 	.fm-episodes-item h3 {
@@ -235,14 +254,7 @@ h3 {
 } 
 
 @media screen and (max-width: 1280px) {
-	a.fm-video-thumbnail {
-		width: 220px;
-		height: 125px;
-	}
 
-		.fm-episodes-item {
-			width: 220px;
-		} 
 }
 
 @media screen and (max-width: 768px) {
@@ -258,14 +270,6 @@ h3 {
 		margin: 150px 32px;
 	}
 
-	a.fm-video-thumbnail {
-		width: 220px;
-		height: 125px;
-	}
-
-		.fm-episodes-item {
-			width: 220px;
-		}
 }
 
 @media screen and (max-width: 480px) {
@@ -274,15 +278,6 @@ h3 {
 		width: 100%;
 	} 
 
-	a.fm-video-thumbnail {
-		width: 200px;
-		height: 112px;
-	}
-
-		.fm-episodes-item {
-			width: 200px;
-			margin-right: 16px;
-		}
 } 
 
 
@@ -325,6 +320,7 @@ h3 {
 		width: 108px;
 		height: 61px;
 		margin-right: 10px;
+		padding-top: 0px;
 	}
 
 	.fm-episodes-item {
@@ -335,7 +331,7 @@ h3 {
 	} 
 
 	.fm-episodes-item h3 {
-		margin: 4px 0px 8px;
+		margin: -10px 0px 8px;
 	}
 
 	.fm-episodes-item p {
