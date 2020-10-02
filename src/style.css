@@ -43,6 +43,7 @@ h3 {
 	.fm-hero-video {
 		position: relative;
 		width: 100%; 
+		min-height: 400px;
 		/* This padding assumes a 16:9 video, adjust accordingly */
 		padding-bottom: 56.25%;
 		overflow: hidden;
@@ -56,7 +57,9 @@ h3 {
 			left: 0;
 			width: 100%; 
 			height: 100%;
+			min-width: 711px;
 			z-index: 0;
+			margin: 0px auto;
 		} 
 
 	.fm-hero-tear {
@@ -88,15 +91,12 @@ h3 {
 	width: 100%;
 	height: 100%;
 	display: flex;
+	justify-content: flex-end;
 	align-items: flex-start;
 	flex-direction: column;
 	top: 0;
 	left: 0;
 }
-
-	.fm-hero-title { 
-		margin-top: 400px;
-	}
 
 	.fm-hero h1 {
 		background: #000;
@@ -109,6 +109,7 @@ h3 {
 
 	.fm-hero-details {
 		padding: 0px 40px;
+		margin-bottom: 40px;
 	}
 
 		.fm-hero-details h2 {
@@ -137,8 +138,8 @@ h3 {
 		}
 
 .fm-message {
-	margin: 30px 40px;
-	font-size: 17px;
+	padding-left: 40px;
+	font-size: 16px;
 	line-height: 28px;
 	width: 50%;
 }
@@ -155,6 +156,7 @@ h3 {
 
 	a.fm-video-thumbnail {
 		background-image: url("http://fpoimg.com/301x168?text=VideoThumbnai");
+		background-size: cover;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -167,7 +169,8 @@ h3 {
 		background-color: #fff;
 		display: inline-block;
 		font-family: "Trade Gothic Bold", sans-serif; 
-		font-size: 12px;
+		font-size: 11px;
+		font-weight: 600;
 		text-transform: uppercase;
 		color: rgb(25, 28, 29); 
 		padding: 3px 5px; 
@@ -193,6 +196,12 @@ h3 {
 		justify-content: start; 
 	}
 
+	.fm-episodes-item {
+		width: 301px;
+		margin-right: 20px;
+		position: relative;
+	}
+
 	.fm-episodes-item h3 {
 		margin: 20px 0px 10px;
 	}
@@ -202,35 +211,151 @@ h3 {
 		font-family: "Interstate Reg", sans-serif;
 		font-size: 12px;
 		line-height: 20px;
-		width: 301px; 
-		margin-right: 20px;
 	}
 
+@media screen and (min-width: 1440px) {
+	.fm-hero-content,
+	.fm-message,
+	.fm-episodes {
+		width: 1210px;
+	} 
+	.fm-hero-content { 
+		left: 50%;
+		margin: 0px auto 0px -605px;
+	}
+	
+	.fm-message {
+		margin: 0px auto; 
+		padding: 0px;
+	}
 
-@media screen and (max-width: 375px) {
+	.fm-episodes {
+		margin: 150px auto; 
+	}
+} 
 
-}
+@media screen and (max-width: 1280px) {
+	a.fm-video-thumbnail {
+		width: 220px;
+		height: 125px;
+	}
 
-@media screen and (max-width: 480px) {
-
+		.fm-episodes-item {
+			width: 220px;
+		} 
 }
 
 @media screen and (max-width: 768px) {
+	.fm-hero h1 {
+		margin: 0px auto;
+	}
 
+	.fm-message {
+		width: 57%;
+	} 
+
+	.fm-episodes {
+		margin: 150px 32px;
+	}
+
+	a.fm-video-thumbnail {
+		width: 220px;
+		height: 125px;
+	}
+
+		.fm-episodes-item {
+			width: 220px;
+		}
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 480px) {
+	.fm-message {
+		padding: 0px 32px;
+		width: 100%;
+	} 
 
-}
+	a.fm-video-thumbnail {
+		width: 200px;
+		height: 112px;
+	}
 
-@media screen and (max-width: 1280px) {
+		.fm-episodes-item {
+			width: 200px;
+			margin-right: 16px;
+		}
+} 
 
-}
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 375px) {
+	h1 {
+		font-size: 36px;
+	}
 
-}
+	.fm-hero-play {
+		position: absolute;
+		left: 50%;
+		top: 80px;
+		width: 50px;
+		height: 50px;
+		margin-left: -25px;
+		border-radius: 25px;
+	}
 
-@media screen and (min-width: 1440px) {
+	.fm-hero-play svg {
+		margin: 0;
+	}
 
-}
+	.fm-hero-play-text {
+		display: none;
+	}
+
+	.fm-episodes {
+		margin: 100px 32px 150px;
+	}
+
+	.fm-episodes h2 {
+		margin-bottom: 40px;
+	}
+
+	.fm-episodes-collection {
+		flex-direction: column;
+	}
+
+	a.fm-video-thumbnail {
+		width: 108px;
+		height: 61px;
+		margin-right: 10px;
+	}
+
+	.fm-episodes-item {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-right: 16px;
+	} 
+
+	.fm-episodes-item h3 {
+		margin: 4px 0px 8px;
+	}
+
+	.fm-episodes-item p {
+		margin-bottom: 40px;
+	}
+
+	.fm-video-thumbnail-new-tag {
+		position: static;
+	}
+
+	.fm-episodes-item-main {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10px;
+	}
+
+	/* TODO: When we get svg icons, this should swap out the smaller play arrow */j
+	.fm-video-thumbnail-play-icon { 
+		width: 34px;
+		height: 34px;
+	}
+
+} 
