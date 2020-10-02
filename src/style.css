@@ -205,3 +205,32 @@ h3 {
 		width: 301px; 
 		margin-right: 20px;
 	}
+
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 1440px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+
+}
