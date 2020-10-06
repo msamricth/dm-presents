@@ -215,6 +215,11 @@ h3 {
 		margin: -25px 0px 0px -25px;
 		z-index: 1;
 	}
+	
+	.fm-video-thumbnail-play-icon svg {
+		position: relative;
+		left: 1px;
+	}
 
 	.fm-episodes-collection {
 		display: flex;
@@ -266,6 +271,7 @@ h3 {
 @media screen and (max-width: 768px) {
 	.fm-hero h1 {
 		margin: 0px auto;
+		padding: 8px 32px 8px 40px;
 	}
 
 	.fm-message {
