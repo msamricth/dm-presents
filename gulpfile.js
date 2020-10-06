@@ -1,52 +1,66 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var htmlmin = require('gulp-htmlmin');
 var cleanCSS = require('gulp-clean-css');
-var inject = require('gulp-inject-string');
+var uglify = require('gulp-uglify');
+var mustache = require('gulp-mustache');
+var fs = require('fs');
 
-const files = [
-	'templates/test_header.html', 
-	'build/style.min.css', 
-	'templates/test_header2.html', 
-	'src/home.html', 
-	'templates/test_footer.html'
-];
-
-const exportFiles = [
-	'build/style.export.css',
-	'src/home.html'
-];
-
+// Minify & strip comments from all css in /src and put it in /build
 gulp.task('css', () => {
-	return gulp.src('src/style.css')
-		.pipe(cleanCSS())
-		.pipe(rename('style.min.css'))
+	return gulp.src('src/*.css')
+		.pipe(cleanCSS({ removeComments: true }))
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('combine', () => { 
-	return gulp.src(files)
-		.pipe(concat('index.html'))
+// Minify & strip comments from all html in /src and put it in /build
+gulp.task('html', () => { 
+	return gulp.src('src/*.html')
 		.pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('cssExport', () => {
-	return gulp.src('src/style.css') 
-		.pipe(cleanCSS())
-		.pipe(inject.prepend('<style type="text/css">'))
-		.pipe(inject.append('</style>'))
-		.pipe(rename('style.export.css'))
+// Minify & ... you get the picture
+gulp.task('js', () => { 
+	return gulp.src('src/*.js')
+		.pipe(uglify({ removeComments: true }))
 		.pipe(gulp.dest('build'));
-});
+}); 
 
-gulp.task('combineExport', () => { 
-	return gulp.src(exportFiles)
-		.pipe(concat('export.html'))
-		.pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+// TODO(AJ): These two tasks are *really* similar, there should be a way to clean this up
+
+// Using the templates/preview.mustache template, render out build/index.html
+// NOTE: Then run `serve build` (or use whatever local hosting solution you like) to preview things
+gulp.task('buildPreview', () => {
+	return gulp.src('templates/preview.mustache')
+		.pipe(mustache({ 
+			style: fs.readFileSync('build/style.css').toString(),
+			content: fs.readFileSync('build/home.html').toString(), 
+			script: fs.readFileSync('build/home.js').toString()
+		}))
+		.pipe(rename('index.html'))
 		.pipe(gulp.dest('build')); 
 });
 
-gulp.task('default', gulp.series('css', 'combine')); 
-gulp.task('export', gulp.series('cssExport', 'combineExport')); 
+// Using the templates/export.mustache template, render out build.export.html
+// This is the giant blob of text that needs to be copy/pasted into hybris
+gulp.task('buildExport', () => {
+	return gulp.src('templates/export.mustache')
+		.pipe(mustache({ 
+			style: fs.readFileSync('build/style.css').toString(),
+			content: fs.readFileSync('build/home.html').toString(), 
+			script: fs.readFileSync('build/home.js').toString()
+		}))
+		.pipe(rename('export.html'))
+		.pipe(gulp.dest('build')); 
+});
+
+// Just simplifing the minify tasks into one task
+gulp.task('minify', gulp.parallel('html', 'css', 'js'));
+
+// These are the two tasks that should be called
+// By default, just running `gulp` will build a preview
+gulp.task('default', gulp.series('minify', 'buildPreview')); 
+
+// Running `gulp export` will create build/export, which is the blob to be copy/pasted into Hybris
+gulp.task('export', gulp.series('minify', 'buildExport')); 
