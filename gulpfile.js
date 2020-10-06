@@ -5,24 +5,26 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var mustache = require('gulp-mustache');
 var fs = require('fs');
+var jsonTransform = require('gulp-json-transform');
+var Mustache = require('mustache');
 
 // Minify & strip comments from all css in /src and put it in /build
 gulp.task('css', () => {
-	return gulp.src('src/*.css')
+	return gulp.src('src/**/*.css')
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('build'));
 });
 
 // Minify & strip comments from all html in /src and put it in /build
 gulp.task('html', () => { 
-	return gulp.src('src/*.html')
+	return gulp.src('src/**/*.html')
 		.pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
 		.pipe(gulp.dest('build'));
 });
 
 // Minify & ... you get the picture
 gulp.task('js', () => { 
-	return gulp.src('src/*.js')
+	return gulp.src('src/**/*.js')
 		.pipe(uglify())
 		.pipe(gulp.dest('build'));
 }); 
@@ -54,6 +56,32 @@ gulp.task('buildExport', () => {
 		.pipe(rename('export.html'))
 		.pipe(gulp.dest('build')); 
 });
+
+gulp.task('json', () => { 
+	const templates = {}
+	const getTemplate = (component) => { 
+		if(templates[component] === undefined) {
+			templates[component] = fs.readFileSync("build/components/" + component + ".html").toString();
+		}
+		return templates[component];
+	};
+	return gulp.src("data/*.json")
+		.pipe(jsonTransform((data, file) => { 
+			return {
+				components: data.episodeContent.map((item) => { 
+					return Mustache.render(getTemplate(item.component), item); 
+				})
+			};
+		}))
+		.pipe(gulp.dest("build"));
+});
+
+gulp.task('buildEpisodes', gulp.parallel('json', 'html', 'css', 'js') => { 
+	// TODO: figure out how to pipe the json through mustache using a single template
+	return gulp.src("build/*.json")
+		.dest("build");
+});
+
 
 // Just simplifing the minify tasks into one task
 gulp.task('minify', gulp.parallel('html', 'css', 'js'));

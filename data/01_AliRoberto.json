@@ -1,0 +1,41 @@
+{
+	"episodeNumber" : "1",
+	"creatorName" : "Ali Roberto",
+	"vimeoID" : "1234567", 
+	"episodeTitle" : "Lorem Ipsum",
+	"episodeDescription" : "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision",
+	"episodeContent" : [
+		{
+			"component" : "text",
+			"text" : "Brooklyn-native Gabriel Gomez is a director, producer, entrepreneur, and founder of Crooked Letter, a creative production company. Through his work, Gabe has formed a creative community that allows him to focus on his many passions: filmmaking, managing artists, podcasting, and more. Now, Gabe is connecting with his community to highlight musicians' stories of resilience in 2020 for the Dr. Martens Presents: Filmmaker Series." 
+		},
+		{
+			"component" : "bigImage",
+			"url" : "http://placekitten.com/1280/720"
+		},
+		{
+			"component" : "quote",
+			"text" : "Innovation and change come from tragedy and strife and everyone has had something to overcome this year."
+		},
+		{
+			"component" : "bigImage",
+			"url" : "http://placekitten.com/1280/720"
+		},
+		{
+			"component" : "quote",
+			"text" : "Helping artists visually express themselves during this time has been beautiful. And also healing for me."
+		},
+		{
+			"component" : "video",
+			"vimeoID" : "1234567" 
+		},
+		{
+			"component" : "quote",
+			"text" : "My crew are all multi-talented hybrid creatives like me, we are able to film with small crews and still achieve cinematic quality." 
+		},
+		{
+			"component" : "bigImage",
+			"url" : "http://placekitten.com/1280/720"
+		} 
+	]
+}

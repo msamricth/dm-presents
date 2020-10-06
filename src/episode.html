@@ -1,0 +1,52 @@
+<div class="fm-container">
+
+	<div class="fm-video-container fm-main-video">
+		<!-- TODO: VIDEO -->
+		<img class="fm-big-image" src="https://placekitten.com/1280/720"/> 
+	</div>
+
+	<div class="fm-description">
+		<div class="fm-description-title">
+			<h1>{{creatorName}}</div>
+		</div> 
+		<h2>Filmmaker Series &bull; E{{episodeNumber}}</h2> 
+		<p>{{episodeDescription}}</p> 
+	</div> 
+
+	{{#components}}
+		{{.}}
+	{{/components}}
+
+	<div class="fm-episodes">
+		<h2>Episodes</h2>
+
+		<!-- TODO: When we have more than just one or two videos this will need to be turned into a carousel -->
+		<!-- TODO: If we're only launching with one video, do we want this? -->
+		<div class="fm-episodes-collection">
+
+			<div class="fm-episodes-item"> 
+				<div class="fm-episodes-item-main">
+					<a href="#" class="fm-video-thumbnail"> 
+						<!-- TODO: Replace link URL with a link to the video details page -->
+						<iframe src="https://player.vimeo.com/video/413245570?title=0&byline=0&portrait=0&playsinline=0&muted=1&autoplay=0&autopause=1&controls=0&loop=1&app_id=122963" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="" title="Supply Reel Attract Loop" data-ready="true"></iframe>
+						<span class="fm-video-thumbnail-play-icon">
+							<!-- TODO: Get svg from sketch doc, it has a 1px rounded corner -->
+							<svg width="14" height="14">
+								<polygon points="0,0,14,7,0,14" style="fill:#000;"></polygon>
+							</svg> 
+						</span>
+					</a>
+
+					<!-- TODO: Replace with final copy -->
+					<div class="fm-episodes-item-title">
+						<h3>1. Video Title</h3>
+						<span class="fm-video-thumbnail-new-tag">new</span> 
+					</div>
+				</div> 
+
+				<!-- TODO: Replace with final copy -->
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+			</div> 
+		</div> 
+	</div> 
+</div>
