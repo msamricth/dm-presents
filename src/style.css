@@ -1,20 +1,22 @@
-h1, h2 { margin: 0; }
+h1, h2 {
+	margin: 0;
+	font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
+	letter-spacing: 0.05em;
+}
 		
 h1 {
-	font-family: "Trade Gothic Bold", sans-serif;
 	font-size: 48px;
 	text-transform: uppercase;
 } 
 	
 h2 {
-	font-family: "Trade Gothic Bold", sans-serif;
 	font-size: 20px;
 }
 
 h3 {
-	font-family: "Interstate Reg", sans-serif;
+	font-family: "Interstate Reg", interstate, sans-serif;
 	font-size: 15px;
-	font-weight: 900;
+	font-weight: 800;
 }
 
 .dm-main {
@@ -27,6 +29,7 @@ h3 {
 	width: 100%;
 	background: #000;
 	color: #fff;
+	font-family: "Interstate Reg", interstate, sans-serif;
 } 
 
 .fm-hero {
@@ -129,7 +132,7 @@ h3 {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-family: "Trade Gothic Bold";
+			font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
 			font-size: 18px;
 			text-transform: uppercase;
 			padding: 10px;
@@ -147,6 +150,7 @@ h3 {
 	font-size: 16px;
 	line-height: 28px;
 	width: 50%;
+	font-family: "Interstate Reg", interstate, sans-serif;
 }
 
 .fm-episodes {
@@ -185,9 +189,9 @@ h3 {
 	.fm-video-thumbnail-new-tag {
 		background-color: #fff;
 		display: inline-block;
-		font-family: "Trade Gothic Bold", sans-serif; 
+		font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif; 
 		font-size: 11px;
-		font-weight: 600;
+		font-weight: 700;
 		text-transform: uppercase;
 		color: rgb(25, 28, 29); 
 		padding: 3px 5px; 
@@ -230,7 +234,6 @@ h3 {
 
 	.fm-episodes-item p {
 		color: rgb(168, 168, 168);
-		font-family: "Interstate Reg", sans-serif;
 		font-size: 12px;
 		line-height: 20px;
 	}
