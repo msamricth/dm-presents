@@ -9,7 +9,7 @@ var fs = require('fs');
 // Minify & strip comments from all css in /src and put it in /build
 gulp.task('css', () => {
 	return gulp.src('src/*.css')
-		.pipe(cleanCSS({ removeComments: true }))
+		.pipe(cleanCSS())
 		.pipe(gulp.dest('build'));
 });
 
@@ -23,7 +23,7 @@ gulp.task('html', () => {
 // Minify & ... you get the picture
 gulp.task('js', () => { 
 	return gulp.src('src/*.js')
-		.pipe(uglify({ removeComments: true }))
+		.pipe(uglify())
 		.pipe(gulp.dest('build'));
 }); 
 
