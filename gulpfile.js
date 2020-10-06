@@ -34,7 +34,7 @@ gulp.task('js', () => {
 gulp.task('buildPreview', () => {
 	return gulp.src('templates/preview.mustache')
 		.pipe(mustache({ 
-			style: fs.readFileSync('build/style.css').toString(),
+			style: fs.readFileSync('build/home.css').toString(),
 			content: fs.readFileSync('build/home.html').toString(), 
 			script: fs.readFileSync('build/home.js').toString()
 		}))
@@ -47,7 +47,7 @@ gulp.task('buildPreview', () => {
 gulp.task('buildExport', () => {
 	return gulp.src('templates/export.mustache')
 		.pipe(mustache({ 
-			style: fs.readFileSync('build/style.css').toString(),
+			style: fs.readFileSync('build/home.css').toString(),
 			content: fs.readFileSync('build/home.html').toString(), 
 			script: fs.readFileSync('build/home.js').toString()
 		}))
