@@ -55,12 +55,37 @@ gulp.task('buildExport', () => {
 		.pipe(gulp.dest('build')); 
 });
 
+// TODO: This should be expanded to build all available episodes
+gulp.task('buildEpisodePreview', () => {
+	return gulp.src('templates/preview.mustache')
+		.pipe(mustache({ 
+			style: fs.readFileSync('build/episodes.css').toString(),
+			content: fs.readFileSync('build/episode1.html').toString(), 
+			script: fs.readFileSync('build/home.js').toString()
+		}))
+		.pipe(rename('episode1.html'))
+		.pipe(gulp.dest('build')); 
+});
+
+// Using the templates/export.mustache template, render out build.export.html
+// This is the giant blob of text that needs to be copy/pasted into hybris
+gulp.task('buildEpisodeExport', () => {
+	return gulp.src('templates/export.mustache')
+		.pipe(mustache({ 
+			style: fs.readFileSync('build/episodes.css').toString(),
+			content: fs.readFileSync('build/episode1.html').toString(), 
+			script: fs.readFileSync('build/home.js').toString()
+		}))
+		.pipe(rename('export_episode1.html'))
+		.pipe(gulp.dest('build')); 
+});
+
 // Just simplifing the minify tasks into one task
 gulp.task('minify', gulp.parallel('html', 'css', 'js'));
 
 // These are the two tasks that should be called
 // By default, just running `gulp` will build a preview
-gulp.task('default', gulp.series('minify', 'buildPreview')); 
+gulp.task('default', gulp.series('minify', 'buildPreview', 'buildEpisodePreview')); 
 
 // Running `gulp export` will create build/export, which is the blob to be copy/pasted into Hybris
-gulp.task('export', gulp.series('minify', 'buildExport')); 
+gulp.task('export', gulp.series('minify', 'buildExport', 'buildEpisodeExport')); 
