@@ -1,3 +1,8 @@
+@font-face {
+	font-family:"DrMartensHandwritingRounder"; 
+	src: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/drMartensHandwritingRounder.woff") format("woff");
+}
+
 h1, h2 {
 	margin: 0;
 	font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
@@ -60,14 +65,16 @@ p {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background-image: url("ripDesktop.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("scratchyBackground.jpg"); /* TODO: Replace with S3 URL */
+	background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@2x.jpg");
 	background-size: 100%;
-	background-position: bottom, top, center;
+	/* NOTE(AJ): the position of the rip bg is set to 101% because 'bottom' sometimes caused a 1px gap 
+		Short on time, so that's the fix for now. If you have a better idea, by all means. :) 
+	*/
+	background-position: 0 101%, top, center;
 	background-repeat: no-repeat;
 	padding: 30px 40px 96px;
 	position: relative;
-}
-
+} 
 
 .fm-title h1 {
 	background: #000;
@@ -98,7 +105,7 @@ p {
 .fm-episode-quote {
 	margin: 75px auto;
 	width: 55%;
-	font-family: "TODO GET FONT FROM DR MARTENS", six-hands-brush, sans-serif;
+	font-family: "DrMartensHandwritingRounder", serif;
 	font-size: 40px;
 	text-align: center;
 	line-height: 48px;
@@ -107,6 +114,13 @@ p {
 
 img.fm-episode-big-image {
 	width: 100%;
+
+	/* TODO(AJ)[FIX]: This is a fix for some images uploaded to S3 with a white border
+		Photoshop did me wrong. We can get rid of this when we do our next batch upload to S3
+	*/
+	outline: 3px solid #000;
+	outline-offset: -3px;
+	/* ENDFIX */
 }
 
 a.fm-episode-back {
@@ -224,12 +238,18 @@ a.fm-episode-back {
 	}
 
 @media screen and (min-width: 1440px) {
+	.fm-episode-details {
+		padding: 30px 25% 160px;
+	} 
+}
+
+@media screen and (max-width: 1440px) {
 	.fm-episodes {
 		width: 1210px;
 	} 
 
 	.fm-episode-details {
-		padding: 30px auto 160px;
+		padding: 30px 114px 160px;
 	} 
 
 	.fm-hero-content { 
@@ -248,6 +268,10 @@ a.fm-episode-back {
 } 
 
 @media screen and (max-width: 768px) {
+	.fm-episode-details {
+		padding: 30px 40px 160px;
+	} 
+
 	.fm-title h1 {
 		margin: 0px auto;
 		padding: 8px 32px 8px 40px;
@@ -338,12 +362,12 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) { 
 	.fm-hero-tear {
-		background-image: url("ripDesktop@2x.png");
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
 	}
 
 	@media screen and (max-width: 768px) {
 		.fm-episode-details {
-			background-image: url("ripMobile@2x.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("scratchyBackground.jpg"); /* TODO: Replace with S3 URL */
+			background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@3x.jpg");
 		}
 	}
 }

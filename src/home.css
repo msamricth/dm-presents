@@ -69,7 +69,7 @@ h3 {
 
 	.fm-hero-tear {
 		position: absolute;
-		background-image: url("ripDesktop.png"); /* TODO: Replace with S3 URL */
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png");
 		background-size: 100%;
 		background-position: bottom;
 		background-repeat: no-repeat;
@@ -284,7 +284,7 @@ h3 {
 	}
 
 	.fm-hero-tear {
-		background-image: url("ripMobile.png");
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile.png");
 	}
 
 }
@@ -390,12 +390,12 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) { 
 	.fm-hero-tear {
-		background-image: url("ripDesktop@2x.png");
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
 	}
 
 	@media screen and (max-width: 768px) {
 		.fm-hero-tear {
-			background-image: url("ripMobile@2x.png");
+			background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png");
 		}
 	}
 }
