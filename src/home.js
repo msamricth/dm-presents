@@ -8,6 +8,16 @@ function ready(cb) {
 
 ready(function(){ 
 	document.querySelectorAll('.fm-video-thumbnail').forEach(function(a){ 
+
+		a.querySelector("iframe").addEventListener("load", function(e){
+			var iframe = e.currentTarget;
+			var start = parseFloat(iframe.getAttribute("data-start"));
+			iframe.contentWindow.postMessage({ method: 'setCurrentTime', value: start }, '*'); 
+			setTimeout(function(){
+				iframe.contentWindow.postMessage({ method: 'pause'}, '*'); 
+			}, 100);
+		});
+
 		a.addEventListener('mouseover', function(e){ 
 			a.querySelector('iframe').contentWindow.postMessage({ method: 'play'}, '*'); 
 		});
