@@ -161,7 +161,7 @@ h3 {
 
 	.fm-episodes h2{
 		text-transform: uppercase;
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 		height: 30px;
 	}
 
@@ -237,7 +237,7 @@ h3 {
 	}
 
 	.fm-episodes-item h3 {
-		margin: 20px 0px 10px;
+		margin: -8px 0px 10px;
 	}
 
 	.fm-episodes-item p {
@@ -293,6 +293,10 @@ h3 {
 	.fm-episodes {
 		margin: 150px 32px;
 	} 
+
+	.fm-episodes-item {
+		max-width: none;
+	} 
 }
 
 @media screen and (max-width: 480px) {
@@ -307,10 +311,6 @@ h3 {
 
 	.fm-hero-tear {
 		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile.png");
-	}
-
-	.fm-episodes-item {
-		max-width: none;
 	} 
 } 
 
@@ -374,7 +374,7 @@ h3 {
 		align-items: flex-start;
 	}
 
-	.fm-episodes-item h3 {
+	.fm-episodes-item-title h3 {
 		margin: -6px 0px 8px;
 	}
 
@@ -395,6 +395,8 @@ h3 {
 	.fm-video-thumbnail-play-icon { 
 		width: 34px;
 		height: 34px;
+		position: static;
+		margin: 0;
 	}
 
 } 

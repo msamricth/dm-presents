@@ -148,7 +148,7 @@ a.fm-episode-back {
 
 	.fm-episodes h2{
 		text-transform: uppercase;
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 		height: 30px;
 	}
 
@@ -224,7 +224,7 @@ a.fm-episode-back {
 	}
 
 	.fm-episodes-item h3 {
-		margin: 20px 0px 10px;
+		margin: -8px 0px 10px;
 	}
 
 	.fm-episodes-item p {
@@ -298,6 +298,10 @@ a.fm-episode-back {
 	.fm-episodes {
 		margin: 150px 32px;
 	}
+
+	.fm-episodes-item {
+		max-width: none;
+	} 
 }
 
 @media screen and (max-width: 480px) {
@@ -307,10 +311,6 @@ a.fm-episode-back {
 
 	.fm-episode-text {
 		margin: 125px 16px 75px;
-	}
-
-	.fm-episodes-item {
-		max-width: none;
 	} 
 } 
 
@@ -356,7 +356,7 @@ a.fm-episode-back {
 		align-items: flex-start;
 	} 
 
-	.fm-episodes-item h3 {
+	.fm-episodes-item-title h3 {
 		margin: -6px 0px 8px;
 	}
 
@@ -377,6 +377,8 @@ a.fm-episode-back {
 	.fm-video-thumbnail-play-icon { 
 		width: 34px;
 		height: 34px;
+		position: static;
+		margin: 0;
 	}
 
 } 
