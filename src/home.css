@@ -251,7 +251,14 @@ h3 {
 	.fm-message,
 	.fm-episodes {
 		width: 1210px;
+		margin: 150px auto; 
 	} 
+
+	.fm-message span {
+		display: inline-block;
+		width: 492px;
+		padding-left: 40px;
+	}
 	.fm-hero-content { 
 		left: 50%;
 		margin: 0px auto 0px -605px;
@@ -260,16 +267,8 @@ h3 {
 	.fm-message {
 		margin: 0px auto; 
 		padding: 0px;
-	}
-
-	.fm-episodes {
-		margin: 150px auto; 
-	}
+	} 
 } 
-
-@media screen and (max-width: 1280px) {
-
-}
 
 @media screen and (max-width: 768px) {
 
