@@ -60,9 +60,19 @@ const createBuildTask = (name, options) => {
 
 	exportBuildTasks.push(name + "Export");
 	gulp.task(name + "Export", () => { 
+		
+		// TODO(AJ)[HACK]: DrMartens S3 wasn't allowing .woff files for @font-face, so we're base64 embedding it
+		// ... this is obviously a bit of a hack, but it works for now. It requires naming the task "buildEpisode{n}" to be included.
+		// It adds about 500Kb of text to the file that is copy/pasted into Hyrbris, the .woff files is a little less than that
+		// Requesting a file takes a bit of latency so performance-wise I'd guess this is a bit of a wash. 
+		// Code-maintainance-wise it's a mess. Apologies, hopefully we get their S3 to allow .woff files in the future.
+		var fontCSS = "";
+		if(name.includes("Episode")) 
+			fontCSS = fs.readFileSync("src/handwritingFont.css").toString();
+
 		return gulp.src("templates/export.mustache")
 			.pipe(mustache({
-				style: fs.readFileSync("build/" + options.cssFilename).toString(),
+				style: fs.readFileSync("build/" + options.cssFilename).toString() + fontCSS,
 				content: fs.readFileSync("build/" + options.htmlFilename).toString(),
 				script: fs.readFileSync("build/" + options.scriptFilename).toString(),
 			}))
