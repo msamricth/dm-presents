@@ -23,13 +23,14 @@ p {
 	line-height: 30px;
 }
 
-.dm-main {
+body {
 	background-color: #000;
 	color: #fff;
 }
 
 .fm-container {
-	margin: 0px auto;
+	/* -60 bottom margin to compensate for something weird in the hybris template */
+	margin: 0px auto -60px;
 	width: 100%;
 	background: #000;
 	color: #fff;
@@ -219,6 +220,10 @@ a.fm-episode-back {
 		flex-grow: 1;
 	}
 
+	.fm-episodes-item:last-child {
+		margin-right: 0;
+	}
+
 	.fm-episodes-item h3 {
 		margin: -8px 0px 10px;
 	}
@@ -297,6 +302,13 @@ a.fm-episode-back {
 
 	.fm-episodes-item {
 		max-width: none;
+	} 
+}
+
+/* Hack to compensate for weirdness in hybris template */
+@media screen and (max-width: 767px) {
+	.fm-container {
+		margin-bottom: -90px;
 	} 
 }
 
