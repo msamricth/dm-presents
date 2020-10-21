@@ -5,6 +5,7 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var mustache = require('gulp-mustache');
 var fs = require('fs');
+var pug = require('gulp-pug');
 
 /*
 	AJ (10/9/2020):
@@ -113,10 +114,16 @@ createBuildTask('buildEpisode2', {
 	exportFilename: "hybris_02GabrielGomez.html"
 }); 
 
+gulp.task("default", () => { 
+	return gulp.src("src/preview/*.pug")
+		.pipe(pug())
+		.pipe(gulp.dest("build/us/en"));
+});
+
 
 // These are the two tasks that should be called
 // By default, just running `gulp` will build a preview
-gulp.task('default', gulp.series('minify', gulp.parallel(previewBuildTasks))); 
+// gulp.task('default', gulp.series('minify', gulp.parallel(previewBuildTasks))); 
 
 // Running `gulp export` will create build/export, which is the blob to be copy/pasted into Hybris
 gulp.task('export', gulp.series('minify', gulp.parallel(exportBuildTasks))); 

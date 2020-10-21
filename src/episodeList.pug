@@ -1,0 +1,24 @@
+- var ali = { url: "/us/en/dm-presents-ali-roberto", vimeoId: "465051454", vimeoTitle: "AliTeaser", videoStart:"0.55", title: "1. Ali Roberto", description: "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision." }
+- var gabe = { url: "/us/en/dm-presents-gabriel-gomez", vimeoId: "466283147", vimeoTitle: "GabrielTeaser", videoStart:"4.2", title: "2. Gabriel Gomez", description: "NY Filmmaker Gabriel Gomez uses these unprecedented times to hone in on what matters to him and the musicians in his community." }
+- var episodes = [ali, gabe]
+
+mixin episodeItem(episode)
+	.fm-episodes-item
+		.fm-episodes-item-main
+			a.fm-video-thumbnail(href!=`${episode.url}`)
+				iframe(src!=`https://player.vimeo.com/video/${episode.vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=1&autoplay=1&autopause=1&controls=0&loop=1"` frameborder="0" allow="autoplay;" allowfullscreen="" title=episode.vimeoTitle data-ready="true" data-start=episode.videoStart)
+				.fm-video-thumbnail-play-icon
+					svg(width="14" height="14")
+						polygon(points="0,0,14,7,0,14" style="fill:#000;")
+			.fm-episodes-item-title
+				h3= episode.title
+				if episode.isNew
+					span.fm-video-thumbnail-new-tag new
+		p= episode.description 
+
+.fm-episodes
+	h2 Episodes
+
+	.fm-episodes-collection 
+		each episode in episodes
+			+episodeItem(episode) 

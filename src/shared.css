@@ -1,0 +1,61 @@
+
+h1, h2 {
+	margin: 0;
+	font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif; 
+	font-weight: 500;
+}
+		
+h1 {
+	font-size: 48px;
+	text-transform: uppercase;
+} 
+	
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-family: "Interstate Reg", interstate, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
+}
+
+p { 
+	line-height: 30px;
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+}
+
+.fm-container {
+	/* -60 bottom margin to compensate for something weird in the hybris template */
+	margin: 0px auto -60px;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	font-family: "Interstate Reg", interstate, sans-serif;
+} 
+
+.fm-hero-video {
+	position: relative;
+	width: 100%; 
+	height: 100%;
+	/* This padding assumes a 16:9 video, adjust accordingly */
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	z-index: 0;
+}
+	.fm-hero-video iframe, 
+	.fm-hero-video object, 
+	.fm-hero-video embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%; 
+		height: 100%;
+		min-width: 711px;
+		z-index: 0;
+		margin: 0px auto;
+	} 
