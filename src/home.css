@@ -56,9 +56,7 @@ body {
 		overflow: hidden;
 		z-index: 0;
 	}
-		.fm-hero-video iframe, 
-		.fm-hero-video object, 
-		.fm-hero-video embed {
+		.fm-hero-video video {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -177,9 +175,7 @@ body {
 		box-sizing: content-box;
 	}
 
-	.fm-video-thumbnail iframe, 
-	.fm-video-thumbnail object,
-	.fm-video-thumbnail embed {
+	.fm-video-thumbnail video {
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -335,6 +331,9 @@ body {
 	}
 
 	.fm-hero-play svg {
+		position: relative;
+		left: 1px;
+		top: 0px;
 		margin: 0;
 	}
 
