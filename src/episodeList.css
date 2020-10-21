@@ -32,9 +32,9 @@
 	.fm-video-thumbnail-new-tag {
 		background-color: #fff;
 		display: inline-block;
-		font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif; 
+		font-family: "Trade Gothic Bold", sans-serif; 
 		font-size: 11px;
-		font-weight: 700;
+		font-weight: 600;
 		text-transform: uppercase;
 		color: rgb(25, 28, 29); 
 		padding: 3px 5px; 
@@ -90,3 +90,90 @@
 		font-size: 12px;
 		line-height: 20px;
 	}
+
+@media screen and (min-width: 1440px) {
+	.fm-episodes {
+		width: 1210px;
+		margin: 150px auto 130px; 
+	} 
+} 
+
+@media screen and (max-width: 768px) { 
+
+	.fm-hero-video {
+		left: -25%;
+		width: 150%;
+	} 
+
+	.fm-episodes {
+		margin: 150px 32px 130px;
+	} 
+
+	.fm-episodes-item {
+		max-width: none;
+	} 
+} 
+
+@media screen and (max-width: 375px) { 
+	.fm-episodes {
+		margin: 100px 32px 55px;
+	}
+
+	.fm-episodes h2 {
+		margin-bottom: 40px;
+	}
+
+	.fm-episodes-collection {
+		flex-direction: column;
+	}
+
+	a.fm-video-thumbnail {
+		width: 108px;
+		height: 61px;
+		margin-right: 10px;
+		padding-top: 0px;
+	}
+
+	.fm-episodes-item {
+		border-bottom: 1px solid rgb(25, 28, 29); 
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-right: 16px;
+		max-width: 100%;
+		padding: 20px 0;
+	} 
+
+	.fm-episodes-item-title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.fm-episodes-item-title h3 {
+		margin: -6px 0px 8px;
+	}
+
+	.fm-episodes-item p {
+		margin-bottom: 0px;
+	}
+
+	.fm-video-thumbnail-new-tag {
+		position: static;
+	}
+
+	.fm-episodes-item-main {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10px;
+	}
+
+	.fm-video-thumbnail-play-icon { 
+		width: 34px;
+		height: 34px;
+		position: static;
+		margin: 0;
+	}
+
+} 

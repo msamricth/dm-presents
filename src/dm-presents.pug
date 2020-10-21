@@ -1,3 +1,5 @@
+include video-mixins
+
 block header
 
 style
@@ -9,7 +11,8 @@ style
 	.fm-hero
 		.fm-hero-background
 			.fm-hero-video
-				iframe(src="https://player.vimeo.com/video/465051454?title=0&byline=0&portrait=0&playsinline=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="" title="AliTeaser" data-ready="true")
+				video(loop autoplay muted playsinline)
+					source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Alia/aliTeaser.mp4` type="video/mp4")
 			.fm-hero-fade
 			.fm-hero-tear
 		

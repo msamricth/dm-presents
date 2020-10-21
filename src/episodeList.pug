@@ -1,12 +1,16 @@
-- var ali = { url: "/us/en/dm-presents-ali-roberto", vimeoId: "465051454", vimeoTitle: "AliTeaser", videoStart:"0.55", title: "1. Ali Roberto", description: "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision." }
-- var gabe = { url: "/us/en/dm-presents-gabriel-gomez", vimeoId: "466283147", vimeoTitle: "GabrielTeaser", videoStart:"4.2", title: "2. Gabriel Gomez", description: "NY Filmmaker Gabriel Gomez uses these unprecedented times to hone in on what matters to him and the musicians in his community." }
-- var episodes = [ali, gabe]
+include video-mixins.pug
+
+- var ali = { isNew: false, url: "/us/en/dm-presents-ali-roberto", relativePath: "Alia/aliTeaser", videoStart:"0.575", title: "1. Ali Roberto", description: "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision." }
+- var gabe = { isNew: false, url: "/us/en/dm-presents-gabriel-gomez", relativePath: "Gabe/gabrielTeaser", videoStart:"4.05", title: "2. Gabriel Gomez", description: "NY Filmmaker Gabriel Gomez uses these unprecedented times to hone in on what matters to him and the musicians in his community." }
+- var lrw = { isNew: true, url: "/us/en/dm-presents-lauren-ruth-ward", relativePath: "LRW/lrwTeaser", videoStart:"4.05", title: "3. Lauren Ruth Ward", description: "Lauren Ruth Ward is a musician, stylist, photographer, and more than the sum of her parts, seeking ways to connect without in-person shows." }
+- var rosehardt = { isNew: true, url: "/us/en/dm-presents-rosehardt", relativePath: "Rosehardt/rosehardtTeaser", videoStart:"4.05", title: "4. Rosehardt", description: "Caleb Eberhardt has always used his music to connect with others. Now, he’s working to use his platform and leave a legacy of social change." }
+- var episodes = [ali, gabe, lrw, rosehardt]
 
 mixin episodeItem(episode)
 	.fm-episodes-item
 		.fm-episodes-item-main
 			a.fm-video-thumbnail(href!=`${episode.url}`)
-				iframe(src!=`https://player.vimeo.com/video/${episode.vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=1&autoplay=1&autopause=1&controls=0&loop=1"` frameborder="0" allow="autoplay;" allowfullscreen="" title=episode.vimeoTitle data-ready="true" data-start=episode.videoStart)
+				+thumbnailVideo(episode.relativePath, episode.videoStart)
 				.fm-video-thumbnail-play-icon
 					svg(width="14" height="14")
 						polygon(points="0,0,14,7,0,14" style="fill:#000;")
