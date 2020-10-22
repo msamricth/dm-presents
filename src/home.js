@@ -63,7 +63,8 @@ ready(function(){
 	var nextArrow = document.querySelector(".fm-episodes-next");
 	var prevArrow = document.querySelector(".fm-episodes-prev"); 
 
-	var episodeIndex = 0;
+	var videosShown = window.innerWidth > 768 ? 3 : 2;
+	var episodeIndex = episodeItems.length - videosShown;
 	var episodeCount = episodeItems.length;
 
 	var moveEpisodeCarousel = function(direction) { 
