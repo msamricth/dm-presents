@@ -1,4 +1,5 @@
-include video-mixins.pug
+include video-mixins
+include svg-mixins
 
 - var ali = { isNew: false, url: "/us/en/dm-presents-ali-roberto", relativePath: "Alia/aliTeaser", videoStart:"0.575", title: "1. Ali Roberto", description: "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision." }
 - var gabe = { isNew: false, url: "/us/en/dm-presents-gabriel-gomez", relativePath: "Gabe/gabrielTeaser", videoStart:"4.05", title: "2. Gabriel Gomez", description: "NY Filmmaker Gabriel Gomez uses these unprecedented times to hone in on what matters to him and the musicians in his community." }
@@ -7,9 +8,9 @@ include video-mixins.pug
 - var episodes = [ali, gabe, lrw, rosehardt]
 
 mixin episodeItem(episode)
-	.fm-episodes-item
+	a.fm-episodes-item(href!=`${episode.url}`)
 		.fm-episodes-item-main
-			a.fm-video-thumbnail(href!=`${episode.url}`)
+			.fm-video-thumbnail
 				+thumbnailVideo(episode.relativePath, episode.videoStart)
 				.fm-video-thumbnail-play-icon
 					svg(width="14" height="14")
@@ -21,8 +22,13 @@ mixin episodeItem(episode)
 		p= episode.description 
 
 .fm-episodes
-	h2 Episodes
+	h2 Episodes 
 
 	.fm-episodes-collection 
-		each episode in episodes
-			+episodeItem(episode) 
+		a.fm-episodes-prev(href="#")
+			+svgLeftArrow()
+		a.fm-episodes-next(href="#")
+			+svgRightArrow()
+		.fm-episodes-item-container
+			each episode in episodes
+				+episodeItem(episode) 
