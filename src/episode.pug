@@ -1,10 +1,11 @@
 include video-mixins
 
 mixin episodeDetails(episodeNumber, title, description)
-	.fm-episode-details
-		.fm-title: h1= title
-		h2 Filmmaker Series &bull; E#{episodeNumber}
-		p= description
+	.fm-episode-details-container
+		.fm-episode-details
+			.fm-title: h1= title
+			h2 Filmmaker Series &bull; E#{episodeNumber}
+			p= description
 
 mixin bigImage(relativePath) 
 	img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.jpg 2x`)

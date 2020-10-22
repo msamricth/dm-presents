@@ -51,10 +51,8 @@
 		left: 2px;
 	}
 
-.fm-episode-details {
+.fm-episode-details-container {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
 	background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@2x.jpg");
 	background-size: contain, 100%, cover;
 	/* NOTE(AJ): the position of the rip bg is set to 101% because 'bottom' sometimes caused a 1px gap 
@@ -63,8 +61,13 @@
 	background-position: 0 101%, top, center;
 	background-repeat: no-repeat;
 	padding: 30px 40px 100px;
-	position: relative;
 } 
+
+.fm-episode-details {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
 
 .fm-title h1 {
 	background: #000;
@@ -135,8 +138,15 @@ a.fm-episode-back {
 		letter-spacing: 0.05em; 
 	}
 
-@media screen and (max-width: 1440px) { 
+@media screen and (min-width: 1441px) { 
 	.fm-episode-details {
+		width: 1210px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 1440px) { 
+	.fm-episode-details-container {
 		padding: 30px 114px 100px;
 	} 
 
@@ -152,7 +162,7 @@ a.fm-episode-back {
 } 
 
 @media screen and (max-width: 1290px) { 
-	.fm-episode-details {
+	.fm-episode-details-container {
 		padding: 30px 40px 100px;
 	} 
 }
@@ -193,7 +203,7 @@ a.fm-episode-back {
 }
 
 @media screen and (max-width: 480px) {
-	.fm-episode-details {
+	.fm-episode-details-container {
 		padding: 30px 16px 100px; 
 	}
 
