@@ -29,21 +29,7 @@
 .fm-episode-header-video { 
 	position: relative;
 	cursor: pointer;
-}
-	.fm-episode-header-video .fm-hero-video.vimeo { 
-		position: absolute;
-		left: 0px;
-		top: 0px; 
-		cursor: pointer;
-		z-index: 0;
-		opacity: 0;
-	}
-	.fm-episode-header-video .fm-hero-video.preview { 
-		z-index: 1;
-		cursor: pointer;
-		pointer-events: none;
-		position: relative;
-	}
+} 
 
 .fm-big-play-button {
 	position: absolute;
