@@ -15,9 +15,9 @@ mixin thumbnailVideo(relativePath, startTime)
 
 mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle)
 	.fm-episode-header-video
-		.fm-hero-video
+		.fm-hero-video.preview
 			video(loop autoplay muted playsinline)
 				source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
-		.fm-hero-video(style="display:none;")
+		.fm-hero-video.vimeo
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="fullscreen" frameborder="0" title=vimeoTitle)
 		+bigPlayButton()

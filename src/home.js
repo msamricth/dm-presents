@@ -139,22 +139,30 @@ ready(function(){
 	window.addEventListener('resize', function(e){ handleResize(); });
 	window.addEventListener("scroll", adjustEpisodeCarouselArrows );
 
+	var vimeoVideo = document.querySelector(".fm-hero-video.vimeo");
+	var iframe = vimeoVideo.querySelector("iframe"); 
 
-	var episodePlaceholderTeaser = document.querySelector(".fm-episode-header-video");
-	if(episodePlaceholderTeaser !== null) {
-		episodePlaceholderTeaser.addEventListener("click", function(e) { 
-			var videos = episodePlaceholderTeaser.querySelectorAll(".fm-hero-video");
-			var playButton = episodePlaceholderTeaser.querySelector(".fm-big-play-button");
-			var placeholder = videos[0];
-			var vimeoVideo = videos[1];
-			var iframe = vimeoVideo.querySelector("iframe"); 
+	window.addEventListener("message", e => { 
+		if(e.origin === "https://player.vimeo.com") {
+			if(e.data === '{"event":"ready"}') {
+				var iframe = document.querySelector(".fm-episode-header-video iframe");
+				iframe.setAttribute("data-ready", true);
+				iframe.contentWindow.postMessage({ method: "addEventListener", value: "play"}, "*");
+			}
+			else if( typeof(e.data) === "object" && e.data.event === "play" ) {
+				if(vimeoVideo !== null) {
+					var playButton = document.querySelector(".fm-big-play-button");
+					var placeholder = document.querySelector(".fm-hero-video.preview"); 
 
-			vimeoVideo.style.display = "block";
-			placeholder.style.display = "none";
-			playButton.style.display = "none";
-			iframe.contentWindow.postMessage({method:"play"}, "*"); 
-		});
-	}
+					vimeoVideo.style.opacity = "1.0";
+					placeholder.style.opacity = "0";
+					playButton.style.display = "none";
+				} 
+			}
+		}
+	}); 
+
+
 
 
 	// NOTE: This is for debugging on Hybris. Since when connected over VPN Vimeo won't load videos
