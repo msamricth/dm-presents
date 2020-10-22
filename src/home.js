@@ -128,7 +128,7 @@ ready(function(){
 	};
 
 	var handleResize = function(e) {
-		if( collageVideo !== undefined ) 
+		if( collageVideo !== null ) 
 			adjustCollageVideo();
 		
 		adjustEpisodeCarouselArrows(); 
@@ -137,6 +137,23 @@ ready(function(){
 	handleResize();
 	window.addEventListener('resize', function(e){ handleResize(); });
 	window.addEventListener("scroll", adjustEpisodeCarouselArrows );
+
+
+	var episodePlaceholderTeaser = document.querySelector(".fm-episode-header-video");
+	if(episodePlaceholderTeaser !== null) {
+		episodePlaceholderTeaser.addEventListener("click", function(e) { 
+			var videos = episodePlaceholderTeaser.querySelectorAll(".fm-hero-video");
+			var playButton = episodePlaceholderTeaser.querySelector(".fm-big-play-button");
+			var placeholder = videos[0];
+			var vimeoVideo = videos[1];
+			var iframe = vimeoVideo.querySelector("iframe"); 
+
+			vimeoVideo.style.display = "block";
+			placeholder.style.display = "none";
+			playButton.style.display = "none";
+			iframe.contentWindow.postMessage({method:"play"}, "*"); 
+		});
+	}
 
 
 	// NOTE: This is for debugging on Hybris. Since when connected over VPN Vimeo won't load videos

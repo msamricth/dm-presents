@@ -26,6 +26,31 @@
 		margin: 0px auto;
 	} 
 
+.fm-episode-header-video { 
+	position: relative;
+	cursor: pointer;
+}
+
+.fm-big-play-button {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin: -32px 0 0 -32px;
+	background: rgb(255, 230, 0);
+	z-index: 1;
+	width: 64px;
+	height: 64px;
+	border-radius: 32px;
+}
+
+	.fm-big-play-button svg {
+		position: relative;
+		left: 2px;
+	}
+
 .fm-episode-details {
 	width: 100%;
 	display: flex;
