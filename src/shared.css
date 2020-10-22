@@ -1,7 +1,7 @@
 
 h1, h2 {
 	margin: 0;
-	font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif; 
+	font-family: "Trade Gothic Bold", sans-serif; 
 	font-weight: 500;
 }
 		
@@ -15,7 +15,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Interstate Reg", interstate, sans-serif;
+	font-family: "Interstate Reg", sans-serif;
 	font-size: 15px;
 	font-weight: 800;
 }
@@ -35,7 +35,7 @@ body {
 	width: 100%;
 	background: #000;
 	color: #fff;
-	font-family: "Interstate Reg", interstate, sans-serif;
+	font-family: "Interstate Reg", sans-serif;
 } 
 
 .fm-hero-video {

@@ -4,7 +4,7 @@
 	width: 100%;
 	background: #000;
 	color: #fff;
-	font-family: "Interstate Reg", interstate, sans-serif;
+	font-family: "Interstate Reg", sans-serif;
 } 
 
 .fm-hero-video {
@@ -135,7 +135,7 @@ a.fm-episode-back {
 
 	.fm-episode-back span {
 		color: #000; 
-		font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
+		font-family: "Trade Gothic Bold", sans-serif;
 		font-size: 18px;
 		letter-spacing: 0.05em; 
 	}
