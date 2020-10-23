@@ -29,21 +29,7 @@
 .fm-episode-header-video { 
 	position: relative;
 	cursor: pointer;
-}
-	.fm-episode-header-video .fm-hero-video.vimeo { 
-		position: absolute;
-		left: 0px;
-		top: 0px; 
-		cursor: pointer;
-		z-index: 0;
-		opacity: 0;
-	}
-	.fm-episode-header-video .fm-hero-video.preview { 
-		z-index: 1;
-		cursor: pointer;
-		pointer-events: none;
-		position: relative;
-	}
+} 
 
 .fm-big-play-button {
 	position: absolute;
@@ -191,6 +177,15 @@ a.fm-episode-back {
 }
 
 @media screen and (max-width: 768px) {
+
+	.fm-episode-header-video {
+		overflow: hidden;
+	}
+
+	.fm-hero-video.preview {
+		left: -25%;
+		width: 150%;
+	} 
 
 	.fm-title h1 {
 		margin: 0px auto;

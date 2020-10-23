@@ -72,7 +72,6 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
-		/* display: none; */
 	} 
 		a.fm-episodes-next svg, a.fm-episodes-prev svg {
 			overflow: visible;
@@ -121,11 +120,6 @@
 
 @media screen and (max-width: 768px) { 
 
-	.fm-hero-video {
-		left: -25%;
-		width: 150%;
-	} 
-
 	.fm-episodes {
 		margin: 150px 32px 130px;
 	} 
@@ -135,7 +129,7 @@
 	}
 } 
 
-@media screen and (max-width: 375px) { 
+@media screen and (max-width: 480px) { 
 	.fm-episodes {
 		margin: 100px 32px 55px;
 	}
@@ -146,6 +140,7 @@
 
 	.fm-episodes-item-container {
 		flex-direction: column;
+		left: 0;
 	}
 
 	.fm-video-thumbnail {
@@ -197,6 +192,10 @@
 		margin: 0;
 		top: 14px;
 		left: 38px;
+	}
+
+	a.fm-episodes-next, a.fm-episodes-prev {
+		display: none; 
 	}
 
 } 

@@ -10,17 +10,23 @@ html
 			*, *:before, *:after { box-sizing: border-box; text-decoration: none; } 
 			body, h1, h2, h3, h4, h5, h6, p, ol, ul { margin: 0; padding: 0; font-weight: normal; } 
 			ol, ul { list-style: none; } 
-			img { max-width: 100%; height: auto; }
-
+			img { max-width: 100%; height: auto; } 
 			@font-face { 
 				font-family: "Trade Gothic Bold"; 
 				src: url("/TradeGothicLTComBdCn20.woff") format("woff");
-			}
-
+			} 
 			@font-face {
 				font-family: "Interstate Reg";
 				src: url("/Interstate-Regular.woff") format("woff");
 			} 
+			.footer-top {
+				margin-top: 60px;
+			}
+			@media screen and (max-width: 768px) {
+				.footer-top {
+					margin-top: 90px;
+				}
+			}
 
 	body.dm-main 
 		div(style="background:#191b1d;height:35px;")
@@ -29,7 +35,7 @@ html
 
 		block content
 
-		div(style="background:#191b1d;height:107px;")
+		div.footer-top(style="background:#191b1d;height:107px;")
 		div(style="background:#24272a;height:414px;")
 		div(style="background:#191b1d;height:60px;") 
 
