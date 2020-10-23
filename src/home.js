@@ -141,6 +141,7 @@ ready(function(){
 
 	handleResize();
 	window.addEventListener('resize', function(e){ handleResize(); });
+	window.addEventListener('orientationchange', function(e){ handleResize(); });
 	window.addEventListener("scroll", adjustEpisodeCarouselArrows );
 
 	var episodePlaceholderTeaser = document.querySelector(".fm-episode-header-video");
