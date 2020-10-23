@@ -1,0 +1,202 @@
+.fm-episodes {
+	margin: 150px 40px 130px;
+	position: relative;
+	z-index: 0;
+}
+
+	.fm-episodes h2{
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		height: 30px;
+	}
+
+	.fm-video-thumbnail {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		margin-bottom: 25px;
+	}
+
+	.fm-video-thumbnail video {
+		width: 100%;
+	}
+
+	.fm-video-thumbnail-new-tag {
+		background-color: #fff;
+		display: inline-block;
+		font-family: "Interstate Reg", sans-serif; 
+		font-size: 11px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: rgb(25, 28, 29); 
+		padding: 3px 5px; 
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+
+	.fm-video-thumbnail-play-icon {
+		background-color: rgb(255, 230, 0);
+		border-radius: 25px;;
+		width: 50px;
+		height: 50px; 
+		color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -25px 0px 0px -25px;
+		z-index: 1;
+	}
+	
+	.fm-video-thumbnail-play-icon svg {
+		position: relative;
+		left: 1px;
+	}
+
+	.fm-episodes-collection {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	a.fm-episodes-next, a.fm-episodes-prev {
+		width: 42px;
+		height: 48px;
+		position: fixed;
+		top: 150px;
+		background: rgb(242, 242, 249); 
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+		/* display: none; */
+	} 
+		a.fm-episodes-next svg, a.fm-episodes-prev svg {
+			overflow: visible;
+		} 
+
+	.fm-episodes-item-container {
+		display: inline-flex;
+		position: relative;
+	}
+
+	.fm-episodes-item {
+		display: inline-block;
+		margin-right: 20px;
+		position: relative;
+		flex-grow: 1;
+		min-width: 390px;
+	}
+
+	.fm-episodes-item:last-child {
+		margin-right: 0;
+	}
+
+	.fm-episodes-item h3 {
+		color: #fff;
+		margin: -8px 0px 10px; 
+	}
+
+	.fm-episodes-item p {
+		color: rgb(168, 168, 168);
+		font-size: 12px;
+		line-height: 20px;
+	} 
+
+@media screen and (min-width: 1441px) {
+	.fm-episodes {
+		width: 1210px;
+		margin: 150px auto 130px; 
+	} 
+} 
+
+@media screen and (max-width: 1440px) {
+	.fm-episodes-item {
+		min-width: calc(33.33vw - 46px);
+	}
+} 
+
+@media screen and (max-width: 768px) { 
+
+	.fm-hero-video {
+		left: -25%;
+		width: 150%;
+	} 
+
+	.fm-episodes {
+		margin: 150px 32px 130px;
+	} 
+
+	.fm-episodes-item {
+		min-width: calc(50vw - 50px);
+	}
+} 
+
+@media screen and (max-width: 375px) { 
+	.fm-episodes {
+		margin: 100px 32px 55px;
+	}
+
+	.fm-episodes h2 {
+		margin-bottom: 40px;
+	}
+
+	.fm-episodes-item-container {
+		flex-direction: column;
+	}
+
+	.fm-video-thumbnail {
+		width: 108px;
+		height: 61px;
+		margin-right: 10px;
+		margin-bottom: 0px;
+		padding-top: 0px;
+	}
+
+	.fm-episodes-item {
+		border-bottom: 1px solid rgb(25, 28, 29); 
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-right: 16px;
+		max-width: 100%;
+		padding: 20px 0;
+	} 
+
+	.fm-episodes-item-title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding-top: 11px;
+	}
+
+	.fm-episodes-item-title h3 {
+		margin: -6px 0px 8px;
+	}
+
+	.fm-episodes-item p {
+		margin-bottom: 0px;
+	}
+
+	.fm-video-thumbnail-new-tag {
+		position: static;
+	}
+
+	.fm-episodes-item-main {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10px;
+	}
+
+	.fm-video-thumbnail-play-icon { 
+		width: 34px;
+		height: 34px;
+		margin: 0;
+		top: 14px;
+		left: 38px;
+	}
+
+} 

@@ -18,11 +18,14 @@ ready(function(){
 			video.removeEventListener('canplaythrough', setStart); 
 		}; 
 		video.addEventListener('canplaythrough', setStart); 
+	}); 
 
+	document.querySelectorAll(".fm-episodes-item").forEach(function(a){ 
+		var video = a.querySelector("video");
 		// play/pause on hover for thumbnails
 		a.addEventListener('mouseover', function(e){ video.play(); });
 		a.addEventListener('mouseleave', function(e){ video.pause(); }); 
-	}); 
+	});
 
 	// swap for mobile collage looping video
 	// TODO: This should be moved to an episodes.js for release2
@@ -55,8 +58,111 @@ ready(function(){
 		}
 	};
 
-	adjustCollageVideo(); 
-	window.addEventListener('resize', function(e){ adjustCollageVideo(); });
+	var episodeItems = document.querySelectorAll(".fm-episodes-item");
+	var episodeItemContainer = document.querySelector(".fm-episodes-item-container");
+	var nextArrow = document.querySelector(".fm-episodes-next");
+	var prevArrow = document.querySelector(".fm-episodes-prev"); 
+
+	var videosShown = window.innerWidth > 768 ? 3 : 2;
+	var episodeIndex = episodeItems.length - videosShown;
+	var episodeCount = episodeItems.length;
+
+	var moveEpisodeCarousel = function(direction) { 
+		var videosShown = window.innerWidth > 768 ? 3 : 2;
+		if(direction < 0)
+			episodeIndex = Math.max(0, episodeIndex - videosShown); 
+		else
+			episodeIndex = Math.min(episodeCount - videosShown, episodeIndex + videosShown);
+
+		adjustEpisodeCarouselArrows(250);
+	};
+
+	prevArrow.addEventListener("click", function(e) {
+		e.preventDefault();
+		moveEpisodeCarousel(-1);
+	});
+
+	nextArrow.addEventListener("click", function(e) {
+		e.preventDefault();
+		moveEpisodeCarousel(1);
+	}); 
+
+	var adjustEpisodeCarouselArrows = function(delay) { 
+		delay = delay | 0;
+		if( window.innerWidth <= 375 ) {
+			[nextArrow, prevArrow].forEach((a) => { a.style.display = "none"; }); 
+		}
+		else {
+			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
+			if(episodeIndex == 0) mo = 0; // ignore if we're at the first item, otherwise the math is confused
+
+			if(window.innerWidth > 1440)
+				episodeItemContainer.style.left = parseInt(-episodeIndex * 390 - mo).toString() + "px";
+			else if(window.innerWidth > 768)
+				episodeItemContainer.style.left = `calc((33.33vw - 46px) * ${-episodeIndex} - ${mo}px)`;
+			else if(window.innerWidth > 375)
+				episodeItemContainer.style.left = `calc((50vw - 50px) * ${-episodeIndex} - ${mo}px)`; 
+
+			episodeItemContainer.style.transition = "left ease-in-out 0.25s";
+
+			setTimeout(() => {
+				episodeItemContainer.style.transition = "none";
+				var videosShown = window.innerWidth > 768 ? 3 : 2;
+				var rect = episodeItems[episodeIndex].querySelector("video").getBoundingClientRect(); 
+				var lastIndex = Math.min(episodeCount-1, episodeIndex+(videosShown-1));
+				var endRect = episodeItems[lastIndex].querySelector("video").getBoundingClientRect(); 
+				var top = parseInt(rect.y + rect.height / 2.0 - 24).toString() + "px"; 
+				var left = parseInt(rect.x - 20).toString() + "px";
+				var right = parseInt(endRect.right - 20).toString() + "px";
+				[nextArrow, prevArrow].forEach((a) => { 
+					a.style.top = top;
+				}); 
+
+				prevArrow.style.left = left;
+				nextArrow.style.left = right;
+
+				prevArrow.style.display = (episodeIndex > 0) ? "flex" : "none";
+				nextArrow.style.display = (episodeIndex <= episodeCount - videosShown - episodeIndex) ? "flex" : "none"; 
+			}, delay); 
+		}
+
+	};
+
+	var handleResize = function(e) {
+		if( collageVideo !== null ) 
+			adjustCollageVideo();
+		
+		adjustEpisodeCarouselArrows(); 
+	}; 
+
+	handleResize();
+	window.addEventListener('resize', function(e){ handleResize(); });
+	window.addEventListener("scroll", adjustEpisodeCarouselArrows );
+
+	var vimeoVideo = document.querySelector(".fm-hero-video.vimeo");
+	var iframe = vimeoVideo.querySelector("iframe"); 
+
+	window.addEventListener("message", e => { 
+		if(e.origin === "https://player.vimeo.com") {
+			if(e.data === '{"event":"ready"}') {
+				var iframe = document.querySelector(".fm-episode-header-video iframe");
+				iframe.setAttribute("data-ready", true);
+				iframe.contentWindow.postMessage({ method: "addEventListener", value: "play"}, "*");
+			}
+			else if( typeof(e.data) === "object" && e.data.event === "play" ) {
+				if(vimeoVideo !== null) {
+					var playButton = document.querySelector(".fm-big-play-button");
+					var placeholder = document.querySelector(".fm-hero-video.preview"); 
+
+					vimeoVideo.style.opacity = "1.0";
+					placeholder.style.opacity = "0";
+					playButton.style.display = "none";
+				} 
+			}
+		}
+	}); 
+
+
 
 
 	// NOTE: This is for debugging on Hybris. Since when connected over VPN Vimeo won't load videos

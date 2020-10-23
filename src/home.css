@@ -1,36 +1,3 @@
-h1, h2 {
-	margin: 0;
-	font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
-}
-		
-h1 {
-	font-size: 48px;
-	text-transform: uppercase;
-} 
-	
-h2 {
-	font-size: 20px;
-}
-
-h3 {
-	font-family: "Interstate Reg", interstate, sans-serif;
-	font-size: 15px;
-	font-weight: 800;
-}
-
-body {
-	background-color: #000;
-	color: #fff;
-}
-
-.fm-container {
-	margin: 0px auto;
-	width: 100%;
-	background: #000;
-	color: #fff;
-	font-family: "Interstate Reg", interstate, sans-serif;
-} 
-
 .fm-hero {
 	position: relative;
 	margin-bottom: 50px;
@@ -45,7 +12,7 @@ body {
 	height: 100%;
 	z-index: 0;
 	overflow: hidden;
-	max-height: 660px;
+	max-height: 576px;
 }
 	.fm-hero-video {
 		position: relative;
@@ -78,6 +45,9 @@ body {
 		z-index: 2;
 		width: 100%;
 		height: 100%;
+		image-rendering: crisp-edges;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -webkit-optimize-contrast;
 	}
 
 	.fm-hero-fade {
@@ -126,130 +96,36 @@ body {
 			height: 30px;
 		}
 
-		.fm-hero-play {
+		a.fm-hero-play {
 			background: rgb(255, 230, 0);
+			text-decoration: none;
 			color: #000;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
+			display: block;
+			font-family: "Trade Gothic Bold", sans-serif;
 			font-size: 18px;
 			text-transform: uppercase;
-			padding: 10px;
-			width: 114px;
-			height: 42px;
+			padding: 10px 30px;
 			margin-top: 30px;
 		}
 
-		.fm-hero-play svg {
-			margin-right: 8px;
-		}
 
 .fm-message {
 	padding-left: 40px;
 	font-size: 16px;
 	line-height: 28px;
 	width: 50%;
-	font-family: "Interstate Reg", interstate, sans-serif;
+	font-family: "Interstate Reg", sans-serif;
+} 
+
+@media screen and (min-width: 2440px) { 
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
+	}
 }
-
-.fm-episodes {
-	margin: 150px 40px 130px;
-}
-
-	.fm-episodes h2{
-		text-transform: uppercase;
-		margin-bottom: 30px;
-		height: 30px;
-	}
-
-	a.fm-video-thumbnail {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: relative;
-		min-width: 108px;
-		min-height: 61px;
-		padding-top: 56.26%;
-		width: 100%;
-		box-sizing: content-box;
-	}
-
-	.fm-video-thumbnail video {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 100%;
-		z-index: 0;
-	}
-
-	.fm-video-thumbnail-new-tag {
-		background-color: #fff;
-		display: inline-block;
-		font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif; 
-		font-size: 11px;
-		font-weight: 700;
-		text-transform: uppercase;
-		color: rgb(25, 28, 29); 
-		padding: 3px 5px; 
-		position: absolute;
-		top: 40px;
-		left: 10px;
-	}
-
-	.fm-video-thumbnail-play-icon {
-		background-color: rgb(255, 230, 0);
-		border-radius: 25px;;
-		width: 50px;
-		height: 50px; 
-		color: #000;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: -25px 0px 0px -25px;
-		z-index: 1;
-	}
-	
-	.fm-video-thumbnail-play-icon svg {
-		position: relative;
-		left: 1px;
-	}
-
-	.fm-episodes-collection {
-		display: flex;
-		overflow: hidden;
-		justify-content: start; 
-	}
-
-	.fm-episodes-item {
-		margin-right: 20px;
-		position: relative;
-		flex-grow: 1;
-		max-width: 33%;
-	}
-
-	.fm-episodes-item:last-child {
-		margin-right: 0;
-	}
-
-	.fm-episodes-item h3 {
-		margin: -8px 0px 10px;
-	}
-
-	.fm-episodes-item p {
-		color: rgb(168, 168, 168);
-		font-size: 12px;
-		line-height: 20px;
-	}
 
 @media screen and (min-width: 1440px) {
 	.fm-hero-content,
-	.fm-message,
-	.fm-episodes {
+	.fm-message {
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
@@ -257,11 +133,10 @@ body {
 	.fm-message span {
 		display: inline-block;
 		width: 492px;
-		padding-left: 40px;
 	}
 	.fm-hero-content { 
 		left: 50%;
-		margin: 0px auto 0px -605px;
+		margin: 0px auto 0px -642px;
 	}
 	
 	.fm-message {
@@ -289,14 +164,6 @@ body {
 	.fm-message {
 		width: 57%;
 	} 
-
-	.fm-episodes {
-		margin: 150px 32px 130px;
-	} 
-
-	.fm-episodes-item {
-		max-width: none;
-	} 
 }
 
 @media screen and (max-width: 480px) {
@@ -309,6 +176,14 @@ body {
 		width: 100%;
 	} 
 
+	.fm-hero-details {
+		padding: 0 32px;
+	}
+
+	.fm-hero h1 {
+		padding: 8px 32px;
+	}
+
 	.fm-hero-tear {
 		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile.png");
 	} 
@@ -316,93 +191,14 @@ body {
 
 
 @media screen and (max-width: 375px) { 
-	.fm-hero-play {
-		position: absolute;
-		left: 50%;
-		top: 80px;
-		width: 50px;
-		height: 50px;
-		margin-left: -25px;
-		border-radius: 25px;
+	a.fm-hero-play {
+		margin-top: 20px;
 	}
 
-	.fm-hero-details {
-		margin-bottom: 92px;
+	.fm-hero-details h3 {
+		margin-top: 6px;
 	}
-
-	.fm-hero-play svg {
-		position: relative;
-		left: 1px;
-		top: 0px;
-		margin: 0;
-	}
-
-	.fm-hero-play-text {
-		display: none;
-	}
-
-	.fm-episodes {
-		margin: 100px 32px 55px;
-	}
-
-	.fm-episodes h2 {
-		margin-bottom: 40px;
-	}
-
-	.fm-episodes-collection {
-		flex-direction: column;
-	}
-
-	a.fm-video-thumbnail {
-		width: 108px;
-		height: 61px;
-		margin-right: 10px;
-		padding-top: 0px;
-	}
-
-	.fm-episodes-item {
-		border-bottom: 1px solid rgb(25, 28, 29); 
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		margin-right: 16px;
-		max-width: 100%;
-		padding: 20px 0;
-	} 
-
-	.fm-episodes-item-title {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-	}
-
-	.fm-episodes-item-title h3 {
-		margin: -6px 0px 8px;
-	}
-
-	.fm-episodes-item p {
-		margin-bottom: 0px;
-	}
-
-	.fm-video-thumbnail-new-tag {
-		position: static;
-	}
-
-	.fm-episodes-item-main {
-		display: flex;
-		flex-direction: row;
-		margin-bottom: 10px;
-	}
-
-	.fm-video-thumbnail-play-icon { 
-		width: 34px;
-		height: 34px;
-		position: static;
-		margin: 0;
-	}
-
-} 
+}
 
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),

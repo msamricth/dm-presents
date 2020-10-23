@@ -1,0 +1,31 @@
+include video-mixins
+
+mixin episodeDetails(episodeNumber, title, description)
+	.fm-episode-details-container
+		.fm-episode-details
+			.fm-title: h1= title
+			h2 Filmmaker Series &bull; E#{episodeNumber}
+			p= description
+
+mixin bigImage(relativePath) 
+	img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.jpg 2x`)
+
+style
+	include handwritingFont.css
+	include shared.css
+	include episodes.css 
+	include episodeList.css
+
+.fm-container 
+	block header
+	block content 
+
+	include episodeList
+
+	a.fm-episode-back(href="/us/en/dm-presents")
+		svg(width="9" height="17")
+			polyline(points="9,0,0,8.5,9,17" style="stroke:#000;fill:transparent;stroke-width:4px;")
+		span Back to Filmmaker Series
+
+script(type="text/javascript")
+	include home.js
