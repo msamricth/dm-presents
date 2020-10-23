@@ -37,7 +37,9 @@ Modify files in the `src/` directory to make changes, and then run `gulp` or `gu
 
 ### Creating a new page
 
-Duplicate an existing page such as `src/dm-presents-ali-roberto.pug` and modify as needed. 
+Duplicate an existing page such as `src/dm-presents-ali-roberto.pug` and modify as needed.
+
+When you want to preview locally, duplicate an existing preview page such as `/src/prview/dm-presents-ali-roberto.pug` and modify to include the correct new page.
 
 All episode pages are inherited from `src/episode.pug`.
 
