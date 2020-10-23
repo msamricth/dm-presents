@@ -1,2 +1,7 @@
 # Ignore directories
 node_modules/
+build/
+.vscode/
+
+# Lock is local
+package-lock.json

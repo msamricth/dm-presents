@@ -1,0 +1,423 @@
+h1, h2 {
+	margin: 0;
+	font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
+}
+		
+h1 {
+	font-size: 48px;
+	text-transform: uppercase;
+} 
+	
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-family: "Interstate Reg", interstate, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+}
+
+.fm-container {
+	margin: 0px auto;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	font-family: "Interstate Reg", interstate, sans-serif;
+} 
+
+.fm-hero {
+	position: relative;
+	margin-bottom: 50px;
+	min-height: 400px;
+}
+
+.fm-hero-background {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+	max-height: 660px;
+}
+	.fm-hero-video {
+		position: relative;
+		width: 100%; 
+		height: 100%;
+		/* This padding assumes a 16:9 video, adjust accordingly */
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		z-index: 0;
+	}
+		.fm-hero-video video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%; 
+			height: 100%;
+			min-width: 711px;
+			z-index: 0;
+			margin: 0px auto;
+		} 
+
+	.fm-hero-tear {
+		position: absolute;
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png");
+		background-size: 100%;
+		background-position: bottom;
+		background-repeat: no-repeat;
+		left: 0px;
+		bottom: 0px;;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+	}
+
+	.fm-hero-fade {
+		position: absolute;
+		z-index: 1;
+		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 255));
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: bottom, top;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+	}
+
+.fm-hero-content {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+}
+
+	.fm-hero h1 {
+		background: #000;
+		color: #fff;
+		display: inline-block; 
+		padding: 8px 32px;
+		margin: 0 auto 0 8px;
+		width: auto;
+	}
+
+	.fm-hero-details {
+		padding: 0px 40px;
+		margin-bottom: 40px;
+	}
+
+		.fm-hero-details h2 {
+			display: inline-block;
+			margin-top: 10px;
+			height: 30px;
+		}
+
+		.fm-hero-play {
+			background: rgb(255, 230, 0);
+			color: #000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif;
+			font-size: 18px;
+			text-transform: uppercase;
+			padding: 10px;
+			width: 114px;
+			height: 42px;
+			margin-top: 30px;
+		}
+
+		.fm-hero-play svg {
+			margin-right: 8px;
+		}
+
+.fm-message {
+	padding-left: 40px;
+	font-size: 16px;
+	line-height: 28px;
+	width: 50%;
+	font-family: "Interstate Reg", interstate, sans-serif;
+}
+
+.fm-episodes {
+	margin: 150px 40px 130px;
+}
+
+	.fm-episodes h2{
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		height: 30px;
+	}
+
+	a.fm-video-thumbnail {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		min-width: 108px;
+		min-height: 61px;
+		padding-top: 56.26%;
+		width: 100%;
+		box-sizing: content-box;
+	}
+
+	.fm-video-thumbnail video {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	.fm-video-thumbnail-new-tag {
+		background-color: #fff;
+		display: inline-block;
+		font-family: "Trade Gothic Bold", trade-gothic-next-compressed, sans-serif; 
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: rgb(25, 28, 29); 
+		padding: 3px 5px; 
+		position: absolute;
+		top: 40px;
+		left: 10px;
+	}
+
+	.fm-video-thumbnail-play-icon {
+		background-color: rgb(255, 230, 0);
+		border-radius: 25px;;
+		width: 50px;
+		height: 50px; 
+		color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -25px 0px 0px -25px;
+		z-index: 1;
+	}
+	
+	.fm-video-thumbnail-play-icon svg {
+		position: relative;
+		left: 1px;
+	}
+
+	.fm-episodes-collection {
+		display: flex;
+		overflow: hidden;
+		justify-content: start; 
+	}
+
+	.fm-episodes-item {
+		margin-right: 20px;
+		position: relative;
+		flex-grow: 1;
+		max-width: 33%;
+	}
+
+	.fm-episodes-item:last-child {
+		margin-right: 0;
+	}
+
+	.fm-episodes-item h3 {
+		margin: -8px 0px 10px;
+	}
+
+	.fm-episodes-item p {
+		color: rgb(168, 168, 168);
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+@media screen and (min-width: 1440px) {
+	.fm-hero-content,
+	.fm-message,
+	.fm-episodes {
+		width: 1210px;
+		margin: 150px auto 130px; 
+	} 
+
+	.fm-message span {
+		display: inline-block;
+		width: 492px;
+		padding-left: 40px;
+	}
+	.fm-hero-content { 
+		left: 50%;
+		margin: 0px auto 0px -605px;
+	}
+	
+	.fm-message {
+		margin: 0px auto; 
+		padding: 0px;
+	} 
+} 
+
+@media screen and (max-width: 768px) {
+
+	.fm-hero-background {
+		position: absolute;
+	}
+
+	.fm-hero-video {
+		left: -25%;
+		width: 150%;
+	}
+
+	.fm-hero h1 {
+		margin: 0px auto;
+		padding: 8px 32px 8px 40px;
+	}
+
+	.fm-message {
+		width: 57%;
+	} 
+
+	.fm-episodes {
+		margin: 150px 32px 130px;
+	} 
+
+	.fm-episodes-item {
+		max-width: none;
+	} 
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 36px;
+	}
+
+	.fm-message {
+		padding: 0px 32px;
+		width: 100%;
+	} 
+
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile.png");
+	} 
+} 
+
+
+@media screen and (max-width: 375px) { 
+	.fm-hero-play {
+		position: absolute;
+		left: 50%;
+		top: 80px;
+		width: 50px;
+		height: 50px;
+		margin-left: -25px;
+		border-radius: 25px;
+	}
+
+	.fm-hero-details {
+		margin-bottom: 92px;
+	}
+
+	.fm-hero-play svg {
+		position: relative;
+		left: 1px;
+		top: 0px;
+		margin: 0;
+	}
+
+	.fm-hero-play-text {
+		display: none;
+	}
+
+	.fm-episodes {
+		margin: 100px 32px 55px;
+	}
+
+	.fm-episodes h2 {
+		margin-bottom: 40px;
+	}
+
+	.fm-episodes-collection {
+		flex-direction: column;
+	}
+
+	a.fm-video-thumbnail {
+		width: 108px;
+		height: 61px;
+		margin-right: 10px;
+		padding-top: 0px;
+	}
+
+	.fm-episodes-item {
+		border-bottom: 1px solid rgb(25, 28, 29); 
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-right: 16px;
+		max-width: 100%;
+		padding: 20px 0;
+	} 
+
+	.fm-episodes-item-title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.fm-episodes-item-title h3 {
+		margin: -6px 0px 8px;
+	}
+
+	.fm-episodes-item p {
+		margin-bottom: 0px;
+	}
+
+	.fm-video-thumbnail-new-tag {
+		position: static;
+	}
+
+	.fm-episodes-item-main {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10px;
+	}
+
+	.fm-video-thumbnail-play-icon { 
+		width: 34px;
+		height: 34px;
+		position: static;
+		margin: 0;
+	}
+
+} 
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
+	}
+
+	@media screen and (max-width: 480px) {
+		.fm-hero-tear {
+			background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png");
+		}
+	}
+}
