@@ -94,6 +94,7 @@ ready(function(){
 		delay = delay | 0;
 		if( window.outerWidth <= 480 ) {
 			[nextArrow, prevArrow].forEach((a) => { a.style.display = "none"; }); 
+			episodeItemContainer.style.left = "0"; 
 		}
 		else {
 			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
