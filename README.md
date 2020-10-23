@@ -43,7 +43,7 @@ When you want to preview locally, duplicate an existing preview page such as `/s
 
 All episode pages are inherited from `src/episode.pug`.
 
-Check out the [pug docs](https://pugjs.org/language/attributes) for more info.
+Check out the [pug docs](https://pugjs.org/language/attributes.html) for more info.
 
 We are using `gulp-pug` to compile pug into our html/css/js blobs, then 'gulp-minify-inline` to minify the blob.
 
