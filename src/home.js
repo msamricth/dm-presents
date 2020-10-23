@@ -46,7 +46,7 @@ ready(function(){
 		var existingSrc = collageVideoSource.getAttribute("src");
 		var newSrc;
 
-		if(window.innerWidth <= breakpoint)
+		if(window.outerWidth <= breakpoint)
 			newSrc = collageDesktopSrc.replace(/(https:\/\/.+)([\.]mp4)/gm, "$1Mobile$2");
 		else
 			newSrc = collageDesktopSrc; 
@@ -63,12 +63,15 @@ ready(function(){
 	var nextArrow = document.querySelector(".fm-episodes-next");
 	var prevArrow = document.querySelector(".fm-episodes-prev"); 
 
-	var videosShown = window.innerWidth > 768 ? 3 : 2;
+	var videosShown = window.outerWidth > 768 ? 3 : 2;
 	var episodeIndex = episodeItems.length - videosShown;
+	if(window.outerWidth <= 480)
+		episodeIndex = 0;
+
 	var episodeCount = episodeItems.length;
 
 	var moveEpisodeCarousel = function(direction) { 
-		var videosShown = window.innerWidth > 768 ? 3 : 2;
+		var videosShown = window.outerWidth > 768 ? 3 : 2;
 		if(direction < 0)
 			episodeIndex = Math.max(0, episodeIndex - videosShown); 
 		else
@@ -89,25 +92,25 @@ ready(function(){
 
 	var adjustEpisodeCarouselArrows = function(delay) { 
 		delay = delay | 0;
-		if( window.innerWidth <= 375 ) {
+		if( window.outerWidth <= 480 ) {
 			[nextArrow, prevArrow].forEach((a) => { a.style.display = "none"; }); 
 		}
 		else {
 			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
 			if(episodeIndex == 0) mo = 0; // ignore if we're at the first item, otherwise the math is confused
 
-			if(window.innerWidth > 1440)
+			if(window.outerWidth > 1440)
 				episodeItemContainer.style.left = parseInt(-episodeIndex * 390 - mo).toString() + "px";
-			else if(window.innerWidth > 768)
+			else if(window.outerWidth > 768)
 				episodeItemContainer.style.left = `calc((33.33vw - 46px) * ${-episodeIndex} - ${mo}px)`;
-			else if(window.innerWidth > 375)
+			else if(window.outerWidth > 480)
 				episodeItemContainer.style.left = `calc((50vw - 50px) * ${-episodeIndex} - ${mo}px)`; 
 
 			episodeItemContainer.style.transition = "left ease-in-out 0.25s";
 
 			setTimeout(() => {
 				episodeItemContainer.style.transition = "none";
-				var videosShown = window.innerWidth > 768 ? 3 : 2;
+				var videosShown = window.outerWidth > 768 ? 3 : 2;
 				var rect = episodeItems[episodeIndex].querySelector("video").getBoundingClientRect(); 
 				var lastIndex = Math.min(episodeCount-1, episodeIndex+(videosShown-1));
 				var endRect = episodeItems[lastIndex].querySelector("video").getBoundingClientRect(); 
