@@ -46,6 +46,7 @@ body {
 }
 	.fm-hero-video iframe, 
 	.fm-hero-video object, 
+	.fm-hero-video video, 
 	.fm-hero-video embed {
 		position: absolute;
 		top: 0;
@@ -161,9 +162,7 @@ a.fm-episode-back {
 		box-sizing: content-box;
 	}
 
-	.fm-video-thumbnail iframe, 
-	.fm-video-thumbnail object,
-	.fm-video-thumbnail embed {
+	.fm-video-thumbnail video {
 		position: absolute;
 		top: 0px;
 		left: 0px;
