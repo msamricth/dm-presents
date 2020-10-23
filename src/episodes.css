@@ -178,6 +178,15 @@ a.fm-episode-back {
 
 @media screen and (max-width: 768px) {
 
+	.fm-episode-header-video {
+		overflow: hidden;
+	}
+
+	.fm-hero-video.preview {
+		left: -25%;
+		width: 150%;
+	} 
+
 	.fm-title h1 {
 		margin: 0px auto;
 		padding: 8px 32px 8px 32px;

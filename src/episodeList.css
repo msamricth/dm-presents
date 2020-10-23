@@ -120,11 +120,6 @@
 
 @media screen and (max-width: 768px) { 
 
-	.fm-hero-video {
-		left: -25%;
-		width: 150%;
-	} 
-
 	.fm-episodes {
 		margin: 150px 32px 130px;
 	} 
