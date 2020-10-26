@@ -64,7 +64,10 @@ ready(function(){
 	var prevArrow = document.querySelector(".fm-episodes-prev"); 
 
 	var videosShown = window.outerWidth > 768 ? 3 : 2;
-	var episodeIndex = episodeItems.length - videosShown;
+
+	// Scroll to end, disabled for now
+	//var episodeIndex = episodeItems.length - videosShown;
+	var episodeIndex = 0;
 	if(window.outerWidth <= 480)
 		episodeIndex = 0;
 
