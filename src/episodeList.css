@@ -131,7 +131,7 @@
 
 @media screen and (max-width: 480px) { 
 	.fm-episodes {
-		margin: 100px 32px 55px;
+		margin: 100px 16px 55px;
 	}
 
 	.fm-episodes h2 {

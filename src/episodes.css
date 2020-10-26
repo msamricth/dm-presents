@@ -187,9 +187,13 @@ a.fm-episode-back {
 		width: 150%;
 	} 
 
+	.fm-episode-details-container {
+		padding: 30px 30px 100px;
+	} 
+
 	.fm-title h1 {
 		margin: 0px auto;
-		padding: 8px 32px 8px 32px;
+		padding: 8px 38px 8px;
 	}
 
 	.fm-episode-details p {
@@ -220,15 +224,12 @@ a.fm-episode-back {
 		padding: 30px 16px 100px; 
 	}
 
-	.fm-episode-text {
-		margin: 125px 16px 75px;
-	}
-}
-
-
-@media screen and (max-width: 375px) {
 	h1 {
 		font-size: 36px;
+	}
+
+	.fm-episode-text {
+		margin: 125px 16px 75px;
 	}
 }
 
