@@ -29,6 +29,12 @@ body {
 	color: #fff;
 }
 
+@media screen and (max-width:1023px) {
+	.dm-main { 
+		margin-top: 0px !important;
+	}
+}
+
 .fm-container {
 	/* -60 bottom margin to compensate for something weird in the hybris template */
 	margin: 0px auto -60px;
