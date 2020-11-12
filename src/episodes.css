@@ -4,7 +4,7 @@
 	width: 100%;
 	background: #000;
 	color: #fff;
-	font-family: "Interstate Reg", sans-serif;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
 } 
 
 .fm-hero-video {
@@ -109,6 +109,7 @@ cite {
 	margin: 75px auto;
 	padding: 0 5%;
 	font-family: "DrMartensHandwritingRounder", serif;
+	font-weight: normal;
 	font-size: 40px;
 	text-align: center;
 	line-height: 48px;
@@ -144,7 +145,7 @@ a.fm-episode-back {
 
 	.fm-episode-back span {
 		color: #000; 
-		font-family: "Trade Gothic Bold", sans-serif;
+		font-family: "Oswald", "Trade Gothic Bold", sans-serif;
 		font-size: 18px;
 		letter-spacing: 0.05em; 
 	}

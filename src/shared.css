@@ -1,7 +1,7 @@
 
 h1, h2 {
 	margin: 0;
-	font-family: "Trade Gothic Bold", sans-serif; 
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
 	font-weight: 500;
 }
 		
@@ -15,7 +15,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Interstate Reg", sans-serif;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
 	font-size: 15px;
 	font-weight: 800;
 }
@@ -27,6 +27,7 @@ p {
 body {
 	background-color: #000;
 	color: #fff;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
 }
 
 @media screen and (max-width:1023px) {
@@ -41,7 +42,7 @@ body {
 	width: 100%;
 	background: #000;
 	color: #fff;
-	font-family: "Interstate Reg", sans-serif;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
 } 
 
 .fm-hero-video {
