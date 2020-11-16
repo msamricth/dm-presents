@@ -3,6 +3,9 @@
 	position: relative;
 	z-index: 0;
 }
+	.fm-episodes a:hover {
+		text-decoration: none;
+	}
 
 	.fm-episodes h2{
 		text-transform: uppercase;
