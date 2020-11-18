@@ -50,8 +50,15 @@ We are using `gulp-pug` to compile pug into our html/css/js blobs, then 'gulp-mi
 
 ### Gulp tasks 
 
-`default` creates files in `build/` which can be hosted locally to get an preview of the content. 
+`default` creates files in `build/` which can be hosted locally to get a preview of the content
 
-URLs are relative to the domain, so that's why it places previews into `build/us/en/`
+URLs (such as links) are relative to the domain, so that's why it places previews into `build/us/en/`
 
-`export` exports minified blobs of html/css/js that need to be copy/pasted into Hybris, it places them in `build/hybris/`.
+`export` exports minified blobs of html/css/js that need to be copy/pasted into Hybris, it places them in `build/hybris/`
+
+We have been delivering those blobs to Bahareh Rezaeian (bahareh.rezaeian@drmartens.com) in the form of a .txt files in a single .zip file for ease of deployment to their live site
+
+**TODO**: Modify `gulp.js` to automatically create that .zip file
+
+*Windows* `cd buid\hybris` `copy *.html *.txt` then use whatever zip tool you have to bundle the .txt files into a .zip (I've been using 7zip)
+*Unix* `cd build\hybris` `cp *.html *.txt` `zip DMPresents_HybrisContent_R3.zip *.txt` (or use whatever zip tool you sparks you joy)
