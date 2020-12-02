@@ -6,26 +6,37 @@ function ready(cb) {
 	}
 }
 
-ready(function(){ 
-	document.querySelectorAll('.fm-video-thumbnail').forEach(function(a){ 
+var setStart = function(e) {
+	var video = e.currentTarget;
+	var start = parseFloat(video.getAttribute("data-start")); 
+	video.currentTime = start; 
+	video.pause();
+	video.removeEventListener('canplaythrough', setStart); 
+}; 
 
+ready(function(){ 
+	var thumbnails = document.querySelectorAll('.fm-video-thumbnail');
+	for( var i = 0; i < thumbnails.length; i++ ) { 
+		var a = thumbnails[i];
 		// set thumbnail preview start time
 		var video = a.querySelector("video");
-		var start = parseFloat(video.getAttribute("data-start")); 
-		var setStart = function(e) {
-			video.currentTime = start; 
-			video.pause();
-			video.removeEventListener('canplaythrough', setStart); 
-		}; 
 		video.addEventListener('canplaythrough', setStart); 
-	}); 
+	}; 
 
-	document.querySelectorAll(".fm-episodes-item").forEach(function(a){ 
-		var video = a.querySelector("video");
+	var items = document.querySelectorAll(".fm-episodes-item");
+	for( var i = 0; i < items.length; i++ ) {
+		var a = items[i];
 		// play/pause on hover for thumbnails
-		a.addEventListener('mouseover', function(e){ video.play(); });
-		a.addEventListener('mouseleave', function(e){ video.pause(); }); 
-	});
+		a.addEventListener('mouseenter', function(e){ 
+			var video = e.target.querySelector("video");
+			var res = video.play(); 
+			console.log(res);
+		});
+		a.addEventListener('mouseleave', function(e){ 
+			var video = e.target.querySelector("video");
+			video.pause(); 
+		}); 
+	};
 
 	// swap for mobile collage looping video
 	// TODO: This should be moved to an episodes.js for release2
@@ -96,7 +107,8 @@ ready(function(){
 	var adjustEpisodeCarouselArrows = function(delay) { 
 		delay = delay | 0;
 		if( window.outerWidth <= 480 ) {
-			[nextArrow, prevArrow].forEach((a) => { a.style.display = "none"; }); 
+			nextArrow.style.display = "none";
+			prevArrow.style.display = "none";
 			episodeItemContainer.style.left = "0"; 
 		}
 		else {
@@ -106,27 +118,25 @@ ready(function(){
 			if(window.outerWidth > 1440)
 				episodeItemContainer.style.left = parseInt(-episodeIndex * 390 - mo).toString() + "px";
 			else if(window.outerWidth > 768)
-				episodeItemContainer.style.left = `calc((33.33vw - 46px) * ${-episodeIndex} - ${mo}px)`;
+				episodeItemContainer.style.left = "calc((33.33vw - 46px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
 			else if(window.outerWidth > 480)
-				episodeItemContainer.style.left = `calc((50vw - 50px) * ${-episodeIndex} - ${mo}px)`; 
+				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)"; 
 
 			episodeItemContainer.style.transition = "left ease-in-out 0.25s";
 
-			setTimeout(() => {
+			setTimeout(function() {
 				episodeItemContainer.style.transition = "none";
 				var videosShown = window.outerWidth > 768 ? 3 : 2;
 				var rect = episodeItems[episodeIndex].querySelector("video").getBoundingClientRect(); 
 				var lastIndex = Math.min(episodeCount-1, episodeIndex+(videosShown-1));
 				var endRect = episodeItems[lastIndex].querySelector("video").getBoundingClientRect(); 
-				var top = parseInt(rect.y + rect.height / 2.0 - 24).toString() + "px"; 
-				var left = parseInt(rect.x - 20).toString() + "px";
+				var top = parseInt(rect.top + rect.height / 2.0 - 24).toString() + "px"; 
+				var left = parseInt(rect.left - 20).toString() + "px";
 				var right = parseInt(endRect.right - 20).toString() + "px";
-				[nextArrow, prevArrow].forEach((a) => { 
-					a.style.top = top;
-				}); 
-
-				prevArrow.style.left = left;
+				nextArrow.style.top = top;
 				nextArrow.style.left = right;
+				prevArrow.style.top = top; 
+				prevArrow.style.left = left;
 
 				prevArrow.style.display = (episodeIndex > 0) ? "flex" : "none";
 				nextArrow.style.display = (episodeIndex <= episodeCount - videosShown - episodeIndex) ? "flex" : "none"; 
@@ -167,9 +177,10 @@ ready(function(){
 	// so you have to disconnect from VPN and then reload all iframes. This is just a handy shortcut. 
 	window.addEventListener('keydown', function(e){ 
 		if(e.key == 'r') { 
-			document.querySelectorAll("iframe").forEach(function(iframe){
-				iframe.src = iframe.src;
-			});
+			var iframes = document.querySelectorAll("iframe");
+			for( var i = 0; i < iframes.length; i++ ) {
+				iframes[i].src = iframes[i].src;
+			};
 		}
 	});
 });
