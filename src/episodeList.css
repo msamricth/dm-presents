@@ -108,6 +108,15 @@
 		line-height: 20px;
 	} 
 
+	a.fm-episodes-item:hover p {
+		color: rgb(168, 168, 168);
+		text-decoration: underline;
+	}
+	a.fm-episodes-item:hover h3 {
+		color: #fff;
+		text-decoration: underline;
+	}
+
 @media screen and (min-width: 1441px) {
 	.fm-episodes {
 		width: 1210px;
