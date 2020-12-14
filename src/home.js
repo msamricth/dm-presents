@@ -40,7 +40,7 @@ ready(function(){
 
 	// swap for mobile collage looping video
 	// TODO: This should be moved to an episodes.js for release2
-	var collageVideo = document.querySelector(".fm-hero-video video")
+	var collageVideo = document.querySelector(".fm-hero-video:not(.preview) video");
 	var collageContainer = collageVideo.parentElement;
 	var collageVideoSource = collageVideo.querySelector("source");
 	var collageBreakpoint = collageVideoSource.getAttribute("data-breakpoint");
