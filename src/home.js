@@ -139,7 +139,7 @@ ready(function(){
 				prevArrow.style.left = left;
 
 				prevArrow.style.display = (episodeIndex > 0) ? "flex" : "none";
-				nextArrow.style.display = (episodeIndex - 1 <= episodeCount - videosShown - episodeIndex) ? "flex" : "none"; 
+				nextArrow.style.display = (episodeIndex < episodeCount - videosShown) ? "flex" : "none"; 
 			}, delay); 
 		}
 
