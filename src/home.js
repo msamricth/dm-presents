@@ -30,7 +30,6 @@ ready(function(){
 		a.addEventListener('mouseenter', function(e){ 
 			var video = e.target.querySelector("video");
 			var res = video.play(); 
-			console.log(res);
 		});
 		a.addEventListener('mouseleave', function(e){ 
 			var video = e.target.querySelector("video");
