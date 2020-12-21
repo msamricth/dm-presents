@@ -110,11 +110,11 @@
 
 	a.fm-episodes-item:hover p {
 		color: rgb(168, 168, 168);
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	a.fm-episodes-item:hover h3 {
 		color: #fff;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 @media screen and (min-width: 1441px) {
