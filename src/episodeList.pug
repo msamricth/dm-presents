@@ -7,8 +7,10 @@ include svg-mixins
 - var rosehardt = { isNew: false, url: "/us/en/dm-presents-rosehardt", relativePath: "Rosehardt/rosehardtTeaser", videoStart:"4.05", title: "4. Rosehardt", description: "Caleb Eberhardt has always used his music to connect with others. Now, he’s working to use his platform and leave a legacy of social change." }
 - var tolliver = { isNew: false, url: "/us/en/dm-presents-tolliver", relativePath: "Tolliver/tolliverTeaser", videoStart:"2.2", title: "5. Tolliver", description: "Los Angeles artist Tolliver uses his music to reconcile who he is today with his Baptist upbringing and childhood." }
 - var clay = { isNew: false, url: "/us/en/dm-presents-cautious-clay", relativePath: "Clay/clayTeaser", videoStart:"0.0", title: "6. Cautious Clay", description: "Music is the most natural form of expression for musician/producer Cautious Clay, who is using his art to navigate the turbulence of 2020." }
-- var blimesNGab = { isNew: true, url: "/us/en/dm-presents-blimes-n-gab", relativePath: "BlimesNGab/blimesNGabTeaser", videoStart:"15.0", title: "7. Blimes & Gab", description: "Blimes & Gab blended their unique styles to create <em>Talk About It</em>. Now, they're braving the highs and lows of releasing an album mid-pandemic." }
-- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab]
+- var blimesNGab = { isNew: false, url: "/us/en/dm-presents-blimes-n-gab", relativePath: "BlimesNGab/blimesNGabTeaser", videoStart:"15.0", title: "7. Blimes & Gab", description: "Blimes & Gab blended their unique styles to create <em>Talk About It</em>. Now, they're braving the highs and lows of releasing an album mid-pandemic." }
+- var sunflower = { isNew: true, url: "/us/en/dm-presents-sunflower-bean", relativePath: "Sunflower/sunflowerTeaser", videoStart:"15.0", title: "8. Sunflower Bean", description: "Lifelong musicians and members of Sunflower Bean are leaning on each other, their music, and the politics of their art to continue creating." } 
+
+- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab, sunflower]
 
 mixin episodeItem(episode)
 	a.fm-episodes-item(href!=`${episode.url}`)
