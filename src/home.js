@@ -66,6 +66,9 @@ ready(function(){
 			collageVideo.addEventListener("canplaythrough", adjustCollageVideoPadding);
 			collageVideo.load();
 		}
+		else {
+			adjustCollageVideoPadding();
+		}
 	};
 
 	var episodeItems = document.querySelectorAll(".fm-episodes-item");
