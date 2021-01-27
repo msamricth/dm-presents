@@ -68,6 +68,7 @@ ready(function(){
 		}
 		else {
 			adjustCollageVideoPadding();
+			collageVideo.addEventListener("canplaythrough", adjustCollageVideoPadding);
 		}
 	};
 
