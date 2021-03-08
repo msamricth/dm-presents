@@ -11,9 +11,10 @@ include svg-mixins
 - var sunflower = { isNew: false, url: "/us/en/dm-presents-sunflower-bean", relativePath: "SunflowerBean/sunflowerTeaser", videoStart:"15.0", title: "8. Sunflower Bean", description: "Lifelong musicians and members of Sunflower Bean are leaning on each other, their music, and the politics of their art to continue creating." } 
 - var nez = { isNew: false, url: "/us/en/dm-presents-nez", relativePath: "Nez/nezTeaser", videoStart:"0.0", title: "9. NEZ", description: "NEZ, Los Angeles-based music artist and producer, focuses on cultivating a creative space where he can express himself in the truest form possible." } 
 - var orion = { isNew: false, url: "/us/en/dm-presents-orion-sun", relativePath: "Orion/orionTeaser", videoStart:"0.0", title: "10. Orion Sun", description: "Despite the dark early days of lockdown, singer, producer, and songwriter Orion Sun is finding the light by learning to live on her own terms." } 
-- var regrettes = { isNew: true, url: "/us/en/dm-presents-the-regrettes", relativePath: "TheRegrettes/regrettesTeaser", videoStart:"0.0", title: "11. The Regrettes", description: "The Regrettes are looking within for inspiration and learning to let go as their non-stop touring lifestyle slows in the midst of lockdown." }
+- var regrettes = { isNew: false, url: "/us/en/dm-presents-the-regrettes", relativePath: "TheRegrettes/regrettesTeaser", videoStart:"0.0", title: "11. The Regrettes", description: "The Regrettes are looking within for inspiration and learning to let go as their non-stop touring lifestyle slows in the midst of lockdown." }
+- var stuyedeyed = { isNew: true, url: "/us/en/dm-presents-stuyedeyed", relativePath: "Stuyedeyed/stuyedeyedTeaser", videoStart:"0.0", title: "12. Stuyedeyed", description: "NYC band Stuyedeyed is focusing on what they can control: creating music they believe in, and through that, inciting change." }
 
-- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab, sunflower, nez, orion, regrettes]
+- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab, sunflower, nez, orion, regrettes, stuyedeyed]
 
 mixin episodeItem(episode)
 	a.fm-episodes-item(href!=`${episode.url}`)
