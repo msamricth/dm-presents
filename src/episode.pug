@@ -7,8 +7,11 @@ mixin episodeDetails(episodeNumber, title, description)
 			h2 Filmmaker Series &bull; E#{episodeNumber}
 			p!= description
 
-mixin bigImage(relativePath, altText) 
-	img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.jpg 2x` alt=altText)
+mixin bigImage(relativePath, altText, useAmplience=false) 
+	if useAmplience
+		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` srcset=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath} 1x, https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}@2x 2x` alt=altText)
+	else
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.jpg 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.jpg 2x` alt=altText)
 
 style
 	include handwritingFont.css

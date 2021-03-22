@@ -4,20 +4,29 @@ mixin vimeoHeroVideo(vimeoId, vimeoTitle)
 	.fm-hero-video
 		iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=1&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 
-mixin heroVideo(relativePath, breakpoint)
+mixin heroVideo(relativePath, breakpoint, useAmplience=false)
 	.fm-hero-video
 		video(loop autoplay muted playsinline)
-			source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4" data-breakpoint=breakpoint)
+			if useAmplience
+				source(src=`https://cdn.media.amplience.net/v/drmartens/ss21-dmpresents-${relativePath}` type="video/mp4" data-breakpoint=breakpoint)
+			else
+				source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4" data-breakpoint=breakpoint)
 
-mixin thumbnailVideo(relativePath, startTime)
+mixin thumbnailVideo(relativePath, startTime, useAmplience=false)
 	video(loop autoplay muted playsinline data-start=startTime)
-		source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
+		if useAmplience
+			source(src=`https://cdn.media.amplience.net/v/drmartens/ss21-dmpresents-${relativePath}` type="video/mp4")
+		else
+			source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
 
-mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle)
+mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle, useAmplience=false)
 	.fm-episode-header-video
 		.fm-hero-video.preview
 			video(loop autoplay muted playsinline)
-				source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
+				if useAmplience
+					source(src=`https://cdn.media.amplience.net/v/drmartens/ss21-dmpresents-${relativePath}` type="video/mp4")
+				else
+					source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
 		.fm-hero-video.vimeo(style="display:none;")
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 		+bigPlayButton()
