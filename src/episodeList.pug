@@ -12,9 +12,10 @@ include svg-mixins
 - var nez = { isNew: false, url: "/us/en/dm-presents-nez", relativePath: "Nez/nezTeaser", videoStart:"0.0", title: "9. NEZ", description: "NEZ, Los Angeles-based music artist and producer, focuses on cultivating a creative space where he can express himself in the truest form possible." } 
 - var orion = { isNew: false, url: "/us/en/dm-presents-orion-sun", relativePath: "Orion/orionTeaser", videoStart:"0.0", title: "10. Orion Sun", description: "Despite the dark early days of lockdown, singer, producer, and songwriter Orion Sun is finding the light by learning to live on her own terms." } 
 - var regrettes = { isNew: false, url: "/us/en/dm-presents-the-regrettes", relativePath: "TheRegrettes/regrettesTeaser", videoStart:"0.0", title: "11. The Regrettes", description: "The Regrettes are looking within for inspiration and learning to let go as their non-stop touring lifestyle slows in the midst of lockdown." }
-- var stuyedeyed = { isNew: true, url: "/us/en/dm-presents-stuyedeyed", relativePath: "Stuyedeyed/stuyedeyedTeaser", videoStart:"0.0", title: "12. Stuyedeyed", description: "NYC band Stuyedeyed is focusing on what they can control: creating music they believe in, and through that, inciting change." }
+- var stuyedeyed = { isNew: false, url: "/us/en/dm-presents-stuyedeyed", relativePath: "Stuyedeyed/stuyedeyedTeaser", videoStart:"0.0", title: "12. Stuyedeyed", description: "NYC band Stuyedeyed is focusing on what they can control: creating music they believe in, and through that, inciting change." }
+- var duendita = { isNew: true, url: "/us/en/dm-presents-duendita", relativePath: "Duendita/duenditaTeaser", videoStart:"0.0", title: "13. Duendita", description: "Brooklyn-based artist duendita uses her time in lockdown to find well-deserved rest and focuses on expressing her deepest self through her music." }
 
-- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab, sunflower, nez, orion, regrettes, stuyedeyed]
+- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab, sunflower, nez, orion, regrettes, stuyedeyed, duendita]
 
 mixin episodeItem(episode)
 	a.fm-episodes-item(href!=`${episode.url}`)
