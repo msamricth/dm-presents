@@ -3,9 +3,20 @@ include svg-mixins
 
 - var ali = { isNew: false, url: "/us/en/dm-presents-ali-roberto", relativePath: "Alia/aliTeaser", videoStart:"0.575", title: "1. Ali Roberto", description: "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision." }
 - var gabe = { isNew: false, url: "/us/en/dm-presents-gabriel-gomez", relativePath: "Gabe/gabrielTeaser", videoStart:"4.05", title: "2. Gabriel Gomez", description: "NY Filmmaker Gabriel Gomez uses these unprecedented times to hone in on what matters to him and the musicians in his community." }
-- var lrw = { isNew: true, url: "/us/en/dm-presents-lauren-ruth-ward", relativePath: "LRW/lrwTeaser", videoStart:"13.0", title: "3. Lauren Ruth Ward", description: "Lauren Ruth Ward is a musician, stylist, photographer, and more than the sum of her parts, seeking ways to connect without in-person shows." }
-- var rosehardt = { isNew: true, url: "/us/en/dm-presents-rosehardt", relativePath: "Rosehardt/rosehardtTeaser", videoStart:"4.05", title: "4. Rosehardt", description: "Caleb Eberhardt has always used his music to connect with others. Now, he’s working to use his platform and leave a legacy of social change." }
-- var episodes = [ali, gabe, lrw, rosehardt]
+- var lrw = { isNew: false, url: "/us/en/dm-presents-lauren-ruth-ward", relativePath: "LRW/lrwTeaser", videoStart:"13.0", title: "3. Lauren Ruth Ward", description: "Lauren Ruth Ward is a musician, stylist, photographer, and more than the sum of her parts, seeking ways to connect without in-person shows." }
+- var rosehardt = { isNew: false, url: "/us/en/dm-presents-rosehardt", relativePath: "Rosehardt/rosehardtTeaser", videoStart:"4.05", title: "4. Rosehardt", description: "Caleb Eberhardt has always used his music to connect with others. Now, he's working to use his platform and leave a legacy of social change." }
+- var tolliver = { isNew: false, url: "/us/en/dm-presents-tolliver", relativePath: "Tolliver/tolliverTeaser", videoStart:"2.2", title: "5. Tolliver", description: "Los Angeles artist Tolliver uses his music to reconcile who he is today with his Baptist upbringing and childhood." }
+- var clay = { isNew: false, url: "/us/en/dm-presents-cautious-clay", relativePath: "Clay/clayTeaser", videoStart:"0.0", title: "6. Cautious Clay", description: "Music is the most natural form of expression for musician/producer Cautious Clay, who is using his art to navigate the turbulence of 2020." }
+- var blimesNGab = { isNew: false, url: "/us/en/dm-presents-blimes-n-gab", relativePath: "BlimesNGab/blimesNGabTeaser", videoStart:"15.0", title: "7. Blimes & Gab", description: "Blimes & Gab blended their unique styles to create <em>Talk About It</em>. Now, they're braving the highs and lows of releasing an album mid-pandemic." }
+- var sunflower = { isNew: false, url: "/us/en/dm-presents-sunflower-bean", relativePath: "SunflowerBean/sunflowerTeaser", videoStart:"15.0", title: "8. Sunflower Bean", description: "Lifelong musicians and members of Sunflower Bean are leaning on each other, their music, and the politics of their art to continue creating." } 
+- var nez = { isNew: false, url: "/us/en/dm-presents-nez", relativePath: "Nez/nezTeaser", videoStart:"0.0", title: "9. NEZ", description: "NEZ, Los Angeles-based music artist and producer, focuses on cultivating a creative space where he can express himself in the truest form possible." } 
+- var orion = { isNew: false, url: "/us/en/dm-presents-orion-sun", relativePath: "Orion/orionTeaser", videoStart:"0.0", title: "10. Orion Sun", description: "Despite the dark early days of lockdown, singer, producer, and songwriter Orion Sun is finding the light by learning to live on her own terms." } 
+- var regrettes = { isNew: false, url: "/us/en/dm-presents-the-regrettes", relativePath: "TheRegrettes/regrettesTeaser", videoStart:"0.0", title: "11. The Regrettes", description: "The Regrettes are looking within for inspiration and learning to let go as their non-stop touring lifestyle slows in the midst of lockdown." }
+- var stuyedeyed = { isNew: false, url: "/us/en/dm-presents-stuyedeyed", relativePath: "Stuyedeyed/stuyedeyedTeaser", videoStart:"0.0", title: "12. Stuyedeyed", description: "NYC band Stuyedeyed is focusing on what they can control: creating music they believe in, and through that, inciting change." }
+- var duendita = { isNew: false, url: "/us/en/dm-presents-duendita", relativePath: "Duendita/ss21-dmpresents-duendita-duenditaTeaser", videoStart:"7.9", title: "13. duendita", description: "Brooklyn-based artist duendita uses her time in lockdown to find well-deserved rest and focuses on expressing her deepest self through her music." }
+- var frankie = { isNew: true, url: "/us/en/dm-presents-frankie-witch-fingers", relativePath: "FATWF/frankieTeaser", videoStart:"0.0", title: "14. Frankie and the Witch Fingers", description: "Powered by the explosive energy they usually channel onstage, Los Angeles band Frankie and the Witch Fingers uses art to engage their community." }
+
+- var episodes = [ali, gabe, lrw, rosehardt, tolliver, clay, blimesNGab, sunflower, nez, orion, regrettes, stuyedeyed, duendita, frankie]
 
 mixin episodeItem(episode)
 	a.fm-episodes-item(href!=`${episode.url}`)
@@ -19,7 +30,7 @@ mixin episodeItem(episode)
 				h3= episode.title
 				if episode.isNew
 					span.fm-video-thumbnail-new-tag new
-		p= episode.description 
+		p!= episode.description 
 
 .fm-episodes
 	h2 Episodes 

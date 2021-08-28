@@ -7,7 +7,6 @@ var minify = require("gulp-minify-inline");
 gulp.task("default", () => { 
 	return gulp.src("src/preview/*.pug")
 		.pipe(pug())
-		.pipe(minify())
 		.pipe(gulp.dest("build/us/en"));
 });
 
