@@ -60,6 +60,23 @@
 		left: 1px;
 	}
 
+	.fm-episodes-selector {
+		display: flex;
+	}
+
+		.fm-episodes-selector h2 {
+			cursor: pointer;
+		}
+
+		.fm-episodes-selector h2:not(last-child) {
+			margin-right: 30px;
+		}
+
+		.fm-episodes-selector h2.active {
+			padding-bottom: 4px;
+			border-bottom: 3px solid rgb(255, 230, 0);
+		}
+
 	.fm-episodes-collection {
 		overflow: hidden;
 		width: 100%;
@@ -85,11 +102,16 @@
 		position: relative;
 	}
 
+	/* TODO(AJ): Remove on S2E1, this is a patch to make the trailer look correct in the episode list */
+	.fm-episodes-item-container[data-season="2"] .fm-episodes-item {
+		flex-basis: 40%;
+	}
+
 	.fm-episodes-item {
 		display: inline-block;
 		margin-right: 20px;
 		position: relative;
-		flex-grow: 1;
+		/* flex-grow: 1; */ /* Removed because it caused problems, may need to add back in */
 		min-width: 390px;
 	}
 

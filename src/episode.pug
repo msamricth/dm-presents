@@ -1,10 +1,11 @@
 include video-mixins
 
-mixin episodeDetails(episodeNumber, title, description)
+mixin episodeDetails(seasonNumber, episodeNumber, title, description)
 	.fm-episode-details-container
-		.fm-episode-details
+		.fm-episode-details(data-season=`${seasonNumber}`)
 			.fm-title: h1= title
-			h2 Filmmaker Series &bull; E#{episodeNumber}
+			if episodeNumber != 0
+				h2 Filmmaker Series &bull; S#{seasonNumber} E#{episodeNumber}
 			p!= description
 
 mixin bigImage(relativePath, altText, useAmplience=false, extension="jpg") 
@@ -19,7 +20,7 @@ style
 	include episodes.css 
 	include episodeList.css
 
-.fm-container 
+.fm-container
 	block header
 	block content 
 
