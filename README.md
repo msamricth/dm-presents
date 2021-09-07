@@ -1,7 +1,8 @@
 # Dr Martens
 
-This is a central repo for development of promotional websites for use with Doc Martens CMS
+This is a central repo for development of promotional websites for use with DrMartens CMS
 
+---
 ## Hybris
 
  Dr. Martens uses Hybris as a CMS, and it can be easy to make mistakes if you're not careful. Here are some general helpful tips
@@ -9,6 +10,7 @@ This is a central repo for development of promotional websites for use with Doc 
 >  **WARNING**
 > - When editing a page, select "Page Info" in the top bar to ensure you're editing the correct page. In some cases hard-coded pop-ups have redirected to the homepage... in which case you'll be editing the homepage may not realize it.
 
+> **THIS IS ALL OUT OF DATE, WILL UPDATE WHEN DM GIVES US INFO** 
 - Mark Robinson has a recording of a video call introducing how they use Hybris, you may find that helpful.
 - When first logged in there is a "Sites" drop down, you'll want "Dr Martens Official"
 - To create a new page you'll have to click into the "pages" link under staging
@@ -29,13 +31,15 @@ This is a central repo for development of promotional websites for use with Doc 
  2) Disconnect from VPN, then press `r` (this behavior is defined in home.js) to reload all iframes.
  3) You should now see the page with videos loaded. 
 
+---
 ## Setup & Usage
 
 Run `npm i` in the project directory to install dependencies for building & exporting.
 
-Modify files in the `src/` directory to make changes, and then run `gulp` or `gulp export` (see below).
+Modify files in the `src/` directory to make changes, and then run `npm run preview` or `npm run export` (see below).
 
-### Creating a new page
+---
+## Creating a new page
 
 Duplicate an existing page such as `src/dm-presents-ali-roberto.pug` and modify as needed.
 
@@ -45,10 +49,11 @@ All episode pages are inherited from `src/episode.pug`.
 
 Check out the [pug docs](https://pugjs.org/language/attributes.html) for more info.
 
-We are using `gulp-pug` to compile pug into our html/css/js blobs, then 'gulp-minify-inline` to minify the blob.
+We are using `gulp-pug` to compile pug into our html/css/js blobs, then `gulp-minify-inline` to minify the blob.
 
+---
 
-### Gulp tasks 
+## Gulp tasks 
 
 `default` creates files in `build/` which can be hosted locally to get a preview of the content
 
@@ -60,5 +65,14 @@ We have been delivering those blobs to Bahareh Rezaeian (bahareh.rezaeian@drmart
 
 **TODO**: Modify `gulp.js` to automatically create that .zip file
 
-*Windows* `cd buid\hybris` `copy *.html *.txt` then use whatever zip tool you have to bundle the .txt files into a .zip (I've been using 7zip)
-*Unix* `cd build\hybris` `cp *.html *.txt` `zip DMPresents_HybrisContent_R3.zip *.txt` (or use whatever zip tool you sparks you joy)
+---
+## Delivery to DrMartens
+
+- Create a .zip of the `build/hybris` folder with the naming structrure of `DMPresents_Hybris_S#E#_D##.M##.Y####.zip` 
+  - S for season, E for episode, D for day of month, M for month number, Y for year.
+  - For example: `DMPresents_Hybris_S2E0_07.09.2021.zip` is season 2 episode 0, delivered on Sep 7th, 2021. 
+  - If you need multiple deliveries per day for bug fixes add a `_v#` to the end to indicate the version.
+
+- Post the .zip in the internal drmartens slack channel
+- Coordinate with project lead/manager to deliver .zip for deployment
+- So far our contacts for Hybris have been Bahareh (bahareh.rezaeian@drmartens.com), and Uyen (uyen.ochsner@drmartens.com) 
