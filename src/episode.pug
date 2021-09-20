@@ -8,11 +8,22 @@ mixin episodeDetails(seasonNumber, episodeNumber, title, description)
 				h2 Filmmaker Series &bull; S#{seasonNumber} E#{episodeNumber}
 			p!= description
 
-mixin bigImage(relativePath, altText, useAmplience=false, extension="jpg") 
-	if useAmplience
+
+mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
+		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` alt=altText)
+	else if backend == "s3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+
+mixin bigImage(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
 		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` srcset=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath} 1x, https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}@2x 2x` alt=altText)
-	else
+	else if backend == "s3"
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.${extension} 2x` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
 
 style
 	include handwritingFont.css

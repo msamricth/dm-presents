@@ -104,7 +104,7 @@
 
 	/* TODO(AJ): Remove on S2E1, this is a patch to make the trailer look correct in the episode list */
 	.fm-episodes-hug[data-season="2"] .fm-episode {
-		flex-basis: 40%;
+		flex-basis: 33%;
 	}
 
 	.fm-episode {
