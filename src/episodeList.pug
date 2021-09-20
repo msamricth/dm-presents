@@ -25,8 +25,8 @@ include svg-mixins
 - var seasons = [season1, season2]
 
 mixin episodeItem(episode)
-	a.fm-episodes-item(href!=`${episode.url}`)
-		.fm-episodes-item-main
+	.fm-episode(data-href!=`${episode.url}`)
+		.fm-episode-main
 			.fm-video-thumbnail
 				if episode.season == 1
 					+thumbnailVideo(episode.relativePath, episode.videoStart)
@@ -35,7 +35,7 @@ mixin episodeItem(episode)
 				.fm-video-thumbnail-play-icon
 					svg(width="14" height="14")
 						polygon(points="0,0,14,7,0,14" style="fill:#000;")
-			.fm-episodes-item-title
+			.fm-episode-title
 				h3= episode.title
 				if episode.isNew
 					span.fm-video-thumbnail-new-tag new
@@ -53,11 +53,11 @@ mixin episodeSelector(seasons)
 .fm-episodes
 	+episodeSelector(seasons)
 	.fm-episodes-collection
-		a.fm-episodes-prev(href="#")
+		a.fm-episodes-p(href="#")
 			+svgLeftArrow()
-		a.fm-episodes-next(href="#")
+		a.fm-episodes-n(href="#")
 			+svgRightArrow()
 		each season in seasons
-			.fm-episodes-item-container(data-season=`${season.number}`)
+			.fm-episodes-hug(data-season=`${season.number}`)
 				each episode in season.episodes
 					+episodeItem(episode) 

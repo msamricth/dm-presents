@@ -23,7 +23,7 @@ ready(function(){
 		video.addEventListener('canplaythrough', setStart); 
 	}; 
 
-	var items = document.querySelectorAll(".fm-episodes-item");
+	var items = document.querySelectorAll(".fm-episode");
 	for( var i = 0; i < items.length; i++ ) {
 		var a = items[i];
 		// play/pause on hover for thumbnails
@@ -35,6 +35,15 @@ ready(function(){
 			var video = e.target.querySelector("video");
 			video.pause(); 
 		}); 
+
+		a.addEventListener('click', function(e) {
+			e.preventDefault();
+			var item  = e.currentTarget;
+			var href = item.dataset.href;
+			if(href) {
+				window.location = href;
+			}
+		});
 	};
 
 	// swap for mobile collage looping video
@@ -79,8 +88,8 @@ ready(function(){
 	};
 
 	var episodeDetails = document.querySelector(".fm-episode-details");
-	var nextArrow = document.querySelector(".fm-episodes-next");
-	var prevArrow = document.querySelector(".fm-episodes-prev"); 
+	var nextArrow = document.querySelector(".fm-episodes-n");
+	var prevArrow = document.querySelector(".fm-episodes-p"); 
 	var episodeItems = [];
 
 	var handleEpisodeSelectorClick = function(e) {
@@ -100,13 +109,19 @@ ready(function(){
 		season = _season;
 
 		// hide old container
-		var episodeItemContainers = document.querySelectorAll(".fm-episodes-item-container");
+		var episodeItemContainers = document.querySelectorAll(".fm-episodes-hug");
 		for(var i = 0; i < episodeItemContainers.length; i++){
 			episodeItemContainers[i].style.display = "none";
 		}
 
-		episodeItemContainer = document.querySelector(".fm-episodes-item-container[data-season='" + season + "']");
-		episodeItems = episodeItemContainer.querySelectorAll(".fm-episodes-item");
+		episodeItemContainer = document.querySelector(".fm-episodes-hug[data-season='" + season + "']");
+		episodeItems = episodeItemContainer.querySelectorAll(".fm-episode");
+		realEpisodeItems = [];
+		for(var i = 0; i < episodeItems.length; i++) {
+			if(episodeItems[i].querySelector("video"))
+				realEpisodeItems.push(episodeItems[i]);
+		}
+		episodeItems = realEpisodeItems;
 		episodeCount = episodeItems.length;
 
 		// show new container
