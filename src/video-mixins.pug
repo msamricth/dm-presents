@@ -13,6 +13,8 @@ mixin heroVideo(relativePath, breakpoint, backend="s3")
 				source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4" data-breakpoint=breakpoint)
 			else if backend == "s3v2"
 				source(src=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4" data-breakpoint=breakpoint)
+			else if backend == "s3v3"
+				source(src=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4" data-breakpoint=breakpoint)
 
 mixin thumbnailVideo(relativePath, startTime, backend="s3")
 	video(loop autoplay muted playsinline data-start=startTime)
@@ -22,6 +24,8 @@ mixin thumbnailVideo(relativePath, startTime, backend="s3")
 			source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
 		else if backend == "s3v2"
 			source(src=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4")
+		else if backend == "s3v3"
+			source(src=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4")
 
 mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle, backend="s3")
 	.fm-episode-header-video
@@ -33,6 +37,8 @@ mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle, backend="s3")
 					source(src=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.mp4` type="video/mp4")
 				else if backend == "s3v2" 
 					source(src=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4")
+				else if backend == "s3v3" 
+					source(src=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4")
 		.fm-hero-video.vimeo(style="display:none;")
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 		+bigPlayButton()

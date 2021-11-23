@@ -16,6 +16,8 @@ mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg")
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` alt=altText)
 	else if backend == "s3v2"
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
 
 mixin bigImage(relativePath, altText, backend="s3", extension="jpg") 
 	if backend == "amplience"
@@ -24,6 +26,8 @@ mixin bigImage(relativePath, altText, backend="s3", extension="jpg")
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.${extension} 2x` alt=altText)
 	else if backend == "s3v2"
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
 
 style
 	include handwritingFont.css
