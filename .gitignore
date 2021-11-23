@@ -8,3 +8,4 @@ assets/
 
 # Lock is local
 package-lock.json
+.DS_Store
