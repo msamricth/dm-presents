@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "preview": "gulp && serve build",
-    "export": "gulp export"
+    "export": "gulp export",
+    "bhm": "gulp bhm",
+    "bhm-export": "gulp bhm-export"
   },
   "repository": {
     "type": "git",

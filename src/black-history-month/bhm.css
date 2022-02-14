@@ -1,0 +1,201 @@
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+}
+
+h1, h2 {
+	margin: 0;
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
+	font-weight: 500;
+	font-size: 48px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h2 {
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 18px;
+}
+
+p { 
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+	line-height: 30px;
+}
+
+p a {
+	color: #808080;
+	border-bottom: 1px solid #444;
+}
+	p a:hover {
+		color: #aaa;
+		border-bottom: 1px solid #888;
+	}
+
+a.bhm-icon-website::after {
+	background-image: url("/icon-web.png");
+}
+
+a.bhm-icon-insta::after {
+	background-image: url("/icon-insta.png");
+}
+
+a.bhm-icon-spotify::after {
+	background-image: url("/icon-spotify.png");
+}
+	a.bhm-icon-website::after,
+	a.bhm-icon-insta::after,
+	a.bhm-icon-spotify::after {
+		content:"";
+		background-size: 30px 30px;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		margin: 10px;
+	}
+
+	a.bhm-icon-website::after {
+		margin-left: 0;
+	}
+
+	a.bhm-icon-website:hover,
+	a.bhm-icon-insta:hover,
+	a.bhm-icon-spotify:hover {
+		opacity: 0.5;
+	}
+
+.bhm-mobile {
+	display: none;
+}
+
+/* TODO: This is a fix for fighting against dm's stylings, see if this is needed still. */
+@media screen and (max-width:1023px) {
+	section.bhm { 
+		margin-top: 0px !important;
+	}
+}
+
+section.bhm {
+	background: #000;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+}
+
+header.bhm-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: min(60vw, 1280px);
+	margin: 0 auto 30px;
+}
+
+	header.bhm-header h1 {
+		margin: 30px 0;
+	}
+
+	header.bhm-header p {
+		text-align: center;
+	}
+
+header.bhm-article-header {
+	position: relative;
+	margin-bottom: 70px;
+}
+
+header.bhm-article-header img {
+	width: 100vw;
+	z-index: 0;
+}
+
+.bhm-article-header-content {
+	position: absolute;
+	padding: 70px 60px;
+	display: flex;
+	flex-direction: column;
+	background-color: #000;
+	margin: 25vh auto;
+	z-index: 1;
+	top:0;
+	left:calc(50% - 250px);
+	width:500px;
+}
+
+.bhm-article-header-content *:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+.bhm-video {
+	position: relative;
+	width: 100%; 
+	height: 100%;
+	/* This padding assumes a 16:9 video, adjust accordingly */
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	z-index: 0;
+	margin-bottom: 70px;
+}
+	.bhm-video iframe, 
+	.bhm-video object, 
+	.bhm-video embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%; 
+		height: 100%;
+		z-index: 0;
+		margin: 0px auto;
+	} 
+
+section.bhm-photo {
+	position: relative;
+}
+
+section.bhm-photo img {
+	width: 100%;
+	z-index: 0;
+}
+
+.bhm-photo-cover {
+	width: min(50vw, 1240px);
+	margin: 100px auto;
+}
+
+.bhm-photo-cover h2 {
+	margin-bottom: 30px;
+}
+
+.bhm-photo-cover p {
+	margin-bottom: 30px;
+}
+
+a.bhm-external {
+	color: rgb(255, 230, 0);
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
+	font-weight: 500;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+	a.bhm-external::after {
+		content: "";
+		background-image: url("/icon-arrow.png");
+		background-size: 17px 22px;
+		width: 17px;
+		height: 22px;
+		display: inline-block;
+		margin: 5px;
+		position: relative;
+		top: 9px;
+	}
+
+
+.bhm-footer {
+	width: min(50vw, 1240px);
+	margin: 100px auto;
+}
+
+.bhm-footer p {
+	margin-bottom: 50px;
+}

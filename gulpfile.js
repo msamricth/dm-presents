@@ -2,7 +2,6 @@ var gulp = require("gulp");
 var pug = require("gulp-pug");
 var minify = require("gulp-minify-inline");
 
-// These are the two tasks that should be called
 // By default, just running `gulp` will build a preview
 gulp.task("default", () => { 
 	return gulp.src("src/preview/*.pug")
@@ -16,4 +15,18 @@ gulp.task("export", () => {
 		.pipe(pug())
 		.pipe(minify())
 		.pipe(gulp.dest("build/hybris"));
+}); 
+
+// `bhm` will preview the black history month page
+gulp.task("bhm", () => { 
+	return gulp.src("src/preview/black-history-month/bhm.pug")
+		.pipe(pug())
+		.pipe(gulp.dest("build/us/en/black-history-month/"));
+});
+
+gulp.task("bhm-export", () => {
+	return gulp.src("src/black-history-month/bhm.pug")
+		.pipe(pug())
+		.pipe(minify())
+		.pipe(gulp.dest("build/hybris/black-history-month/"));
 }); 

@@ -1,0 +1,62 @@
+style 
+	include bhm.css
+
+mixin vimeoVideo(vimeoId, vimeoTitle) 
+	.bhm-video
+		iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=1&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+
+section.bhm
+	header.bhm-header(aria-level="2")
+		h1 Celebrating Black Voices 
+		p During Black History Month and beyond, Dr. Martens is celebrating our Black employees and the talented Black creators from our community. They'll speak to us about historical Black figures who have shaped Black culture and the artists, activists and organizations who are pushing the conversation forward.
+
+	article#phony-ppl
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Phony Ppl
+			img(src="/1-bhm-hero-collage.jpg" alt="Grid of portraits showcasing all five member of the band Phony Ppl")
+			.bhm-article-header-content
+				h1 Phony Ppl
+				p We met Brooklyn-based Phony Ppl in 2015 when we were introduced to their genre-defying music. Since then, we've worked on a number of projects and performances. They bring enthusiasm and precision to everything they do. Equipped with a variety of musical training and experience, Phony Ppl share the Black artists of the past they admire and fresh new talent to watch.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https:/www.phony-ppl.com/" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl's website")
+					a.bhm-icon-insta(href="https://www.instagram.com/phonyppl" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Instagram")
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/0oBsnAC3fzYkTHF3bkfNx6" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Spotify")
+		+vimeoVideo("676372750", "Phony Ppl")
+
+		section.bhm-photo
+			img(src="/2-bhm-motown.jpg" alt="Two Archival photos arranged side by side: One of Quincy Jones sitting in a chair in a sound studio with his hands raised in the air. The other, of Berry Gordy sitting in a recliner reading papers while spinning a world globe sitting next to him.")
+			.bhm-photo-cover
+				h2 Motown
+				p Berry Gordy Jr. founded #[a(href="https://classic.motown.com/" target="_blank" noopener noreferrer) Motown Records] 1959 in Detroit, Michigan. Later referred to as Hitsville, USA, the music created here by Black artists shaped the music industry and society.
+				
+		section.bhm-photo
+			img(src="/4-bhm-theo.jpg" alt="Thelonious Monk sitting at a piano on a dark stage wearing sunglasses with his hands on the keys looking back over his shoulder into the camera")
+			.bhm-photo-cover
+				h2 Thelonious Monk
+				p A #[a(href="https://www.theloniousmonkmusic.com/" target="_blank" noopener noreferrer) jazz legend] and one of the most inventive composers and pianists in the history of any musical genre.
+
+		section.bhm-photo
+			img(src="/3-bhm-spinners.jpg" alt="Vintage band photo of the spinners posing together in baby blue suits.")
+			.bhm-photo-cover
+				h2 Blue Magic and the Spinners
+				p Blue Magic and the Spinners were two influential vocal groups who dominated music in the 1960s and 70s with lush Philly soul and R&amp;B hits.
+
+		section.bhm-photo
+			img(src="/5-bhm-salim.jpg" alt="Salim Washington smiling and holding his saxophone closely to his chest.")
+			.bhm-photo-cover
+				h2 Salim Washington
+				p #[a(href="https://cliffbells.com/shows/salim/" target="_blank" noopener noreferrer) Salim Washington] is the current leader of the Harlem Jazz Ensemble, a professor at the #[a(href="https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/departments/music/about.php" target="_blank" noopener noreferrer) Brooklyn College Conservatory of Music], and an inspiration to young musicians like Phony Ppl 
+
+		section.bhm-photo
+			img(src="/6-bhm-keiyaa.jpg" alt="KeiyaA confidently laying on her side looking into the camera.")
+			.bhm-photo-cover
+				h2 KeiyaA
+				p KeiyaA is a New York-based singer, songwriter, composer, instrumentalist, and producer with a focus on rich, introspective R&amp;B. Check out her debut album #[em Forever your Girl].
+				a.bhm-icon-website(href="https://keiyaa.xyz/" target="_blank" noopener noreferrer aria-label="Visit Keiya A's website")
+				a.bhm-icon-insta(href="https://www.instagram.com/keiyaa/?hl=en" target="_blank" noopener noreferrer aria-label="Visit Keiya A on Instagram")
+				a.bhm-icon-spotify(href="https://open.spotify.com/artist/542BY6B2YGEdf2XWvBFUJV?si=HAKpvvSMQ8yyF39lEfkSsQ" target="_blank" noopener noreferrer aria-label="Visit Keiya A on Spotify")
+
+	footer.bhm-footer
+		img(src="/charity-logo.png")
+		p In honor of our partners Phony Ppl, Dr. Martens is donating $5000 to: Children of Promise, NYC. A community-centered organization that partners with children and families impacted by mass incarceration.
+		a.bhm-external(href="#" target="_blank" noopener noreferrer) Learn More
