@@ -25,12 +25,12 @@ p {
 }
 
 p a {
-	color: #808080;
-	border-bottom: 1px solid #444;
+	color: rgba(255, 255, 255, 0.5);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 	p a:hover {
-		color: #aaa;
-		border-bottom: 1px solid #888;
+		color: rgba(255, 255, 255, 0.75);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	}
 
 a.bhm-icon-website::after {
@@ -153,13 +153,23 @@ section.bhm-photo {
 }
 
 section.bhm-photo img {
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
+	object-fit: cover;
 	z-index: 0;
+	transition: opacity 0.5s;
+}
+
+.bhm-sticky {
+	opacity: 0.5;
 }
 
 .bhm-photo-cover {
 	width: min(50vw, 1240px);
-	margin: 100px auto;
+	height: 100vh;
+	margin: 0px auto;
+	position: relative;
+	z-index: 1;
 }
 
 .bhm-photo-cover h2 {
