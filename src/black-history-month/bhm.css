@@ -38,15 +38,15 @@ p a {
 	}
 
 a.bhm-icon-website::after {
-	background-image: url("/icon-web.png");
+	background-image: url("https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-web.png");
 }
 
 a.bhm-icon-insta::after {
-	background-image: url("/icon-insta.png");
+	background-image: url("https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-insta.png");
 }
 
 a.bhm-icon-spotify::after {
-	background-image: url("/icon-spotify.png");
+	background-image: url("https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-spotify.png");
 }
 	a.bhm-icon-website::after,
 	a.bhm-icon-insta::after,
@@ -199,7 +199,7 @@ a.bhm-external {
 
 	a.bhm-external::after {
 		content: "";
-		background-image: url("/icon-arrow.png");
+		background-image: url("https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-arrow.png");
 		background-size: 8px 13px;
 		border: none;
 		width: 8px;
