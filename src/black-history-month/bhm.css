@@ -168,7 +168,7 @@ section.bhm-photo img {
 }
 
 .bhm-photo-cover {
-	width: min(50vw, 1240px);
+	width: min(100vw, 500px);
 	height: 100vh;
 	margin: 0px auto;
 	position: relative;
@@ -216,7 +216,7 @@ a.bhm-external {
 
 
 .bhm-footer {
-	width: min(50vw, 1240px);
+	width: min(100vw, 500px);
 	margin: 100px auto;
 }
 
@@ -228,7 +228,7 @@ a.bhm-external {
 	margin-bottom: 50px;
 }
 
-@media screen and (min-width:1400px) {
+@media screen and (min-width:1440px) {
 	h1 {
 		font-size: 64px;;
 	}
@@ -242,12 +242,15 @@ a.bhm-external {
 	}
 
 	header.bhm-header {
-		width: min(100vw, 1024px);
+		width: min(100vw, 800px);
 	}
 
 	.bhm-article-header-content {
-		left:calc(50% - 512px);
-		width: 1024px;
+		left:calc(50% - 400px);
+		width: 800px;
+	}
+	.bhm-photo-cover, .bhm-footer {
+		width: min(100vw, 800px);
 	}
 }
 

@@ -95,10 +95,10 @@ ready(function(){
 			var fadeOut = smoothstep(1.0, 0.8, 1.0 - scrollAmount);
 			activeCover.style.opacity = Math.min(fadeOut, fadeIn).toString();
 			if(isFooterIntersecting){
-				stickySection.style.opacity = "0.0";
+				stickySection.style.opacity = "0.4";
 			}
 			else {
-				var opacity = smoothstep(0.4, 1.0, scrollAmount);
+				var opacity = smoothstep(0.4, 0.8, scrollAmount);
 				opacity = Math.max(0.4, opacity);
 				stickySection.style.opacity = opacity.toString();
 			}
