@@ -25,12 +25,12 @@ p {
 }
 
 p a {
-	color: rgba(255, 255, 255, 0.5);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	color: rgba(255, 255, 255, 1.0);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 	p a:hover {
-		color: rgba(255, 255, 255, 0.75);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 0.5);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
 
 a.bhm-icon-website::after {
