@@ -6,6 +6,12 @@ function ready(cb) {
 	}
 }
 
+function smoothstep(e1, e2, v) {
+	var val = (v - e1) / (e2 - e1);
+	val = Math.min(Math.max(val, 0.0), 1.0);
+	return val * val * (3.0 - 2.0 * val);
+}
+
 ready(function(){
 	var photoSections = document.querySelectorAll("section.bhm-photo img");
 	var photoCovers = document.querySelectorAll(".bhm-photo-cover");
@@ -80,18 +86,22 @@ ready(function(){
 			// 	var previousRect = previousSection.getBoundingClientRect();
 			// 	previousSection.style.transform = "translate(0, " + (Math.round(-(previousRect.y+previousRect.height)) + "px)";
 			// }
-
-			if(isFooterIntersecting)
-				stickySection.style.opacity= "0.0";
-			else
-				stickySection.style.opacity= "0.4";
 		}
 
 		if(activeCover) {
 			var rect = activeCover.getBoundingClientRect();
-			var opacity = Math.sin(rect.y / window.innerHeight * Math.PI);
-			opacity = Math.min(Math.max(opacity, 0.0), 1.0);
-			activeCover.style.opacity = opacity.toString();
+			var scrollAmount = Math.sin(rect.y / window.innerHeight);
+			var fadeIn = smoothstep(0.6, 0.4, scrollAmount);
+			var fadeOut = smoothstep(1.0, 0.8, 1.0 - scrollAmount);
+			activeCover.style.opacity = Math.min(fadeOut, fadeIn).toString();
+			if(isFooterIntersecting){
+				stickySection.style.opacity = "0.0";
+			}
+			else {
+				var opacity = smoothstep(0.4, 1.0, scrollAmount);
+				opacity = Math.max(0.4, opacity);
+				stickySection.style.opacity = opacity.toString();
+			}
 		}
 	}
 

@@ -163,7 +163,7 @@ section.bhm-photo img {
 	width: 100vw;
 	object-fit: cover;
 	z-index: 0;
-	transition: opacity 0.5s;
+	transition: opacity 0.25s;
 	will-change: transform, opacity;
 }
 
@@ -242,7 +242,7 @@ a.bhm-external {
 	}
 
 	header.bhm-header {
-		width: min(60vw, 1024px);
+		width: min(100vw, 1024px);
 	}
 
 	.bhm-article-header-content {
