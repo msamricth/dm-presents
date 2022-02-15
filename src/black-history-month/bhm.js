@@ -22,8 +22,6 @@ ready(function(){
 		// stickySection = null;
 		// activeCover = null;
 		for(var i = 0; i < entries.length; i++) {
-			console.log(entries);
-			console.log(entries[i].target.previousElementSibling)
 			if(entries[i].isIntersecting && entries[i].target !== footer && entries[i].target !== header) {
 				stickySection = entries[i].target.previousElementSibling;
 				activeCover = entries[i].target;
@@ -52,7 +50,6 @@ ready(function(){
 	}
 
 	var frame = function() {
-		requestAnimationFrame(frame);
 		for(var i = 0; i < photoSections.length; i++) {
 			if(photoSections[i] !== stickySection) {
 				photoSections[i].style.transform = "translate(0,0)";
@@ -94,5 +91,7 @@ ready(function(){
 		}
 	}
 
-	requestAnimationFrame(frame);
+	window.addEventListener("scroll", function(){
+		this.requestAnimationFrame(frame);
+	})
 });

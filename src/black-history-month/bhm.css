@@ -4,6 +4,10 @@ body {
 	font-family: "Overpass", "Interstate Reg", sans-serif;
 }
 
+html {
+	overscroll-behavior: contain;
+}
+
 h1, h2 {
 	margin: 0;
 	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
@@ -81,6 +85,7 @@ section.bhm {
 	color: #fff;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 header.bhm-header {
@@ -159,10 +164,7 @@ section.bhm-photo img {
 	object-fit: cover;
 	z-index: 0;
 	transition: opacity 0.5s;
-}
-
-.bhm-sticky {
-	opacity: 0.5;
+	will-change: transform, opacity;
 }
 
 .bhm-photo-cover {
@@ -171,6 +173,7 @@ section.bhm-photo img {
 	margin: 0px auto;
 	position: relative;
 	z-index: 1;
+	will-change: transform;
 }
 
 .bhm-photo-cover h2 {
