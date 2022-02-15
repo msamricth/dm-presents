@@ -50,6 +50,10 @@ ready(function(){
 	}
 
 	var frame = function() {
+		if(header.getBoundingClientRect().y > 0) {
+			stickySection = null;
+			activeCover = null;
+		}
 		for(var i = 0; i < photoSections.length; i++) {
 			if(photoSections[i] !== stickySection) {
 				photoSections[i].style.transform = "translate(0,0)";
