@@ -185,23 +185,33 @@ section.bhm-photo img {
 }
 
 a.bhm-external {
-	color: rgb(255, 230, 0);
-	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
-	font-weight: 500;
-	font-size: 18px;
+	color: #fff;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+	font-size: 17px;
 	text-transform: uppercase;
+	position:relative;
 }
+	a.bhm-external:hover {
+		color: rgba(255, 255, 255, 0.5);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
 
 	a.bhm-external::after {
 		content: "";
 		background-image: url("/icon-arrow.png");
-		background-size: 17px 22px;
-		width: 17px;
-		height: 22px;
+		background-size: 8px 13px;
+		border: none;
+		width: 8px;
+		height: 13px;
 		display: inline-block;
-		margin: 5px;
-		position: relative;
-		top: 9px;
+		position: absolute;
+		top: 4px;
+		right: -14px;
+	}
+
+	a.bhm-external:hover::after {
+		opacity: 0.5;
 	}
 
 
