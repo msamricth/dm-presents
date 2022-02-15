@@ -210,6 +210,10 @@ a.bhm-external {
 	margin: 100px auto;
 }
 
+.bhm-footer img {
+	width: 280px;
+}
+
 .bhm-footer p {
 	margin-bottom: 50px;
 }
@@ -266,10 +270,29 @@ a.bhm-external {
 		margin-bottom: 50px;
 	}
 
+	.bhm-photo-cover {
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 0 50px;
+	}
+
+	.bhm-footer {
+		width: 100vw;
+		padding: 50px;
+		margin: 0;
+	}
+
 }
 
 @media screen and (max-width:468px) {
 	.bhm-article-header-content {
 		padding: 30px;
+	}
+	.bhm-footer {
+		padding: 30px;
+	}
+	.bhm-photo-cover {
+		padding: 0 30px;
 	}
 }
