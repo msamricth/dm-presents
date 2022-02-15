@@ -87,12 +87,13 @@ header.bhm-header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-width: min(60vw, 1280px);
+	width: min(100vw, 620px);
 	margin: 0 auto 30px;
+	padding: 0 50px;
 }
 
 	header.bhm-header h1 {
-		margin: 30px 0;
+		margin: 30px 0 50px;
 	}
 
 	header.bhm-header p {
@@ -118,8 +119,8 @@ header.bhm-article-header img {
 	margin: 25vh auto;
 	z-index: 1;
 	top:0;
-	left:calc(50% - 250px);
-	width:500px;
+	left:calc(50% - 310px);
+	width:620px;
 }
 
 .bhm-article-header-content *:not(:last-child) {
