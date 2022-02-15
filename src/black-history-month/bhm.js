@@ -65,12 +65,25 @@ ready(function(){
 		if(stickySection) {
 			stickySection.style.transform = "none";
 			var rect = stickySection.getBoundingClientRect();
-			stickySection.style.transform = "translate(0, " + (Math.round(-rect.y)) + "px)";
+			var offset = -rect.y;
+			if(activeCover) {
+				var coverRect = activeCover.getBoundingClientRect();
+				if(coverRect.y < 0)
+					offset += coverRect.y;
+			}
+			stickySection.style.transform = "translate(0, " + Math.round(offset) + "px)";
+
+			// var stickyIndex = photoSections.indexOf(stickySection);
+			// if(stickyIndex > 0) {
+			// 	var previousSection = photoSections[stickyIndex-1];
+			// 	var previousRect = previousSection.getBoundingClientRect();
+			// 	previousSection.style.transform = "translate(0, " + (Math.round(-(previousRect.y+previousRect.height)) + "px)";
+			// }
 
 			if(isFooterIntersecting)
 				stickySection.style.opacity= "0.0";
 			else
-				stickySection.style.opacity= "0.5";
+				stickySection.style.opacity= "0.4";
 		}
 
 		if(activeCover) {
@@ -80,7 +93,6 @@ ready(function(){
 			activeCover.style.opacity = opacity.toString();
 		}
 	}
-
 
 	requestAnimationFrame(frame);
 });
