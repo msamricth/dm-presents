@@ -88,6 +88,25 @@ section.bhm {
 	overflow: hidden;
 }
 
+/* FIXES for main DM styles */
+header.bhm-header,
+header.bhm-article-header {
+	position: unset;
+	z-index: unset;
+	transition: unset;
+	-webkit-transition: unset;
+	-o-transition: unset;
+	width: unset;
+	background: unset;
+	margin: unset;
+}
+footer.bhm-footer {
+	padding: unset;
+	margin: unset;
+	background: unset;
+}
+/* ---------------------------------------------------------------- */
+
 header.bhm-header {
 	display: flex;
 	flex-direction: column;
@@ -215,16 +234,16 @@ a.bhm-external {
 	}
 
 
-.bhm-footer {
+footer.bhm-footer {
 	width: min(100vw, 500px);
 	margin: 100px auto;
 }
 
-.bhm-footer img {
+footer.bhm-footer img {
 	width: 280px;
 }
 
-.bhm-footer p {
+footer.bhm-footer p {
 	margin-bottom: 50px;
 }
 
@@ -249,7 +268,7 @@ a.bhm-external {
 		left:calc(50% - 400px);
 		width: 800px;
 	}
-	.bhm-photo-cover, .bhm-footer {
+	.bhm-photo-cover, footer.bhm-footer {
 		width: min(100vw, 800px);
 	}
 }
@@ -290,7 +309,7 @@ a.bhm-external {
 		padding: 0 50px;
 	}
 
-	.bhm-footer {
+	footer.bhm-footer {
 		width: 100vw;
 		padding: 50px;
 		margin: 0;
@@ -302,7 +321,7 @@ a.bhm-external {
 	.bhm-article-header-content {
 		padding: 30px;
 	}
-	.bhm-footer {
+	footer.bhm-footer {
 		padding: 30px;
 	}
 	.bhm-photo-cover {
