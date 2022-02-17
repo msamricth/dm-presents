@@ -44,6 +44,15 @@ a.bhm-icon-insta::after {
 a.bhm-icon-spotify::after {
 	background-image: url("https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-spotify.png");
 }
+
+a.bhm-icon-website,
+a.bhm-icon-insta,
+a.bhm-icon-spotify {
+	font-size: 0px;
+	line-height: 0px;
+	color: transparent;
+}
+
 	a.bhm-icon-website::after,
 	a.bhm-icon-insta::after,
 	a.bhm-icon-spotify::after {
