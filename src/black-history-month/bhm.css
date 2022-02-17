@@ -4,10 +4,6 @@ body {
 	font-family: "Overpass", "Interstate Reg", sans-serif;
 }
 
-html {
-	overscroll-behavior: contain;
-}
-
 h1, h2 {
 	margin: 0;
 	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
@@ -82,6 +78,8 @@ a.bhm-icon-spotify::after {
 
 section.bhm {
 	background: #000;
+	background-size: auto 100vh;
+	background-position: center top;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -174,25 +172,43 @@ header.bhm-article-header img {
 	} 
 
 section.bhm-photo {
+	background-attachment: scroll;
+	background-size: auto 100vh;
+	background-position: center left;
 	position: relative;
 }
 
-section.bhm-photo img {
-	height: 100vh;
-	width: 100vw;
+
+.bhm-photo-image,
+.bhm-photo-fade {
+	will-change: opacity;
+	background-color: #000;
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.0;
+	z-index: 2;
+}
+
+.bhm-photo-image {
 	object-fit: cover;
-	z-index: 0;
-	transition: opacity 0.25s;
-	will-change: transform, opacity;
+	z-index: 1;
+	opacity: 1.0;
+	width: 100%;
+	height: 100vh;
 }
 
 .bhm-photo-cover {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	width: min(100vw, 500px);
-	height: 100vh;
+	height: 200vh;
 	margin: 0px auto;
 	position: relative;
-	z-index: 1;
-	will-change: transform;
+	z-index: 3;
 }
 
 .bhm-photo-cover h2 {
@@ -303,8 +319,6 @@ footer.bhm-footer p {
 	}
 
 	.bhm-photo-cover {
-		width: 100vw;
-		height: 100vh;
 		margin: 0;
 		padding: 0 50px;
 	}

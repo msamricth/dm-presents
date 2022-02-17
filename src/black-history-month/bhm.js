@@ -13,94 +13,84 @@ function smoothstep(e1, e2, v) {
 }
 
 ready(function(){
-	var photoSections = document.querySelectorAll("section.bhm-photo img");
+	var photoSections = document.querySelectorAll("section.bhm-photo");
 	var photoCovers = document.querySelectorAll(".bhm-photo-cover");
+	var photoFades = document.querySelectorAll(".bhm-photo-fade")
+	var photoImages = document.querySelectorAll(".bhm-photo-image")
 	var footer = document.querySelector(".bhm-footer");
 	var header = document.querySelector(".bhm-video");
 
 	var isFooterIntersecting = false;
 	var isHeaderIntersecting = false;
 
-	var stickySection = null;
-	var activeCover = null;
+	var previousScrollY = 0;
+	var scrollDelta = 0;
 
-	var callback = function(entries, _observer) {
-		// stickySection = null;
-		// activeCover = null;
-		for(var i = 0; i < entries.length; i++) {
-			if(entries[i].isIntersecting && entries[i].target !== footer && entries[i].target !== header) {
-				stickySection = entries[i].target.previousElementSibling;
-				activeCover = entries[i].target;
-			}
-
-			isFooterIntersecting = (entries[i].isIntersecting && entries[i].target === footer);
-			isHeaderIntersecting = (entries[i].isIntersecting && entries[i].target === header);
-		}
-
-		if(isHeaderIntersecting) {
-			stickySection = null;
-			activeCover = null;
-		}
-	}
-
-	var observer = new IntersectionObserver(callback, {
-		root: null,
-		rootMargin: "0px",
-		threshold: 0
-	});
-
-	observer.observe(footer);
-	observer.observe(header);
-	for(var i = 0; i < photoCovers.length; i++) {
-		observer.observe(photoCovers[i]);
+	for(var i = 0; i < photoSections.length; i++) {
+		// photoSections[i].style.backgroundImage = "url(" + photoSections[i].dataset.src + ")";
+		photoImages[i].src = photoSections[i].dataset.src;
 	}
 
 	var frame = function() {
-		if(header.getBoundingClientRect().y > 0) {
-			stickySection = null;
-			activeCover = null;
-		}
+		scrollDelta = window.scrollY - previousScrollY;
+		previousScrollY = window.scrollY;
+
+		var footerY = footer.getBoundingClientRect().y;
+		var headerY = header.getBoundingClientRect().y;
+		isHeaderIntersecting = (headerY > 0);
+		isFooterIntersecting = (footerY < window.innerHeight);
+
 		for(var i = 0; i < photoSections.length; i++) {
-			if(photoSections[i] !== stickySection) {
-				photoSections[i].style.transform = "translate(0,0)";
-				photoSections[i].style.opacity = "1.0";
-			}
-			if(photoCovers[i] !== activeCover) {
-				photoCovers[i].style.opacity = "1.0";
-			}
-		}
-		if(stickySection) {
-			stickySection.style.transform = "none";
-			var rect = stickySection.getBoundingClientRect();
-			var offset = -rect.y;
-			if(activeCover) {
-				var coverRect = activeCover.getBoundingClientRect();
-				if(coverRect.y < 0)
-					offset += coverRect.y;
-			}
-			stickySection.style.transform = "translate(0, " + Math.round(offset) + "px)";
+			var rect = photoCovers[i].getBoundingClientRect();
+			// photoImages[i].style.left = Math.round(-window.innerWidth / 8.0) + "px";
+			if(rect.y <= 0 && rect.bottom > window.innerHeight)  {
+				photoImages[i].style.position = "fixed";
+				photoImages[i].style.top = "0";
 
-			// var stickyIndex = photoSections.indexOf(stickySection);
-			// if(stickyIndex > 0) {
-			// 	var previousSection = photoSections[stickyIndex-1];
-			// 	var previousRect = previousSection.getBoundingClientRect();
-			// 	previousSection.style.transform = "translate(0, " + (Math.round(-(previousRect.y+previousRect.height)) + "px)";
-			// }
-		}
+				// If iOS wasn't late to the party with background-attachment:fixed then this would work
+				// Alas, we are doing things the weird way
+				// photoSections[i].style["background-attachment"] = "fixed";
 
-		if(activeCover) {
-			var rect = activeCover.getBoundingClientRect();
-			var scrollAmount = Math.sin(rect.y / window.innerHeight);
-			var fadeIn = smoothstep(0.6, 0.4, scrollAmount);
-			var fadeOut = smoothstep(1.0, 0.8, 1.0 - scrollAmount);
-			activeCover.style.opacity = Math.min(fadeOut, fadeIn).toString();
-			if(isFooterIntersecting){
-				stickySection.style.opacity = "0.4";
 			}
 			else {
-				var opacity = smoothstep(0.4, 0.8, scrollAmount);
-				opacity = Math.max(0.4, opacity);
-				stickySection.style.opacity = opacity.toString();
+				var imageY = photoImages[i].getBoundingClientRect().y;
+				photoImages[i].style.position = "absolute";
+				// This weirdness is because of getting scroll info is messed up.
+				// If we're scrolling up we want '<', but if we're scrolling down we want '<='
+				// Without this there is a single frame flicker
+				if((scrollDelta < 0 && imageY < 0) || (scrollDelta > 0 && imageY <= 0))
+					photoImages[i].style.top = "50%";
+				else 
+					photoImages[i].style.top = "0";
+
+				// If iOS wasn't late to the party with background-attachment:fixed then this would work
+				// photoSections[i].style["background-attachment"] = "scroll";
+
+			}
+
+			// photoCovers[i].innerText = window.scrollY;
+
+
+			if(rect.y <= window.innerHeight && rect.bottom > 0) {
+				var scrollAmount = -rect.y / window.innerHeight;
+				var fadeIn = smoothstep(0.1, 0.3, scrollAmount);
+				var fadeOut = smoothstep(0.8, 0.7, scrollAmount);
+				// photoCovers[i].innerText = fadeIn.toString() + " :: " + fadeOut.toString();
+				photoCovers[i].style.opacity = Math.min(fadeOut, fadeIn).toString();
+				if(isHeaderIntersecting) {
+					photoImages[i].style.opacity ="1.0";
+				}
+				else if(isFooterIntersecting){
+					photoImages[i].style.opacity ="0.4";
+				}
+				else {
+					var opacity = smoothstep(0.2, 0.0, scrollAmount);
+					opacity = Math.max(0.4, opacity);
+					photoImages[i].style.opacity = opacity.toString();
+				}
+			}
+			else {
+				photoImages[i].style.opacity = "1.0";
 			}
 		}
 	}
