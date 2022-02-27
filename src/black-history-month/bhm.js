@@ -72,10 +72,10 @@ ready(function(){
 
 
 			if(rect.y <= window.innerHeight && rect.bottom > 0) {
-				var scrollAmount = -rect.y / window.innerHeight;
+				var scrollAmount = (-rect.y / window.innerHeight) * 2.0 - 1.0;
 				var fadeIn = smoothstep(0.1, 0.3, scrollAmount);
-				var fadeOut = smoothstep(0.8, 0.7, scrollAmount);
-				// photoCovers[i].innerText = fadeIn.toString() + " :: " + fadeOut.toString();
+				var fadeOut = fadeIn;//smoothstep(1.1, 1.0, scrollAmount); // leaving this in on the off chance we want to re-implement
+				// photoCovers[i].innerText = fadeIn.toString() + " :: " + fadeOut.toString() + " -- " + scrollAmount.toString();
 				photoCovers[i].style.opacity = Math.min(fadeOut, fadeIn).toString();
 				if(isHeaderIntersecting) {
 					photoImages[i].style.opacity ="1.0";
