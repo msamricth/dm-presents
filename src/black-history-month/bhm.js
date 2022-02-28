@@ -20,6 +20,18 @@ ready(function(){
 	var footer = document.querySelector(".bhm-footer");
 	var header = document.querySelector(".bhm-video");
 
+	var videoPlaceholders = document.querySelectorAll("img.bhm-video-placeholder");
+	for(var i = 0; i < videoPlaceholders.length; i++) {
+
+		videoPlaceholders[i].addEventListener("click", function(e) {
+			e.preventDefault();
+			e.target.style.display = "none";
+			e.target.previousElementSibling.style.display = "none";
+			e.target.nextElementSibling.style.display = "block";
+			e.target.nextElementSibling.querySelector("iframe").contentWindow.postMessage({method:"play"}, "*"); 
+		})
+	}
+
 	var isFooterIntersecting = false;
 	var isHeaderIntersecting = false;
 

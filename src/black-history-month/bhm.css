@@ -4,34 +4,46 @@ body {
 	font-family: "Overpass", "Interstate Reg", sans-serif;
 }
 
-h1, h2 {
+.bhm h1, .bhm h2, .bhm h3 {
 	margin: 0;
 	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
 	font-weight: 500;
 	font-size: 48px;
 	text-transform: uppercase;
 	text-align: center;
+	letter-spacing: 0.02em;
 }
 
-h2 {
+.bhm h2 {
 	text-transform: uppercase;
 	text-align: left;
 	font-size: 18px;
 }
 
-p { 
+.bhm h3 {
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.bhm p { 
 	font-family: "Overpass", "Interstate Reg", sans-serif;
 	line-height: 30px;
 }
 
-p a {
+.bhm p a, .bhm a {
 	color: rgba(255, 255, 255, 1.0);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
-	p a:hover {
+	.bhm p a:hover, .bhm a:hover {
 		color: rgba(255, 255, 255, 0.5);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
+
+.bhm-icon-list a:hover,
+.bhm-icon-list a {
+	border: none;
+}
 
 a.bhm-icon-website::after {
 	background-image: url("https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-web.png");
@@ -148,12 +160,14 @@ header.bhm-article-header img {
 .bhm-quote-body {
 	font-family: Oswald,"Trade Gothic Bold",sans-serif;
 	font-weight: 300;
-	font-size: 48px;
+	font-size: 36px;
+	line-height: 45px;
 	margin-bottom: 20px;
+	letter-spacing: 0.1rem;
 }
 	.bhm-quote-body::before {
 		content: "\201C";
-		margin-left: -1.0rem;
+		margin-left: -0.3em;
 	}
 	.bhm-quote-body::after {
 		content: "\201D";
@@ -176,17 +190,86 @@ header.bhm-article-header img {
 	margin-bottom: 30px;
 }
 
+.bhm-reading-list {
+	background-position: top left;
+	background-size: cover;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+	.bhm-reading-list h2 {
+		font-size: 28px;
+		line-height: 42px;
+		text-align: center;
+	}
+
+	.bhm-reading-list h3 {
+		font-size: 28px;
+		line-height: 42px;
+		margin-bottom: 64px;
+	}
+
+	.bhm-reading-list ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+		.bhm-reading-list li {
+			font-family: "Oswald", "Trade Gothic Bold", sans-serif;
+			font-size: 22px;
+			font-weight: 300;
+			height: 50px;
+		}
+			.bhm-reading-list li a {
+				color: black;
+				border-color: black;
+			}
+				.bhm-reading-list li a:hover {
+					color: rgba(0, 0, 0, 0.5);
+					border-color: rgba(0, 0, 0, 0.5);
+				}
+
+			.bhm-reading-list li strong {
+				font-weight: 400;
+			}
+
+.bhm-vimeo-video {
+	margin: 70px;
+	position: relative;
+}
+
+	.bhm-vimeo-video img.bhm-video-placeholder {
+		cursor: pointer;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	.bhm-vimeo-video img.bhm-video-placeholder-icon {
+		pointer-events: none;
+		display: inline-block;
+		width: 64px;
+		position: absolute;
+		left: calc(50% - 32px);
+		top: calc(50% - 32px);
+		z-index: 2;
+	}
+
 .bhm-video {
+	display: none;
 	position: relative;
 	/* width: 100%;  */
 	height: 100%;
 	/* This padding assumes a 16:9 video, adjust accordingly */
 	padding-bottom: 56.25%;
-	margin-left: 70px;
-	margin-right: 70px;
 	overflow: hidden;
 	z-index: 0;
-	margin-bottom: 70px;
 }
 	.bhm-video iframe, 
 	.bhm-video object, 
@@ -264,14 +347,15 @@ section.bhm-photo {
 	margin: 150px auto;
 }
 
-.bhm-quote-citation {
-	color: rgb(168, 168, 168);
-	text-transform: uppercase;
-}
-
-	.bhm-quote-citation::before {
-		content: "\2014";
+	.bhm-quote-citation {
+		color: rgb(168, 168, 168);
+		text-transform: uppercase;
+		font-size: 12px;
 	}
+
+		.bhm-quote-citation::before {
+			content: "\2014";
+		}
 
 .bhm-photo-cover h2, .bhm-looping-video-text h2 {
 	margin-bottom: 30px;
@@ -326,21 +410,23 @@ footer.bhm-footer p {
 }
 
 @media screen and (min-width:1440px) {
-	h1 {
-		font-size: 64px;;
+	.bhm h1 {
+		font-size: 68px;
 	}
 
-	h2 {
-		font-size: 24px;
+	.bhm h2 {
+		font-size: 28px;
+		line-height: 42px;
 	}
 
-	p { 
+	.bhm p { 
 		font-size: 19px;
+		line-height: 36px;
 	}
 
 	.bhm-looping-video-text,
 	.bhm-quote,
-	header.bhm-header {
+	.bhm header.bhm-header {
 		width: min(100vw, 800px);
 	}
 
@@ -348,8 +434,13 @@ footer.bhm-footer p {
 		left:calc(50% - 400px);
 		width: 800px;
 	}
-	.bhm-photo-cover, footer.bhm-footer {
+	.bhm-photo-cover, .bhm footer.bhm-footer {
 		width: min(100vw, 800px);
+	}
+
+	.bhm-quote-body {
+		font-size: 48px;
+		line-height: 60px;
 	}
 }
 
@@ -369,7 +460,7 @@ footer.bhm-footer p {
 
 	.bhm-article-header-content {
 		position: unset;
-		padding: 50px;
+		padding: 50px 32px;
 		display: flex;
 		flex-direction: column;
 		background-color: #000;
@@ -384,13 +475,26 @@ footer.bhm-footer p {
 
 	.bhm-photo-cover {
 		margin: 0;
-		padding: 0 50px;
+		padding: 100vh 64px 0;
+		width: 100%;
 	}
 
 	footer.bhm-footer {
 		width: 100vw;
-		padding: 50px;
+		padding: 64px;
 		margin: 0;
+	}
+	.bhm-looping-video-text {
+		margin: 100px auto;
+	}
+
+	.bhm-looping-video-text {
+		width: 100%;
+		margin: 64px 0;
+	}
+
+	.bhm-quote {
+		margin: 100px auto;
 	}
 
 }
@@ -403,6 +507,42 @@ footer.bhm-footer p {
 		padding: 30px;
 	}
 	.bhm-photo-cover {
-		padding: 0 30px;
+		padding: 100vh 30px 0;
 	}
+
+	.bhm-vimeo-video,
+	.bhm-looping-video {
+		margin: 30px 32px 64px;
+	}
+
+	.bhm-looping-video-text {
+		width: 100%;
+	}
+
+	.bhm-quote {
+		width: auto;
+		margin: 100px 32px 100px 44px;
+	}
+
+	.bhm-quote-body {
+		font-size: 30px;
+		line-height: 40px;
+	}
+
+	.bhm-reading-list h2 {
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.bhm-reading-list h3 {
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 50px;
+	}
+
+		.bhm-reading-list li {
+			font-size: 17px;
+			font-weight: 300;
+			height: 42px;
+		}
 }

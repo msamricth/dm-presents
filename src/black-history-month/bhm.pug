@@ -4,9 +4,12 @@ style
 script(type="text/javascript")
 	include bhm.js
 
-mixin vimeoVideo(vimeoId, vimeoTitle) 
-	.bhm-video
-		iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
+	.bhm-vimeo-video
+		img.bhm-video-placeholder-icon(src="/icon-play-button.svg")
+		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
+		.bhm-video
+			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 
 section.bhm
 	header.bhm-header(aria-level="2")
@@ -27,7 +30,7 @@ section.bhm
 				h1.bhm-mobile-hidden Daizsa Jackson 
 				p Social Media Specialist, Daizsa Jackson manages Dr. Martens social influencer program. Self-proclaimed bookworm and textbook bibliophile, Daizsa is passionate about Black literature. No matter the genre, you can count on her recommendations. Daizsa kindly shared her reading list which features some of her favorite Black writers. 
 		
-		+vimeoVideo("681098837", "Daizsa Jackson")
+		+vimeoVideo("681098837", "Daizsa Jackson", "/daizsa-film-overlay.jpg")
 
 		section.bhm-photo(data-src="/02-Zora.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
 			img.bhm-photo-image
@@ -52,8 +55,20 @@ section.bhm
 			.bhm-quote-body So much content has been centered around our struggles, but over time Black authors have ventured outside of that box and have told more honest stories. The good and the bad and everything in between.
 			.bhm-quote-citation Daizsa Jackson
 		
-		section.bhm-quote
-			.bhm-quote-body FPO, Reading list goes here
+		section.bhm-reading-list(style="background-image:url(/04-reading-list.jpg);")
+			h2 Daizsa's Recommended Reading List:
+			h3 Find your next favorite author.
+			ul
+				li #[strong Homegoing] by #[a(href="https://www.penguinrandomhouse.com/authors/2117741/yaa-gyasi/" target="_blank" noopener noreferrer) Yaa Gyasi]
+				li #[strong Heavy: An American Memoir] by #[a(href="https://www.kieselaymon.com/heavy" target="_blank" noopener noreferrer) Kiese Laymon]
+				li #[strong The Secret Lives of Church Ladies] by #[a(href="https://www.deeshaphilyaw.com" target="_blank" noopener noreferrer) Deesha Philyaw]
+				li #[strong The Vanishing Half] by #[a(href="https://britbennett.com" target="_blank" noopener noreferrer) Brit Bennett]
+				li #[strong Open Water] by #[a(href="https://www.instagram.com/caleb_anelson/?hl=en" target="_blank" noopener noreferrer) Caleb Azumah Nelson]
+				li #[strong Everything Inside] by #[a(href="https://edwidgedanticat.com" target="_blank" noopener noreferrer) Edwidge Danticat]
+				li #[strong Love in Color] by #[a(href="https://www.bolubabalola.com" target="_blank" noopener noreferrer) Bolu Babalola]
+				li #[strong Caul Baby] by #[a(href="http://www.morgan-jerkins.com" target="_blank" noopener noreferrer) Morgan Jerkins]
+				li #[strong Children of Blood and Bone] by #[a(href="https://www.tomiadeyemi.com" target="_blank" noopener noreferrer) Tomi Adeyemi]
+				li #[strong When No One is Watching: A Thriller] by #[a(href="https://alyssacole.com/" target="_blank" noopener noreferrer) Alyssa Cole]
 
 		footer.bhm-footer
 			img(src="/fbwl-charity.png" style="width:180px;margin-bottom:30px;")
@@ -78,7 +93,8 @@ section.bhm
 					a.bhm-icon-website(href="https://www.phony-ppl.com/" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl's website") PhonyPpl Website
 					a.bhm-icon-insta(href="https://www.instagram.com/phonyppl" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Instagram") PhonyPpl Instagram
 					a.bhm-icon-spotify(href="https://open.spotify.com/artist/0oBsnAC3fzYkTHF3bkfNx6" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Spotify") PhonyPpl Spotify
-		+vimeoVideo("676372750", "Phony Ppl")
+
+		+vimeoVideo("676372750", "Phony Ppl", "/phony-ppl-film-overlay.jpg")
 
 		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/2-bhm-motown.jpg" aria-description="Two Archival photos arranged side by side: One of Quincy Jones sitting in a chair in a sound studio with his hands raised in the air. The other, of Berry Gordy sitting in a recliner reading papers while spinning a world globe sitting next to him.")
 			img.bhm-photo-image
