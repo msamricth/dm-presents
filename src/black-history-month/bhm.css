@@ -136,7 +136,6 @@ header.bhm-header {
 	align-items: center;
 	width: min(100vw, 620px);
 	margin: 0 auto 30px;
-	padding: 0 50px;
 }
 
 	header.bhm-header h1 {
@@ -455,7 +454,9 @@ footer.bhm-footer p {
 	}
 
 	header.bhm-header {
-		margin-bottom: 100px;
+		width: 100vw;
+		margin: 100px 0;
+		padding: 0 32px;
 	}
 
 	.bhm-article-header-content {
@@ -494,7 +495,9 @@ footer.bhm-footer p {
 	}
 
 	.bhm-quote {
+		width: 100vw;
 		margin: 100px auto;
+		padding: 0 64px;
 	}
 
 }
@@ -522,6 +525,7 @@ footer.bhm-footer p {
 	.bhm-quote {
 		width: auto;
 		margin: 100px 32px 100px 44px;
+		padding: 0;
 	}
 
 	.bhm-quote-body {

@@ -17,12 +17,12 @@ ready(function(){
 	var photoCovers = document.querySelectorAll(".bhm-photo-cover");
 	var photoFades = document.querySelectorAll(".bhm-photo-fade")
 	var photoImages = document.querySelectorAll(".bhm-photo-image")
-	var footer = document.querySelector(".bhm-footer");
+	var footer = document.querySelector(".bhm-last-footer");
 	var header = document.querySelector(".bhm-video");
 
+	// Play vimeo video when pressing the play button
 	var videoPlaceholders = document.querySelectorAll("img.bhm-video-placeholder");
 	for(var i = 0; i < videoPlaceholders.length; i++) {
-
 		videoPlaceholders[i].addEventListener("click", function(e) {
 			e.preventDefault();
 			e.target.style.display = "none";
@@ -96,7 +96,7 @@ ready(function(){
 					photoImages[i].style.opacity ="0.4";
 				}
 				else {
-					var opacity = smoothstep(0.2, 0.0, scrollAmount);
+					var opacity = smoothstep(0.4, -1.0, scrollAmount);
 					opacity = Math.max(0.4, opacity);
 					photoImages[i].style.opacity = opacity.toString();
 				}
