@@ -178,7 +178,7 @@ header.bhm-article-header img {
 	display: flex;
 	flex-direction: column;
 	background-color: #000;
-	margin: 35vh auto;
+	margin: max(35vh, 300px) auto;
 	z-index: 1;
 	top:0;
 	left:calc(50% - 310px);
@@ -250,7 +250,7 @@ header.bhm-article-header img {
 		z-index: 1;
 	}
 
-	.bhm-vimeo-video img.bhm-video-placeholder-icon {
+	.bhm-vimeo-video svg.bhm-video-placeholder-icon {
 		pointer-events: none;
 		display: inline-block;
 		width: 64px;
@@ -432,7 +432,9 @@ footer.bhm-footer p {
 
 	.bhm-article-header-content {
 		left:calc(50% - 400px);
+		margin: max(35vh, 380px) auto;
 		width: 800px;
+
 	}
 	.bhm-photo-cover, .bhm footer.bhm-footer {
 		width: min(100vw, 800px);

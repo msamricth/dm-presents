@@ -6,33 +6,38 @@ script(type="text/javascript")
 
 mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
 	.bhm-vimeo-video
-		img.bhm-video-placeholder-icon(src="/icon-play-button.svg")
+		+iconPlayButton()
 		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
 		.bhm-video
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+
+mixin iconPlayButton()
+	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+		defs
+			circle(id="path-1" cx="32" cy="32" r="32")
+		g(id="Button/Play/BigBIG-Round/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+			g(id="Oval")
+				use(fill="#FFE600" xlink:href="#path-1")
+				use(fill-opacity="0.07" fill="#000000" xlink:href="#path-1")
+			g(id="Icon/Play/Large" transform="translate(24.000000, 20.000000)" fill="#000000")
+				path(d="M12.1536682,4.45755789 L21.5412984,19.3513942 C21.8357883,19.8186138 21.6957632,20.4361014 21.2285436,20.7305913 C21.0688969,20.8312171 20.8840355,20.8846154 20.6953225,20.8846154 L1.92006213,20.8846154 C1.36777738,20.8846154 0.920062134,20.4369001 0.920062134,19.8846154 C0.920062134,19.6959023 0.973460457,19.5110409 1.07408625,19.3513942 L10.4617164,4.45755789 C10.7562063,3.99033831 11.3736939,3.85031325 11.8409135,4.14480317 C11.9672026,4.22440356 12.0740678,4.33126881 12.1536682,4.45755789 Z" id="Triangle" transform="translate(11.307692, 12.000000) rotate(-270.000000) translate(-11.307692, -12.000000)")
 
 section.bhm
 	header.bhm-header(aria-level="2")
 		h1 Celebrating Black Voices 
 		p During Black History Month and beyond, Dr. Martens is celebrating our Black employees and the talented Black creators from our community. They'll speak to us about historical Black figures who have shaped Black culture and the artists, activists and organizations who are pushing the conversation forward.
-
-	// ====================================================================================================
-	// ====================================================================================================
-	// Post 2 - Daizsa Jackson 
-	// ====================================================================================================
-	// ====================================================================================================
-
+	
 	article#daizsa-jackson
 		header.bhm-article-header(aria-level="3")
 			h1.bhm-mobile(aria-hidden="true") Daizsa Jackson 
-			img(src="/01-Intro-Collage.jpg" alt="")
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/1-intro-collage.jpg" alt="")
 			.bhm-article-header-content
 				h1.bhm-mobile-hidden Daizsa Jackson 
 				p Social Media Specialist, Daizsa Jackson manages Dr. Martens social influencer program. Self-proclaimed bookworm and textbook bibliophile, Daizsa is passionate about Black literature. No matter the genre, you can count on her recommendations. Daizsa kindly shared her reading list which features some of her favorite Black writers. 
 		
-		+vimeoVideo("681098837", "Daizsa Jackson", "/daizsa-film-overlay.jpg")
+		+vimeoVideo("681098837", "Daizsa Jackson", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/daizsa-film-overlay.jpg")
 
-		section.bhm-photo(data-src="/02-Zora.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/2-zora.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
 			img.bhm-photo-image
 			.bhm-photo-cover
 				h2 Zora Neale Hurston
@@ -40,12 +45,12 @@ section.bhm
 		
 		section.bhm-looping-video
 			video(loop autoplay muted playsinline)
-				source(src="/harlem-web.mp4" type="video/mp4")
+				source(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/harlem-web.mp4" type="video/mp4")
 			.bhm-looping-video-text
 				h2 Harlem Renaissance 
 				p A #[a(href="https://www.history.com/topics/roaring-twenties/harlem-renaissance" target="_blank" noopener noreferrer) cultural revival] of new ideas and Black artistic expression during the 1920s centered in the Harlem neighborhood of New York City. It was an explosion of talent! This era is responsible for some of the greatest American artists of all time; Louis Armstrong, Zora Neale Hurston, and Langston Hughes to name a few.
 			
-		section.bhm-photo(data-src="/03-Kiese.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/3-kiese.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
 			img.bhm-photo-image
 			.bhm-photo-cover
 				h2 Kiese Laymon 
@@ -55,7 +60,7 @@ section.bhm
 			.bhm-quote-body So much content has been centered around our struggles, but over time Black authors have ventured outside of that box and have told more honest stories. The good and the bad and everything in between.
 			.bhm-quote-citation Daizsa Jackson
 		
-		section.bhm-reading-list(style="background-image:url(/04-reading-list.jpg);")
+		section.bhm-reading-list(style="background-image:url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/bg-reading-list.jpg);")
 			h2 Daizsa's Recommended Reading List:
 			h3 Find your next favorite author.
 			ul
@@ -71,16 +76,9 @@ section.bhm
 				li #[strong When No One is Watching: A Thriller] by #[a(href="https://alyssacole.com/" target="_blank" noopener noreferrer) Alyssa Cole]
 
 		footer.bhm-footer
-			img(src="/fbwl-charity.png" style="width:180px;margin-bottom:30px;")
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/fbwl-charity.png" style="width:180px;margin-bottom:30px;")
 			p Upon Daizsa's recommendation, Dr. Martens is donating $5,000 to The Free Black Women's Library. &#x22;There's a lack of community and spaces dedicated to uplifting and celebrating Black female writers specifically. I love that this organization is committed to creating those spaces.&#x22; &#x2014; Daizsa Jackson 
 			a.bhm-external(href="https://www.thefreeblackwomenslibrary.com/" target="_blank" noopener noreferrer) Learn More
-
-
-	// ====================================================================================================
-	// ====================================================================================================
-	// Post 1 - PhonyPpl
-	// ====================================================================================================
-	// ====================================================================================================
 	
 	article#phony-ppl
 		header.bhm-article-header(aria-level="3")
@@ -94,7 +92,7 @@ section.bhm
 					a.bhm-icon-insta(href="https://www.instagram.com/phonyppl" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Instagram") PhonyPpl Instagram
 					a.bhm-icon-spotify(href="https://open.spotify.com/artist/0oBsnAC3fzYkTHF3bkfNx6" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Spotify") PhonyPpl Spotify
 
-		+vimeoVideo("676372750", "Phony Ppl", "/phony-ppl-film-overlay.jpg")
+		+vimeoVideo("676372750", "Phony Ppl", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/phony-ppl-film-overlay.jpg")
 
 		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/2-bhm-motown.jpg" aria-description="Two Archival photos arranged side by side: One of Quincy Jones sitting in a chair in a sound studio with his hands raised in the air. The other, of Berry Gordy sitting in a recliner reading papers while spinning a world globe sitting next to him.")
 			img.bhm-photo-image
