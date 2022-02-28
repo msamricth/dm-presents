@@ -331,6 +331,7 @@ section.bhm-photo {
 }
 
 .bhm-looping-video video {
+	width: 100%;
 	margin-bottom: 70px;
 }
 
