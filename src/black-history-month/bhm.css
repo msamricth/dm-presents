@@ -199,7 +199,6 @@ header.bhm-article-header img {
 	align-items: center;
 	height: 100vh;
 }
-
 	.bhm-reading-list h2 {
 		font-size: 28px;
 		line-height: 42px;
@@ -217,6 +216,7 @@ header.bhm-article-header img {
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
+		list-style-type: none;
 	}
 
 		.bhm-reading-list li {
