@@ -288,7 +288,12 @@ section.bhm-photo {
 	background-position: center left;
 	position: relative;
 }
-
+section.bhm-photo-transparent {
+	background-attachment: scroll;
+	background-size: auto 100vh;
+	background-position: center left;
+	position: relative;
+}
 
 .bhm-photo-image,
 .bhm-photo-fade {
@@ -310,6 +315,13 @@ section.bhm-photo {
 	width: 100%;
 	height: 100vh;
 }
+.bhm-photo-image-transparent {
+	object-fit: cover;
+	z-index: 1;
+	opacity: 1.0;
+	width: 100%;
+	height: 100vh;
+}
 
 .bhm-photo-cover {
 	display: flex;
@@ -322,7 +334,9 @@ section.bhm-photo {
 	padding-top:100vh;
 	z-index: 3;
 }
-
+.bhm-photo-cover-transparent {
+	display: none;
+}
 .bhm-looping-video {
 	display: flex;
 	flex-direction: column;
