@@ -14,6 +14,8 @@ function smoothstep(e1, e2, v) {
 
 ready(function(){
 	var photoSections = document.querySelectorAll("section.bhm-photo");
+	var photoSectionsTransparent = document.querySelectorAll("section.bhm-photo-transparent");
+	var photoImagesTransparent = document.querySelectorAll(".bhm-photo-image-transparent");
 	var photoCovers = document.querySelectorAll(".bhm-photo-cover");
 	var photoFades = document.querySelectorAll(".bhm-photo-fade")
 	var photoImages = document.querySelectorAll(".bhm-photo-image")
@@ -41,6 +43,10 @@ ready(function(){
 	for(var i = 0; i < photoSections.length; i++) {
 		// photoSections[i].style.backgroundImage = "url(" + photoSections[i].dataset.src + ")";
 		photoImages[i].src = photoSections[i].dataset.src;
+	}
+	for(var i = 0; i < photoSectionsTransparent.length; i++) {
+		// photoSections[i].style.backgroundImage = "url(" + photoSections[i].dataset.src + ")";
+		photoImagesTransparent[i].src = photoSectionsTransparent[i].dataset.src;
 	}
 
 	var frame = function() {
