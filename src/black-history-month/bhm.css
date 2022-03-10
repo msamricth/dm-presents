@@ -302,7 +302,12 @@ section.bhm-photo {
 	opacity: 0.0;
 	z-index: 2;
 }
-
+.bhm-noroll {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	top: 0px;
+}
 .bhm-photo-image {
 	object-fit: cover;
 	z-index: 1;

@@ -19,6 +19,7 @@ ready(function(){
 	var photoImages = document.querySelectorAll(".bhm-photo-image")
 	var footer = document.querySelector(".bhm-last-footer");
 	var header = document.querySelector(".bhm-video");
+	var noroll = document.querySelector(".bhm-noroll");
 
 	// Play vimeo video when pressing the play button
 	var videoPlaceholders = document.querySelectorAll("img.bhm-video-placeholder");
@@ -34,6 +35,7 @@ ready(function(){
 
 	var isFooterIntersecting = false;
 	var isHeaderIntersecting = false;
+	var isNorollIntersecting = false;
 
 	var previousScrollY = 0;
 	var scrollDelta = 0;
@@ -48,7 +50,9 @@ ready(function(){
 		previousScrollY = window.scrollY;
 
 		var footerY = footer.getBoundingClientRect().y;
+		var norollY = noroll.getBoundingClientRect().y + noroll.clientHeight;
 		var headerY = header.getBoundingClientRect().y;
+		isNorollIntersecting = (norollY < window.innerHeight);
 		isHeaderIntersecting = (headerY > 0);
 		isFooterIntersecting = (footerY < window.innerHeight);
 
@@ -94,6 +98,9 @@ ready(function(){
 				}
 				else if(isFooterIntersecting){
 					photoImages[i].style.opacity ="0.4";
+				}
+				else if(isNorollIntersecting){
+					photoImages[i].style.opacity ="1.0";
 				}
 				else {
 					var opacity = smoothstep(0.4, -1.0, scrollAmount);
