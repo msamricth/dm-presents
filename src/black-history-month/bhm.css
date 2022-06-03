@@ -4,6 +4,7 @@ body {
 	background-color: #000;
 	color: #fff;
     font-family: "Overpass", "Interstate Reg", sans-serif;
+    margin: 0;
 }
 
 .bhm h1, .bhm h2, .bhm h3 {
@@ -33,10 +34,12 @@ body {
 }
 
 .bhm p a, .bhm a {
+    text-decoration: none;
 	color: rgba(255, 255, 255, 1.0);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 	.bhm p a:hover, .bhm a:hover {
+    text-decoration: none;
 		color: rgba(255, 255, 255, 0.5);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
@@ -591,6 +594,10 @@ header.bhm-header .d-flex > img {
 }
 
 @media screen and (min-width:1024px) {
+    footer.bhm-footer-pagination .d-flex {
+        margin: 0 auto;
+        width: 50%;
+    }
     .featured-filmaker-quote {
         margin: 150px 0 50px;
         width: 469px;
@@ -870,4 +877,21 @@ header.bhm-header .d-flex > img {
 }
 .bhm .bhm-video-grid .d-flex .card:hover h4, .bhm .bhm-video-grid .d-flex .card a:hover h4 {
     text-decoration: underline;
+}
+footer.bhm-footer-pagination .bhm-footer-pagination-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background: rgb(255, 230, 0);
+    box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 0px;
+}
+footer.bhm-footer-pagination .bhm-footer-pagination-bar a {
+    color:#000;
+    font-size: 18px;
+    font-family: 'Oswald';
+    letter-spacing: 0.78px;
+    line-height: 20px;
+    border: none;
 }
