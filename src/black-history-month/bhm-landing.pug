@@ -17,7 +17,7 @@ mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 
 mixin iconPlayButton()
-	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink")
 		defs
 			circle(id="path-1" cx="32" cy="32" r="32")
 		g(id="Button/Play/BigBIG-Round/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
@@ -30,28 +30,28 @@ mixin iconPlayButton()
 section.bhm.landing
 	header.bhm-header(aria-level="2")
 		.d-flex
-			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-01.png")
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-01.png")
 			h1 Celebrating 
 		.d-flex
 			h1.mr-3 Black
-			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-02.png")
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-02.png")
 		.d-flex
-			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-03.png")
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-03.png")
 			h1.mx-3 Voices 
-			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-04.png")
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-04.png")
 		.header-intro
 			p During Black History Month and beyond, Dr. Martens is celebrating our Black employees and the talented Black creators from our community. They'll speak to us about historical Black figures who have shaped Black culture and the artists, activists and organizations who are pushing the conversation forward.
 	.bhm-video-grid
 		.d-flex
 			.card
 				video(autoplay loop muted)
-					source(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/intro_series-01.mp4")
+					source(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/intro_series-01.mp4")
 				a(href="https://drmartens.com/us/en/celebrating-black-voices/fredgy")
 					h4 Fredgy
 				p Fredgy Noël is a Haitian-American director and screenwriter in NYC. Her work is an extension of how she sees the world in all of its nuance, complexity, and beauty.   
 			.card
 				video(autoplay loop muted)
-					source(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/thumbnail_series-02.mp4")
+					source(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/thumbnail_series-02.mp4")
 				a(href="https://drmartens.com/us/en/celebrating-black-voices/chelsea-odufo")
 					h4 Chelsea Odufu
 				p Chelsea Odufu is a Guyanese Nigerian American Filmmaker and Visual Artist. Her work explores BIPOC culture.  
