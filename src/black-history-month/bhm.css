@@ -698,6 +698,10 @@ header.bhm-header .d-flex > img {
 		font-size: 48px;
 		line-height: 60px;
 	}
+    .bhm h2 {
+        font-size: 28px;
+        line-height: 42px;
+    }
 }
 
 
