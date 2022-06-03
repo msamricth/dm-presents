@@ -60,12 +60,29 @@
 		left: 1px;
 	}
 
+	.fm-episodes-selector {
+		display: flex;
+	}
+
+		.fm-episodes-selector h2 {
+			cursor: pointer;
+		}
+
+		.fm-episodes-selector h2:not(last-child) {
+			margin-right: 30px;
+		}
+
+		.fm-episodes-selector h2.active {
+			padding-bottom: 4px;
+			border-bottom: 3px solid rgb(255, 230, 0);
+		}
+
 	.fm-episodes-collection {
 		overflow: hidden;
 		width: 100%;
 	}
 
-	a.fm-episodes-next, a.fm-episodes-prev {
+	a.fm-episodes-n, a.fm-episodes-p{
 		width: 42px;
 		height: 48px;
 		position: fixed;
@@ -76,43 +93,49 @@
 		align-items: center;
 		z-index: 1;
 	} 
-		a.fm-episodes-next svg, a.fm-episodes-prev svg {
+		a.fm-episodes-n svg, a.fm-episodes-p svg {
 			overflow: visible;
 		} 
 
-	.fm-episodes-item-container {
+	.fm-episodes-hug {
 		display: inline-flex;
 		position: relative;
 	}
 
-	.fm-episodes-item {
+	/* TODO(AJ): Remove on S2E1, this is a patch to make the trailer look correct in the episode list */
+	.fm-episodes-hug[data-season="2"] .fm-episode {
+		flex-basis: 33%;
+	}
+
+	.fm-episode {
+		cursor: pointer;
 		display: inline-block;
 		margin-right: 20px;
 		position: relative;
-		flex-grow: 1;
+		/* flex-grow: 1; */ /* Removed because it caused problems, may need to add back in */
 		min-width: 390px;
 	}
 
-	.fm-episodes-item:last-child {
+	.fm-episode:last-child {
 		margin-right: 0;
 	}
 
-	.fm-episodes-item h3 {
+	.fm-episode h3 {
 		color: #fff;
 		margin: -8px 0px 10px; 
 	}
 
-	.fm-episodes-item p {
+	.fm-episode p {
 		color: rgb(168, 168, 168);
 		font-size: 12px;
 		line-height: 20px;
 	} 
 
-	a.fm-episodes-item:hover p {
+	a.fm-episode:hover p {
 		color: rgb(168, 168, 168);
 		text-decoration: none;
 	}
-	a.fm-episodes-item:hover h3 {
+	a.fm-episode:hover h3 {
 		color: #fff;
 		text-decoration: none;
 	}
@@ -125,7 +148,7 @@
 } 
 
 @media screen and (max-width: 1440px) {
-	.fm-episodes-item {
+	.fm-episode {
 		min-width: calc(33.33vw - 46px);
 	}
 } 
@@ -136,7 +159,7 @@
 		margin: 150px 32px 130px;
 	} 
 
-	.fm-episodes-item {
+	.fm-episode {
 		min-width: calc(50vw - 50px);
 	}
 } 
@@ -150,7 +173,7 @@
 		margin-bottom: 40px;
 	}
 
-	.fm-episodes-item-container {
+	.fm-episodes-hug {
 		flex-direction: column;
 		left: 0;
 	}
@@ -163,7 +186,7 @@
 		padding-top: 0px;
 	}
 
-	.fm-episodes-item {
+	.fm-episode {
 		border-bottom: 1px solid rgb(25, 28, 29); 
 		display: flex;
 		flex-direction: column;
@@ -173,18 +196,18 @@
 		padding: 20px 0;
 	} 
 
-	.fm-episodes-item-title {
+	.fm-episode-title {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		padding-top: 11px;
 	}
 
-	.fm-episodes-item-title h3 {
+	.fm-episode-title h3 {
 		margin: -6px 0px 8px;
 	}
 
-	.fm-episodes-item p {
+	.fm-episode p {
 		margin-bottom: 0px;
 	}
 
@@ -192,7 +215,7 @@
 		position: static;
 	}
 
-	.fm-episodes-item-main {
+	.fm-episode-main {
 		display: flex;
 		flex-direction: row;
 		margin-bottom: 10px;
@@ -206,7 +229,7 @@
 		left: 38px;
 	}
 
-	a.fm-episodes-next, a.fm-episodes-prev {
+	a.fm-episodes-n, a.fm-episodes-p {
 		display: none; 
 	}
 

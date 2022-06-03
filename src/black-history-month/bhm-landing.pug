@@ -1,0 +1,59 @@
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='description', content='Some description')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+style 
+	include bhm.css
+
+
+mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
+	.bhm-vimeo-video
+		+iconPlayButton()
+		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
+		.bhm-video
+			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+
+mixin iconPlayButton()
+	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+		defs
+			circle(id="path-1" cx="32" cy="32" r="32")
+		g(id="Button/Play/BigBIG-Round/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+			g(id="Oval")
+				use(fill="#FFE600" xlink:href="#path-1")
+				use(fill-opacity="0.07" fill="#000000" xlink:href="#path-1")
+			g(id="Icon/Play/Large" transform="translate(24.000000, 20.000000)" fill="#000000")
+				path(d="M12.1536682,4.45755789 L21.5412984,19.3513942 C21.8357883,19.8186138 21.6957632,20.4361014 21.2285436,20.7305913 C21.0688969,20.8312171 20.8840355,20.8846154 20.6953225,20.8846154 L1.92006213,20.8846154 C1.36777738,20.8846154 0.920062134,20.4369001 0.920062134,19.8846154 C0.920062134,19.6959023 0.973460457,19.5110409 1.07408625,19.3513942 L10.4617164,4.45755789 C10.7562063,3.99033831 11.3736939,3.85031325 11.8409135,4.14480317 C11.9672026,4.22440356 12.0740678,4.33126881 12.1536682,4.45755789 Z" id="Triangle" transform="translate(11.307692, 12.000000) rotate(-270.000000) translate(-11.307692, -12.000000)")
+
+section.bhm.landing
+	header.bhm-header(aria-level="2")
+		.d-flex
+			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-01.png")
+			h1 Celebrating 
+		.d-flex
+			h1.mr-3 Black
+			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-02.png")
+		.d-flex
+			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-03.png")
+			h1.mx-3 Voices 
+			img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/hero-image-04.png")
+		.header-intro
+			p During Black History Month and beyond, Dr. Martens is celebrating our Black employees and the talented Black creators from our community. They'll speak to us about historical Black figures who have shaped Black culture and the artists, activists and organizations who are pushing the conversation forward.
+	.bhm-video-grid
+		.d-flex
+			.card
+				video(autoplay loop muted)
+					source(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/intro_series-01.mp4")
+				a(href="https://drmartens.com/us/en/celebrating-black-voices/fredgy")
+					h4 Fredgy
+				p Fredgy Noël is a Haitian-American director and screenwriter in NYC. Her work is an extension of how she sees the world in all of its nuance, complexity, and beauty.   
+			.card
+				video(autoplay loop muted)
+					source(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/thumbnail_series-02.mp4")
+				a(href="https://drmartens.com/us/en/celebrating-black-voices/chelsea-odufo")
+					h4 Chelsea Odufu
+				p Chelsea Odufu is a Guyanese Nigerian American Filmmaker and Visual Artist. Her work explores BIPOC culture.  
+    
+

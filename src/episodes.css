@@ -72,11 +72,16 @@
 }
 
 cite { 
+	font-family: "Overpass", "Interstate Reg", sans-serif;
 	color: #b9b9b9;
 	display: block;
 	font-size: 12px; 
 	font-style: normal;
 	margin-top: 10px;
+}
+
+.fm-title {
+	margin-bottom: 10px;
 }
 
 .fm-title h1 {
@@ -96,7 +101,7 @@ cite {
 }
 
 .fm-episode-details h2 {
-	padding: 10px 0 30px 0;
+	padding: 0 0 30px 0;
 }
 
 .fm-episode-text {
