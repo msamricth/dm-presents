@@ -895,3 +895,6 @@ footer.bhm-footer-pagination .bhm-footer-pagination-bar a {
     line-height: 20px;
     border: none;
 }
+footer.bhm-footer-pagination .bhm-footer-pagination-bar i {
+    margin-right: 10px;
+}
