@@ -123,7 +123,7 @@ header.bhm-article-header {
 	background: unset;
 	margin: unset;
 }
-footer.bhm-footer {
+.bhm-footer.call-to-action {
 	padding: unset;
 	margin: unset;
 	background: unset;
@@ -428,16 +428,16 @@ a.bhm-external {
 	}
 
 
-footer.bhm-footer {
+.bhm-footer.call-to-action {
 	width: min(100vw, 500px);
 	margin: 100px auto;
 }
 
-footer.bhm-footer img {
+.bhm-footer.call-to-action img {
 	width: 280px;
 }
 
-footer.bhm-footer p {
+.bhm-footer.call-to-action p {
 	margin-bottom: 50px;
 }
 
@@ -448,6 +448,8 @@ footer.bhm-footer p {
 header.bhm-header .d-flex h1 {		
     font-size: 42px;
     letter-spacing: 1;
+    font-family: 'Oswald';
+    font-weight: 400;
 }
 header.bhm-header .d-flex > img {
     height: 34px;
@@ -493,6 +495,7 @@ header.bhm-header .d-flex > img {
     line-height: 41px;
     margin-bottom: 31px;
     text-align: center;
+    font-weight: 400;
 }
 .bhm header.bhm-header .bhm-header-content h4 {
     margin-bottom: 31px;
@@ -697,7 +700,7 @@ header.bhm-header .d-flex > img {
 		width: 800px;
 
 	}
-	.bhm-photo-cover, .bhm footer.bhm-footer {
+	.bhm-photo-cover, .bhm .bhm-footer.call-to-action {
 		width: min(100vw, 800px);
 	}
 
@@ -747,7 +750,7 @@ header.bhm-header .d-flex > img {
 		width: 100%;
 	}
 
-	footer.bhm-footer {
+	.bhm-footer.call-to-action {
 		width: 100vw;
 		padding: 64px;
 		margin: 0;
@@ -773,7 +776,7 @@ header.bhm-header .d-flex > img {
 	.bhm-article-header-content {
 		padding: 30px;
 	}
-	footer.bhm-footer {
+	.bhm-footer.call-to-action {
 		padding: 30px;
 	}
 	.bhm-photo-cover {
@@ -878,6 +881,7 @@ header.bhm-header .d-flex > img {
 .bhm .bhm-video-grid .d-flex .card:hover h4, .bhm .bhm-video-grid .d-flex .card a:hover h4 {
     text-decoration: underline;
 }
+
 footer.bhm-footer-pagination .bhm-footer-pagination-bar {
     display: flex;
     align-items: center;
