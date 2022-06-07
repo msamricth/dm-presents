@@ -25,10 +25,10 @@ mixin youtubeVideo(ytId, ytTitle, placeholderImgSrc)
 			+iconPlayButton()
 		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
 		.bhm-video
-			iframe(data-ytvideoid=ytId src=`https://www.youtube.com/embed/${ytId}?enablejsapi=1` allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" title=ytTitle)
+			iframe.youtube(data-ytvideoid=ytId src=`https://www.youtube.com/embed/${ytId}?enablejsapi=1` allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" title=ytTitle)
 
 mixin iconPlayButton()
-	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink")
 		defs
 			circle(id="path-1" cx="32" cy="32" r="32")
 		g(id="Button/Play/BigBIG-Round/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
@@ -49,7 +49,7 @@ section.bhm.featured-filmaker
 				p
 					a.bhm-icon-insta(href="https://www.instagram.com/chelseaodufu/" target="_blank" noopener noreferrer aria-label="Visit Chelsea Odufu on Instagram") Chelsea Odufu Instagram
 			.bhm-header-image
-				img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/Filmmaker_Chelsea-Odufu.png" alt="A photo of Chelsea Odufu sitting in front of a white background while looking into the camera. Chelsea is wearing a long white puffer jacket with black pants.")
+				img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/Filmmaker_Chelsea-Odufu.png" alt="A photo of Chelsea Odufu sitting in front of a white background while looking into the camera. Chelsea is wearing a long white puffer jacket with black pants.")
 		.featured-filmaker-quote
 			blockquote “Highlighting Black Voices shouldn’t be reduced to just one month as Black people are innovating culture everyday so shout out to Dr. Martens for recognizing and highlighting that. This was an amazing series to Direct.”
 			.bhm-quote-citation Chelsea
@@ -63,7 +63,7 @@ section.bhm.featured-filmaker
 				p Named after Langston Hughes and the son of Black activists, Dr. Martens Ecommerce Coordinator, Langston McClarron honors the Black excellence that came before him and those who sustain it, in his installment of Celebrating Black Voices.
 				.bhm-icon-list
 					a.bhm-icon-insta(href="https://www.instagram.com/itslangduhhh/" target="_blank" noopener noreferrer aria-label="Visit Langston on Instagram") Langston Instagram
-		+youtubeVideo("dK9CzEJe2Tw", "Celebrating Black Voices | Langston", "http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_langston.jpg")
+		+youtubeVideo("dK9CzEJe2Tw", "Celebrating Black Voices | Langston", "https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_langston.jpg")
         
 		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/module1-patrick-kelly.jpg" aria-description="")
 			img.bhm-photo-image
@@ -75,7 +75,7 @@ section.bhm.featured-filmaker
 			.bhm-quote-body You can tell that [Basquiat] was very free when he created his art.. he was the type of artist that went and did what he felt and I could actually see that in his art.. He’s the GOAT, honestly.
 			.bhm-quote-citation JEANTRIX
 
-		section.bhm-photo(data-src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d4/module-2-basquiat.jpg")
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d4/module-2-basquiat.jpg")
 			img.bhm-photo-image
 			.bhm-photo-cover
 				h2 Basquiat
@@ -171,7 +171,7 @@ section.bhm.featured-filmaker
 				li #[strong Open Water] by #[a(href="https://www.instagram.com/caleb_anelson/?hl=en" target="_blank" noopener noreferrer) Caleb Azumah Nelson]
 				li #[strong Everything Inside] by #[a(href="https://edwidgedanticat.com" target="_blank" noopener noreferrer) Edwidge Danticat]
 				li #[strong Love in Color] by #[a(href="https://www.bolubabalola.com" target="_blank" noopener noreferrer) Bolu Babalola]
-				li #[strong Caul Baby] by #[a(href="http://www.morgan-jerkins.com" target="_blank" noopener noreferrer) Morgan Jerkins]
+				li #[strong Caul Baby] by #[a(href="https://www.morgan-jerkins.com" target="_blank" noopener noreferrer) Morgan Jerkins]
 				li #[strong Children of Blood and Bone] by #[a(href="https://www.tomiadeyemi.com" target="_blank" noopener noreferrer) Tomi Adeyemi]
 				li #[strong When No One is Watching: A Thriller] by #[a(href="https://alyssacole.com/" target="_blank" noopener noreferrer) Alyssa Cole]
 
@@ -235,7 +235,7 @@ section.bhm.featured-filmaker
 	footer.bhm-footer-pagination
 		.CBV-branding
 			a(href="https://drmartens.com/us/en/celebrating-black-voices/" aria-label="Return to Celebrating Black Voices")
-				img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV-logo.png" alt="Celebrating Black Voices" width="194")
+				img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV-logo.png" alt="Celebrating Black Voices" width="194")
 		.bhm-video-grid
 			.d-flex
 				.card
