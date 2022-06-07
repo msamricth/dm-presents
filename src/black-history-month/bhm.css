@@ -331,6 +331,8 @@ section.bhm-photo {
 	background-size: auto 100vh;
 	background-position: center left;
 	position: relative;
+    padding-bottom: 100vh;
+    margin-bottom: -100vh;
 }
 section.bhm-photo-transparent {
 	background-attachment: scroll;
