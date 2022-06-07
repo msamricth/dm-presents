@@ -19,7 +19,7 @@ ready(function(){
 	var photoCovers = document.querySelectorAll(".bhm-photo-cover");
 	var photoFades = document.querySelectorAll(".bhm-photo-fade")
 	var photoImages = document.querySelectorAll(".bhm-photo-image")
-	var footer = document.querySelector(".bhm-footer-pagination");
+	var footer = document.querySelector(".call-to-action");
 	var header = document.querySelector(".bhm-video");
 
 	// Play vimeo video when pressing the play button
@@ -117,3 +117,56 @@ ready(function(){
 		this.requestAnimationFrame(frame);
 	})
 });
+$(document).ready(function() {
+  var iframeCount = $('iframe.youtube');
+  iframeCount.each(function(index) {
+    $(this).siblings('.play-btn').attr('id', 'ytposter-' + index);
+    $(this).attr('id', 'ytplayer-' + index);
+  });
+});
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var yt_player = [],
+  playButton = [];
+
+window.onYouTubeIframeAPIReady = function() {
+  $('iframe.youtube').each(function(index, value) {
+    yt_player[index] = new YT.Player(value.id, {
+      events: {
+        'onReady': onPlayerReady(index, value),
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  });
+}
+
+function onPlayerReady(index, value) {
+  var ytplayerid = value.id,
+    ytevideoid = $(value).data('ytvideoid'),
+    ytplaybuttonid = "yt-" + ytevideoid;
+  playButton[index] = document.getElementById(ytplaybuttonid);
+  playButton[index].addEventListener("click", function() {
+    $("#" + ytplaybuttonid).hide();
+    $("#" + ytplaybuttonid).siblings('img').hide();
+
+    var ytvideoid = $("#" + ytplaybuttonid).siblings('.bhm-video iframe').data('ytvideoid');
+
+    if (window.navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+      yt_player[index].mute();
+    }
+    yt_player[index].playVideo();
+    $("#" + ytplayerid).show();
+
+  });
+}
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING) {
+    $('#pause-video').show();
+  }
+}

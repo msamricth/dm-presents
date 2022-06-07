@@ -7,6 +7,7 @@ html
 
 style 
 	include bhm.css
+script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
 script(src="https://kit.fontawesome.com/1f2b77633b.js" crossorigin="anonymous")
 script(type="text/javascript")
 	include bhm.js
@@ -17,6 +18,14 @@ mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
 		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
 		.bhm-video
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+
+mixin youtubeVideo(ytId, ytTitle, placeholderImgSrc)
+	.bhm-yt-video
+		button.play-btn(id=`yt-${ytId}`)
+			+iconPlayButton()
+		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
+		.bhm-video
+			iframe(data-ytvideoid=ytId src=`https://www.youtube.com/embed/${ytId}?enablejsapi=1` allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" title=ytTitle)
 
 mixin iconPlayButton()
 	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
@@ -34,30 +43,28 @@ section.bhm.featured-filmaker
 		.d-flex
 			.bhm-header-content
 				h4 Celebrating Black Voices 
-				h2 Fredgy 
-				p Fredgy Noël is a Haitian-American director and screenwriter in NYC. Noël's films offer inclusive, female-driven stories. Her work is an extension of how she sees the world in all of its nuance, complexity, and beauty. 
-				p She has worked with MTV, VH1, Nickelodeon, and BET. Her films have screened at Tribeca Film Festival and have earned numerous awards. In 2022, she will receive an MFA degree from Hunter College’s IMA program. She recently matriculated at NYU where she will pursue her MFA in Film.
+				h2 Chelsea Odufu
+				p Chelsea Odufu is a Guyanese Nigerian American Filmmaker and Visual Artist  whose work aims to showcase magical depictions of BIPOC.  
+				p Her first two films were both official selections in over 20 film festivals worldwide. In 2021, Chelsea was one of 12 chosen artists to join Black Rock Senegal – a residency program created by Kehinde Wiley where she created a multi channel video installation recently exhibited at the Dakar Biennale. Chelsea’s work confronts past histories while reimagining Black futures. Her work challenges our ideas about marginalized identities and empowers BIPOC to reconnect with their cultural roots through her Afro-futuristic approach. 
 				p
-					a.bhm-icon-insta(href="https://www.instagram.com/fredgynoel" target="_blank" noopener noreferrer aria-label="Visit Fredgy on Instagram") Fredgy Instagram
+					a.bhm-icon-insta(href="https://www.instagram.com/chelseaodufu/" target="_blank" noopener noreferrer aria-label="Visit Chelsea Odufu on Instagram") Chelsea Odufu Instagram
 			.bhm-header-image
-				img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/Filmmaker_Fredgy.png" alt="A photo of Fredgy standing in front of a white background, hands behind her back, while looking into the camera. Fredgy is wearing loose-fitting jeans and a tan long-sleeve shirt with docs.")
+				img(src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/Filmmaker_Chelsea-Odufu.png" alt="A photo of Chelsea Odufu sitting in front of a white background while looking into the camera. Chelsea is wearing a long white puffer jacket with black pants.")
 		.featured-filmaker-quote
-			blockquote “What I loved about this campaign was that it was not a prescriptive representation of blackness. The artists involved were speaking to their unique influences and interests. It was beautiful.”
-			cite – Fredgy
+			blockquote “Highlighting Black Voices shouldn’t be reduced to just one month as Black people are innovating culture everyday so shout out to Dr. Martens for recognizing and highlighting that. This was an amazing series to Direct.”
+			.bhm-quote-citation Chelsea
 
-	article#jeantrix
+	article#langston
 		header.bhm-article-header(aria-level="3")
-			h1.bhm-mobile(aria-hidden="true") jeantrix
-			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/hero-collage.jpg" alt="Jeantrix standing in front of a wall that is covered in graffiti. One man is leaning on the other, showing a closeness between them. Clothes have an edge of street fashion, with tears, patches, and paint. ")
+			h1.bhm-mobile(aria-hidden="true") Langston
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/hero-collage.jpg" alt="A photo of Langston McClarron standing wearing a white crew sweatshirt and jeans while holding a camcorder. ")
 			.bhm-article-header-content
-				h1.bhm-mobile-hidden jeantrix
-				p Philly natives and creators of Jeantrix, Designers Homm and Nyce customize clothing and accessories into wearable works of art. For years, they’ve created pieces worn by the likes of Lizzo, Alicia Keyes, and Janet Jackson. More recently, they opened their first brick-and-mortar store at the King of Prussia Mall to make their artwork even more available to the masses. Always encouraging others to follow their dreams, here they are sharing the designers who inspired them to pursue their own.
+				h1.bhm-mobile-hidden Langston
+				p Named after Langston Hughes and the son of Black activists, Dr. Martens Ecommerce Coordinator, Langston McClarron honors the Black excellence that came before him and those who sustain it, in his installment of Celebrating Black Voices.
 				.bhm-icon-list
-					a.bhm-icon-website(href="https://www.jeantrix.com/" target="_blank" noopener noreferrer aria-label="Visit Jeantrix's website") Jeantrix Website
-					a.bhm-icon-insta(href="https://www.instagram.com/jeantrix/?hl=en" target="_blank" noopener noreferrer aria-label="Visit Jeantrix on Instagram") Jeantrix Instagram
-
-		+vimeoVideo("690334365", "jeantrix", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/jeantrix-video.jpg")
-
+					a.bhm-icon-insta(href="https://www.instagram.com/itslangduhhh/" target="_blank" noopener noreferrer aria-label="Visit Langston on Instagram") Langston Instagram
+		+youtubeVideo("dK9CzEJe2Tw", "Celebrating Black Voices | Langston", "http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_langston.jpg")
+        
 		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/module1-patrick-kelly.jpg" aria-description="")
 			img.bhm-photo-image
 			.bhm-photo-cover

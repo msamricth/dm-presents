@@ -215,7 +215,7 @@ header.bhm-article-header img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 }
 	.bhm-reading-list h2 {
 		font-size: 28px;
@@ -256,19 +256,23 @@ header.bhm-article-header img {
 				font-weight: 400;
 			}
 
-.bhm-vimeo-video {
+.bhm-vimeo-video, .bhm-yt-video {
 	margin: 70px;
 	position: relative;
 }
-
-	.bhm-vimeo-video img.bhm-video-placeholder {
+.bhm-yt-video .play-btn {
+    background: transparent;
+    border:none;
+    outline: none;
+}
+	.bhm-vimeo-video img.bhm-video-placeholder, .bhm-yt-video img.bhm-video-placeholder{
 		cursor: pointer;
 		width: 100%;
 		position: relative;
 		z-index: 1;
 	}
 
-	.bhm-vimeo-video svg.bhm-video-placeholder-icon {
+	.bhm-vimeo-video svg.bhm-video-placeholder-icon, .bhm-yt-video svg.bhm-video-placeholder-icon {
 		pointer-events: none;
 		display: inline-block;
 		width: 64px;
@@ -448,7 +452,6 @@ a.bhm-external {
 header.bhm-header .d-flex h1 {		
     font-size: 42px;
     letter-spacing: 1;
-    font-family: 'Oswald';
     font-weight: 400;
 }
 header.bhm-header .d-flex > img {
@@ -518,6 +521,12 @@ header.bhm-header .d-flex > img {
     font-size: 12px;
     text-transform: uppercase;
     line-height: 20px;
+}
+
+
+.CBV-branding {
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 @media (min-width: 375px) and (max-width: 479.9px)  {
     
@@ -597,6 +606,10 @@ header.bhm-header .d-flex > img {
 }
 
 @media screen and (min-width:1024px) {
+    .CBV-branding {
+        margin-bottom: 75px;
+        margin-top: 150px;
+    }
     footer.bhm-footer-pagination .d-flex {
         margin: 0 auto;
         width: 50%;
@@ -901,4 +914,10 @@ footer.bhm-footer-pagination .bhm-footer-pagination-bar a {
 }
 footer.bhm-footer-pagination .bhm-footer-pagination-bar i {
     margin-right: 10px;
+}
+footer.bhm-footer-pagination .CBV-branding {
+    text-align: center;
+}
+footer.bhm-footer-pagination .CBV-branding a {
+    border:none !important;
 }
