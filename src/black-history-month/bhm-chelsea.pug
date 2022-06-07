@@ -15,17 +15,16 @@ script(type="text/javascript")
 mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
 	.bhm-vimeo-video
 		+iconPlayButton()
-		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
+		img.bhm-video-placeholder.vimeo(src=`${placeholderImgSrc}`)
 		.bhm-video
-			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+			iframe.vimeo(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 
 mixin youtubeVideo(ytId, ytTitle, placeholderImgSrc)
-	.bhm-yt-video
-		button.play-btn(id=`yt-${ytId}`)
+	.bhm-yt-video.wrapper
+		img.bhm-video-placeholder(id="video-cover" src=`${placeholderImgSrc}` alt=ytTitle)
+		iframe.youtube(data-ytvideoid=ytId width="560" height="315" src=`https://www.youtube.com/embed/${ytId}?enablejsapi=1` title=ytTitle frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+		button.play-btn
 			+iconPlayButton()
-		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
-		.bhm-video
-			iframe.youtube(data-ytvideoid=ytId src=`https://www.youtube.com/embed/${ytId}?enablejsapi=1` allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" title=ytTitle)
 
 mixin iconPlayButton()
 	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink")
@@ -65,11 +64,11 @@ section.bhm.featured-filmaker
 					a.bhm-icon-insta(href="https://www.instagram.com/itslangduhhh/" target="_blank" noopener noreferrer aria-label="Visit Langston on Instagram") Langston Instagram
 		+youtubeVideo("dK9CzEJe2Tw", "Celebrating Black Voices | Langston", "https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_langston.jpg")
         
-		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/module1-patrick-kelly.jpg" aria-description="")
+		section.bhm-photo(data-src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_langston_02.jpg" aria-description="A black and white archival photo of Langston Hughes looking into the camera while sitting in a chair in front of a wall of newspaper clippings.")
 			img.bhm-photo-image
 			.bhm-photo-cover
-				h2 Patrick Kelly
-				p A celebrated Black fashion designer who came to fame in the 1980s, #[a(href="https://www.philamuseum.org/exhibitions/799.html" target="_blank" noopener noreferrer) Patrick Kelly's] designs are exuberant, light-hearted and often pushed racial and cultural boundaries. He had many impressive accomplishments throughout his career including being the first American admitted to the chambre syndicale du prêt-à-porter, which governs the French ready-to-wear industry. One of his most notable designs is a Josephine Baker-inspired ensemble displayed in the Philadelphia Museum of Art.
+				h2 Langston Hughes
+				p Known for is thoughtful descriptions of Black life in the 1920s, #[a(href="https://www.poetryfoundation.org/poets/langston-hughes" target="_blank" noopener noreferrer) Hughes] was synonymous with the Harlem Renaissance. Creating a huge body of work, Hughes’ poetry, novels, short stories, and plays were set apart from his contemporaries due to the almost brutal honesty with which he wrote. His influences can still be seen in literature decades later.
 
 		section.bhm-quote
 			.bhm-quote-body You can tell that [Basquiat] was very free when he created his art.. he was the type of artist that went and did what he felt and I could actually see that in his art.. He’s the GOAT, honestly.

@@ -23,14 +23,14 @@ ready(function(){
 	var header = document.querySelector(".bhm-video");
 
 	// Play vimeo video when pressing the play button
-	var videoPlaceholders = document.querySelectorAll("img.bhm-video-placeholder");
+	var videoPlaceholders = document.querySelectorAll("img.vimeo.bhm-video-placeholder");
 	for(var i = 0; i < videoPlaceholders.length; i++) {
 		videoPlaceholders[i].addEventListener("click", function(e) {
 			e.preventDefault();
 			e.target.style.display = "none";
 			e.target.previousElementSibling.style.display = "none";
 			e.target.nextElementSibling.style.display = "block";
-			e.target.nextElementSibling.querySelector("iframe").contentWindow.postMessage({method:"play"}, "*"); 
+			e.target.nextElementSibling.querySelector("iframe.vimeo").contentWindow.postMessage({method:"play"}, "*"); 
 		})
 	}
 
@@ -125,6 +125,7 @@ $(document).ready(function() {
   });
 });
 
+// 1. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -134,6 +135,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var yt_player = [],
   playButton = [];
 
+// 2. This function enables you to use the API on your page
 window.onYouTubeIframeAPIReady = function() {
   $('iframe.youtube').each(function(index, value) {
     yt_player[index] = new YT.Player(value.id, {
@@ -145,16 +147,17 @@ window.onYouTubeIframeAPIReady = function() {
   });
 }
 
+// 3. The API will call this function when the video player is ready.
 function onPlayerReady(index, value) {
   var ytplayerid = value.id,
-    ytevideoid = $(value).data('ytvideoid'),
-    ytplaybuttonid = "yt-" + ytevideoid;
+    ytplaybuttonid = $(value).siblings('.play-btn').attr('id');
+
   playButton[index] = document.getElementById(ytplaybuttonid);
   playButton[index].addEventListener("click", function() {
     $("#" + ytplaybuttonid).hide();
     $("#" + ytplaybuttonid).siblings('img').hide();
 
-    var ytvideoid = $("#" + ytplaybuttonid).siblings('.bhm-video iframe').data('ytvideoid');
+    var ytvideoid = $("#" + ytplaybuttonid).siblings('iframe').data('ytvideoid');
 
     if (window.navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
       yt_player[index].mute();
@@ -165,8 +168,8 @@ function onPlayerReady(index, value) {
   });
 }
 
+// 4. The API calls this function when the player's state changes.
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING) {
-    $('#pause-video').show();
   }
 }
