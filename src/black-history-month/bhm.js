@@ -91,7 +91,7 @@ ready(function(){
 
 			if(rect.y <= window.innerHeight && rect.bottom > 0) {
 				var scrollAmount = (-rect.y / window.innerHeight) * 2.0 - 1.0;
-				var fadeIn = smoothstep(0.1, 0.3, scrollAmount);
+				var fadeIn = smoothstep(0.1, 0.8, scrollAmount);
 				var fadeOut = fadeIn;//smoothstep(1.1, 1.0, scrollAmount); // leaving this in on the off chance we want to re-implement
 				// photoCovers[i].innerText = fadeIn.toString() + " :: " + fadeOut.toString() + " -- " + scrollAmount.toString();
 				photoCovers[i].style.opacity = Math.min(fadeOut, fadeIn).toString();
@@ -173,3 +173,19 @@ function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING) {
   }
 }
+// to top right away
+if ( window.location.hash ) scroll(0,0);
+// void some browsers issue
+setTimeout( function() { scroll(0,0); }, 1);
+
+$(function() {
+    // *only* if we have anchor on the url
+    if(window.location.hash) {
+
+        // smooth scroll to the anchor id
+        $('html, body').animate({
+            scrollTop: $(window.location.hash).offset().top + 'px'
+        }, 1000, 'swing');
+    }
+
+});

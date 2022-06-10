@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Overpass&display=swap');
-
+html {
+  scroll-behavior: smooth;
+}
 body {
 	background-color: #000;
 	color: #fff;
@@ -10,7 +12,7 @@ body {
 .bhm h1, .bhm h2, .bhm h3 {
 	margin: 0;
     font-family: 'Oswald', sans-serif;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 48px;
 	text-transform: uppercase;
 	text-align: center;
@@ -423,8 +425,14 @@ section.bhm-photo-transparent {
 
 .bhm-photo-cover p, .bhm-looping-video-text p {
 	margin-bottom: 30px;
+    margin-top: 0;
 }
-
+.bhm-video-grid .card:hover a, .bhm-video-grid .card:hover {
+    color: rgba(255,255,255,.5) !important;
+}
+.bhm-video-grid .card:hover > a h4 {
+    color: rgba(255,255,255,.5) !important;
+}
 a.bhm-external {
 	color: #fff;
 	font-family: "Overpass", "Interstate Reg", sans-serif;
@@ -716,7 +724,9 @@ header.bhm-header .d-flex > img {
 	.bhm.landing h1 {		
         font-size: 192px !important;
 	}
-
+    .bhm h1 {		
+        font-size: 68px !important;
+	}
 	.bhm p { 
 		font-size: 19px;
 		line-height: 36px;
@@ -877,7 +887,14 @@ header.bhm-header .d-flex > img {
     padding-right: 20px;
 }
 }
-
+.bhm-video-grid .d-flex .card p {
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    
+}
 .bhm-video-grid .d-flex .card h4, .bhm header.bhm-header h4 {
     text-decoration: none;
     color:
