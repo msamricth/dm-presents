@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Overpass&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Overpass&display=swap');
+un mute when developing
+*/
 html {
   scroll-behavior: smooth;
 }
@@ -938,9 +940,6 @@ header.bhm-header .d-flex > img {
 
 .d-flex .card video {
     max-width: 100%;
-}
-.bhm .bhm-video-grid .d-flex .card:hover h4, .bhm .bhm-video-grid .d-flex .card a:hover h4 {
-    text-decoration: underline;
 }
 
 footer.bhm-footer-pagination .bhm-footer-pagination-bar {
