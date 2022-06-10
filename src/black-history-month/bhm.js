@@ -19,7 +19,7 @@ ready(function(){
 	var photoCovers = document.querySelectorAll(".bhm-photo-cover");
 	var photoFades = document.querySelectorAll(".bhm-photo-fade")
 	var photoImages = document.querySelectorAll(".bhm-photo-image")
-	var footer = document.querySelector(".call-to-action");
+	var footer = document.querySelector(".last-footer");
 	var header = document.querySelector(".bhm-video");
 
 	// Play vimeo video when pressing the play button

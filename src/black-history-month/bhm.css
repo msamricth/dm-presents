@@ -713,7 +713,7 @@ header.bhm-header .d-flex > img {
         min-width: 464px;
     }
     header.bhm-header .d-flex > img {height: 160px;}
-	.bhm h1 {		
+	.bhm.landing h1 {		
         font-size: 192px !important;
 	}
 
