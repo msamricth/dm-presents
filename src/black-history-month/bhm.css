@@ -821,16 +821,17 @@ header.bhm-header .d-flex > img {
 }
 
 @media screen and (max-width:468px) {
-	.bhm-article-header-content {
-		padding: 30px;
-	}
+    .bhm-article-header-content {
+
+		width:100%;
+    }
 	.bhm-footer.call-to-action {
 		padding: 30px;
 	}
 	.bhm-photo-cover {
 		padding: 100vh 30px 0;
         
-		width: calc(100% - 60px);
+		width: 100%;
 	}
 
     .bhm-yt-video.wrapper {
