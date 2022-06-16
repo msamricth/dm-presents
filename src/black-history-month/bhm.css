@@ -335,8 +335,6 @@ section.bhm-photo {
 	background-size: auto 100vh;
 	background-position: center left;
 	position: relative;
-    padding-bottom: 100vh;
-    margin-bottom: -100vh;
 }
 section.bhm-photo-transparent {
 	background-attachment: scroll;
@@ -847,7 +845,10 @@ header.bhm-header .d-flex > img {
 	.bhm-looping-video-text {
 		width: 100%;
 	}
-
+    .bhm header.bhm-header .bhm-quote {
+        
+		margin: 100px 0 100px 0;
+    }
 	.bhm-quote {
 		width: auto;
 		margin: 100px 32px 100px 44px;
