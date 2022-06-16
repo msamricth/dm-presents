@@ -2,7 +2,35 @@
 
 This is a central repo for development of promotional websites for use with Doc Martens CMS
 
-## Hybris
+## Branches
+
+The dev branch has additional html tags (below) in the src\black-history-month pug files for testing and debugging on local enviroments. 
+
+> html
+  	head
+		  	meta(charset='utf-8')
+		  	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	  		meta(name='description', content='Some description')
+	  		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+  	style 
+	  	include bhm.css
+  	script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
+  	script(src="https://kit.fontawesome.com/1f2b77633b.js" crossorigin="anonymous")
+  	script(type="text/javascript")
+	  	include bhm.js
+
+
+Its important before merging with master that you remove these tags as they are not needed on drmartens.com and will break things. Correct tags for master are below. Before merging, make a branch of development; replace the code above with the code before, then do a pull-request.
+
+> style 
+	  include bhm.css
+  script(type="text/javascript")
+  	include bhm.js
+
+There is a netlify instance that automatically updates from the development branch. You can view it here: https://starlit-kangaroo-dfcebe.netlify.app/bhm-landing.html (https://starlit-kangaroo-dfcebe.netlify.app/{name of pugfile}.html)
+
+### Hybris
 
  Dr. Martens uses Hybris as a CMS, and it can be easy to make mistakes if you're not careful. Here are some general helpful tips
 
@@ -29,13 +57,13 @@ This is a central repo for development of promotional websites for use with Doc 
  2) Disconnect from VPN, then press `r` (this behavior is defined in home.js) to reload all iframes.
  3) You should now see the page with videos loaded. 
 
-## Setup & Usage
+#### Setup & Usage
 
 Run `npm i` in the project directory to install dependencies for building & exporting.
 
 Modify files in the `src/` directory to make changes, and then run `gulp` or `gulp export` (see below).
 
-### Creating a new page
+##### Creating a new page
 
 Duplicate an existing page such as `src/dm-presents-ali-roberto.pug` and modify as needed.
 
@@ -48,7 +76,7 @@ Check out the [pug docs](https://pugjs.org/language/attributes.html) for more in
 We are using `gulp-pug` to compile pug into our html/css/js blobs, then 'gulp-minify-inline` to minify the blob.
 
 
-### Gulp tasks 
+##### Gulp tasks 
 
 `default` creates files in `build/` which can be hosted locally to get a preview of the content
 
@@ -58,7 +86,11 @@ URLs (such as links) are relative to the domain, so that's why it places preview
 
 We have been delivering those blobs to Bahareh Rezaeian (bahareh.rezaeian@drmartens.com) in the form of a .txt files in a single .zip file for ease of deployment to their live site
 
+gulp bhm-export will minify and export all of the Celebrating Black Voices
+
 **TODO**: Modify `gulp.js` to automatically create that .zip file
+
+**TODO**: Change BHM-export to CBV-export since this is no longer just a Black History Month feature.
 
 *Windows* `cd buid\hybris` `copy *.html *.txt` then use whatever zip tool you have to bundle the .txt files into a .zip (I've been using 7zip)
 *Unix* `cd build\hybris` `cp *.html *.txt` `zip DMPresents_HybrisContent_R3.zip *.txt` (or use whatever zip tool you sparks you joy)
