@@ -1,8 +1,16 @@
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='description', content='Some description')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
 style 
 	include bhm.css
+script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
+script(src="https://kit.fontawesome.com/1f2b77633b.js" crossorigin="anonymous")
 script(type="text/javascript")
 	include bhm.js
-
 
 mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
 	.bhm-vimeo-video
