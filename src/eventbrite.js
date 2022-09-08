@@ -50,7 +50,7 @@ var settings = {
                 "<p>" + address + " &bull; "+ title +"</p>" +
                 "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
                 "<div class='event-meta text-center'>" + edate + "</div>" +
-                "</div><hr /></div>";
+                "</div></div><hr />";
 
             $("#upcoming_events").append(tr_str);
             console.log(tr_str);

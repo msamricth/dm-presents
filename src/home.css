@@ -150,7 +150,7 @@
     color: #a8a8a8;
     line-height: 1.67;
 }
-.eb-events-list .eb-event hr {
+.eb-events-list .eb-event + hr {
     margin: 20px 0 40px;
     border: none;
     border-top: 1px solid #191c1d;
@@ -203,7 +203,17 @@
 		padding: 0px;
 	} 
 } 
-
+@media screen and (min-width: 1024px) {
+    .eb-events-list .eb-event {
+        display:flex;
+    }
+    .eb-events-list .eb-event .event-image {
+        padding-right: 23px;flex-basis:33%;
+    }
+    .eb-events-list .eb-event .event-details {
+        flex-basis: 77%;
+    }
+}
 @media screen and (max-width: 768px) {
 
 	.fm-hero-background {
