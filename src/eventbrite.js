@@ -19,7 +19,7 @@ var settings = {
             var day = d.toLocaleString('default', {day: '2-digit'});
             var time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
-            var edate =  '<h2>' + day + '</h2>' +
+            var edate =  '<h1>' + day + '</h1>' +
             '<h3>' +month + '</h3>' + 
             '<span>' + time + '</span>';
 
@@ -44,12 +44,13 @@ var settings = {
             var eImage = "assets/missing.png";
           }
             var tr_str = "<div class='eb-event'>" +
-                "<img style='max-width:200px;' src='" + eImage + "' />" +
-                "<h3 role='heading' aria-level='2'>DM Presents in " + title + "</h3>" +
-                "<span>" + description + "<span>" +
-                "<a href='"+url+"' target='_blank'>RSVP Now</a>"+
-                "<td align='center'>" + edate + "</td>" +
-                "</div>";
+                "<div class='event-image'><img src='" + eImage + "' /></div>" +
+                "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
+                "<p>" + description + "</p>" +
+                "<p>" + address + " &bull; "+ title +"</p>" +
+                "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
+                "<div class='event-meta text-center'>" + edate + "</div>" +
+                "</div><hr /></div>";
 
             $("#upcoming_events").append(tr_str);
             console.log(tr_str);
