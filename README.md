@@ -50,7 +50,7 @@ There is a netlify instance that automatically updates from the development bran
 - When you're done, go back out the the list of pages, and find yours. In the "..." menu click "sync". This will only sync to stage6, not to the live site.
 - We are using version 6.6 of Hybris in case you need to check the docs.
 - Since many of our pages embed vimeo videos which won't load over VPN, you'll find smartedit load times to be horrible. It's a good idea to open multiple tabs and let them load at the same time.
-
+**Notes:** you may need to use inspect element on the editor to find the component area
 
 > Vimeo videos will not load while connected to the VPN, stage6 pages will not load while *NOT* connected to the VPN. Here's a workaround:
  1) Load page while connected to VPN.
@@ -75,6 +75,7 @@ Check out the [pug docs](https://pugjs.org/language/attributes.html) for more in
 
 We are using `gulp-pug` to compile pug into our html/css/js blobs, then 'gulp-minify-inline` to minify the blob.
 
+**ToDO:** add sass to make styling easier
 
 ##### Gulp tasks 
 

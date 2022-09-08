@@ -111,7 +111,7 @@
 		}
 
 
-.fm-message {
+.fm-message, .eb-events-list {
 	padding-left: 40px;
 	font-size: 16px;
 	line-height: 28px;
@@ -127,12 +127,13 @@
 
 @media screen and (min-width: 1440px) {
 	.fm-hero-content,
-	.fm-message {
+	.fm-message, 
+	.eb-events-list {
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
 
-	.fm-message span {
+	.fm-message span, .eb-events-list span {
 		display: inline-block;
 		width: 492px;
 	}
@@ -141,7 +142,7 @@
 		margin: 0px auto 0px -642px;
 	}
 	
-	.fm-message {
+	.fm-message, .eb-events-list {
 		margin: 0px auto; 
 		padding: 0px;
 	} 
