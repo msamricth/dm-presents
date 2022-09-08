@@ -43,6 +43,7 @@ var settings = {
           if (eImage == null){
             var eImage = "assets/missing.png";
           }
+          if(i < 6){
             var tr_str = "<div class='eb-event'>" +
                 "<div class='event-image'><img src='" + eImage + "' /></div>" +
                 "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
@@ -51,7 +52,16 @@ var settings = {
                 "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
                 "<div class='event-meta text-center'>" + edate + "</div>" +
                 "</div></div><hr />";
-
+          } else {
+            var tr_str = "<div class='eb-event eb-hidden'>" +
+                "<div class='event-image'><img src='" + eImage + "' /></div>" +
+                "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
+                "<p>" + description + "</p>" +
+                "<p>" + address + " &bull; "+ title +"</p>" +
+                "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
+                "<div class='event-meta text-center'>" + edate + "</div>" +
+                "</div></div><hr />";
+          }
             $("#upcoming_events").append(tr_str);
             console.log(tr_str);
         }
