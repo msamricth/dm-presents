@@ -111,14 +111,74 @@
 		}
 
 
-.fm-message {
+.fm-message, .eb-events-list {
 	padding-left: 40px;
+	padding-right: 40px;
 	font-size: 16px;
 	line-height: 28px;
-	width: 50%;
 	font-family: "Overpass", "Interstate Reg", sans-serif;
+	margin-bottom: 100px;
 } 
+.eb-events-list h2 {
+	margin-bottom: 40px;
+}
+.eb-events-list .eb-event .event-image {
+	padding-bottom: 20px;
+}
+.eb-events-list .eb-event .event-image img {
+    max-width: 100%;
+}
+.eb-events-list .eb-event {
+    width: 100%;
+	line-height: 1;
+}
+.eb-events-list .eb-event .event-content {
+    flex-basis: 80%;
+	padding-right: 10px;
+}
 
+.eb-events-list .eb-event .event-content h3 {
+	margin-bottom: 12px;
+}
+.eb-events-list .eb-event .event-meta {
+    flex-basis: 20%;
+	line-height: 1;
+	padding-left: 10px;
+}
+.eb-events-list .eb-event .event-meta h1 {
+	margin-bottom: 12px;
+}
+.eb-events-list .eb-event .event-content p, .eb-events-list .eb-event .event-meta span{
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #a8a8a8;
+    line-height: 1.67;
+}
+.eb-events-list .eb-event + hr {
+    margin: 20px 0 40px;
+    border: none;
+    border-top: 1px solid #191c1d;
+}
+.eb-events-list .eb-event .event-cta {
+    position: relative;
+    color: #ffe512;
+    line-height: 1.33;
+    transition: color 0.15s ease;
+}
+.eb-events-list .eb-event .event-cta:after {
+    content:
+    '';
+    width:100%;
+    height:1px;
+    position:
+    absolute;
+    left:0;
+    top: 100%;
+    display: block;border-bottom:1px solid;
+}
+.eb-events-list .eb-event a.event-cta:hover {
+    color: white;
+}
 @media screen and (min-width: 2440px) { 
 	.fm-hero-tear {
 		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
@@ -127,12 +187,13 @@
 
 @media screen and (min-width: 1440px) {
 	.fm-hero-content,
-	.fm-message {
+	.fm-message, 
+	.eb-events-list {
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
 
-	.fm-message span {
+	.fm-message span, .eb-events-list span {
 		display: inline-block;
 		width: 492px;
 	}
@@ -141,12 +202,32 @@
 		margin: 0px auto 0px -642px;
 	}
 	
-	.fm-message {
+	.fm-message, .eb-events-list {
 		margin: 0px auto; 
 		padding: 0px;
 	} 
 } 
-
+@media screen and (min-width: 1024px) {
+	.eb-events-list .eb-event + hr {
+		margin-bottom: 22px;
+	}
+	.eb-events-list .eb-event .event-content p {
+	}
+	.eb-events-list .eb-event .event-content p:first-of-type {
+		margin-bottom: 0px;
+	}
+    .eb-events-list .eb-event {
+        display:flex;
+    }
+    .eb-events-list .eb-event .event-image {
+        padding-right: 23px;
+		padding-bottom: 0px;
+		flex-basis:33%;
+    }
+    .eb-events-list .eb-event .event-details {
+        flex-basis: 77%;
+    }
+}
 @media screen and (max-width: 768px) {
 
 	.fm-hero-background {
@@ -201,7 +282,10 @@
 		margin-top: 6px;
 	}
 }
-
+.event-details {
+	display: flex;
+    align-items: center;
+}
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min--moz-device-pixel-ratio: 2),
