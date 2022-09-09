@@ -164,6 +164,8 @@
     color: #ffe512;
     line-height: 1.33;
     transition: color 0.15s ease;
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
+	text-transform: uppercase;
 }
 .eb-events-list .eb-event .event-cta:after {
     content:
