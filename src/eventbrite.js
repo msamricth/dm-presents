@@ -1,5 +1,5 @@
 var settings = {
-    "url": "https://www.eventbriteapi.com/v3/organizations/233619576249/events/?expand=organizer,venue&status=live,started",
+    "url": "https://www.eventbriteapi.com/v3/organizations/233619576249/events/?expand=organizer,venue",
     "method": "GET",
     "timeout": 0,
     "headers": {
@@ -43,26 +43,30 @@ var settings = {
           if (eImage == null){
             var eImage = "assets/missing.png";
           }
+          var tr_str = "<div class='eb-event'>" +
+          "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
+          "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
+          "<p>" + description + "</p>" +
+          "<p>" + address + " &bull; "+ title +"</p>" +
+          "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
+          "<div class='event-meta text-center'>" + edate + "</div>" +
+          "</div></div><hr />";
           if(i < 6){
-            var tr_str = "<div class='eb-event'>" +
-                "<div class='event-image'><img src='" + eImage + "' /></div>" +
-                "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
-                "<p>" + description + "</p>" +
-                "<p>" + address + " &bull; "+ title +"</p>" +
-                "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
-                "<div class='event-meta text-center'>" + edate + "</div>" +
-                "</div></div><hr />";
+            var container = tr_str;
           } else {
-            var tr_str = "<div class='eb-event eb-hidden'>" +
-                "<div class='event-image'><img src='" + eImage + "' /></div>" +
-                "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
-                "<p>" + description + "</p>" +
-                "<p>" + address + " &bull; "+ title +"</p>" +
-                "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
-                "<div class='event-meta text-center'>" + edate + "</div>" +
-                "</div></div><hr />";
+            var container = "<div class='eb-hidden eb-pagination' id='eb-"+i+"'>"+tr_str+"</div>";
           }
-            $("#upcoming_events").append(tr_str);
-            console.log(tr_str);
+            $("#upcoming_events").append(container);
         }
+        if(len > 6){
+            var loadCTA = '<a href="#" id="more_events" class="fm-hero-play">Load more events</a>';
+            $("#upcoming_events").append(loadCTA);
+        }
+        $( '#more_events' ).on( 'click', function(event) {
+            $(".eb-hidden").each(function () {
+               $(this).addClass("eb-shown");
+            });
+            $(this).addClass('eb-hidden');
+            event.preventDefault();
+        });
     });
