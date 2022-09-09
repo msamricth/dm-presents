@@ -1,14 +1,21 @@
 var gulp = require("gulp");
 var pug = require("gulp-pug");
 var minify = require("gulp-minify-inline");
+var imagemin = import('gulp-imagemin');
 
 // By default, just running `gulp` will build a preview
+gulp.task('preview-assets', () => { 
+	var img_src = 'assets/*.{jpg,jpeg,png}',
+		img_dest = 'build/us/en/assets';
+  
+	return gulp.src(img_src)
+	  .pipe(gulp.dest(img_dest));
+  });
 gulp.task("default", () => { 
 	return gulp.src("src/preview/*.pug")
 		.pipe(pug())
 		.pipe(gulp.dest("build/us/en"));
 });
-
 // Running `gulp export` will create build/export, which is the blob to be copy/pasted into Hybris
 gulp.task("export", () => {
 	return gulp.src("src/dm-presents*.pug")
