@@ -1,5 +1,5 @@
 var settings = {
-    "url": "https://www.eventbriteapi.com/v3/organizations/233619576249/events/?expand=organizer,venue",
+    "url": "https://www.eventbriteapi.com/v3/organizations/233619576249/events/?expand=organizer,venue&status=live,started",
     "method": "GET",
     "timeout": 0,
     "headers": {
