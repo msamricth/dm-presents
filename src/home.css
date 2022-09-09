@@ -181,6 +181,17 @@
 .eb-events-list .eb-event a.event-cta:hover {
     color: white;
 }
+.eb-hidden {
+	display: none !important;
+}
+.eb-shown.eb-hidden {
+	display: block !important;
+}
+.eb-events-list a.fm-hero-play {
+    margin-left: auto;
+    width: fit-content;
+    margin-right: auto;
+}
 @media screen and (min-width: 2440px) { 
 	.fm-hero-tear {
 		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
