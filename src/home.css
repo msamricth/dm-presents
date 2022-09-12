@@ -142,6 +142,11 @@
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
+	
+	.fm-message {
+		font-size: 17px;
+		margin-bottom: 230px;
+	}
 
 	.fm-message span, .eb-events-list span {
 		display: inline-block;
@@ -198,6 +203,12 @@
     .eb-events-list .eb-event .event-details {
         flex-basis: 77%;
     }
+}
+
+@media screen and (min-width: 1290px) {
+	.fm-message {
+		width: 800px;
+	}
 }
 @media screen and (max-width: 768px) {
 
