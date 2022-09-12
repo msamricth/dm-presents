@@ -37,6 +37,7 @@ var settings = {
               var country = data[i].venue.address.country;
               var capacity = data[i].capacity;
               var vID = data[i].venue.id;
+              var venueName = data[i].venue.name;
               var venue_col = address + ", " + address2 + " " + city + " " + state + ", " + zip + " " + country;
               var title = city + ', ' + state;
           if (eImage == null){
@@ -44,7 +45,7 @@ var settings = {
           }
           var tr_str = "<div class='eb-event'>" +
           "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
-          "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>DM Presents in " + city + "</h3>" +
+          "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>" + city + ": " + venueName +"</h3>" +
           "<p>" + description + "</p>" +
           "<p>" + address + " &bull; "+ title +"</p>" +
           "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
