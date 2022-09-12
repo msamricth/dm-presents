@@ -156,12 +156,12 @@ ready(function(){
 
 	var episodeCount = 0;
 
-	var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 400 ? 2 : 1;
+	var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 390 ? 2 : 1;
 
 
 
 	function moveEpisodeCarousel(direction) { 
-		var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 400 ? 2 : 1;
+		var videosShown = window.innerWidth > 768 ? 3 :window.innerWidth > 390 ? 2 : 1;
 		if(direction < 0)
 			episodeIndex = Math.max(0, episodeIndex - videosShown); 
 		else
@@ -193,6 +193,8 @@ ready(function(){
 				episodeItemContainer.style.left = "calc((33.33vw - 46px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
 			else if(window.innerWidth > 480)
 				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
+			else if(window.innerWidth > 390)
+				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
 			else
 				episodeItemContainer.style.left = "calc(285px * " + (-episodeIndex).toString() + " - " + mo + "px)";  
 
@@ -201,7 +203,7 @@ ready(function(){
 
 			setTimeout(function() {
 				episodeItemContainer.style.transition = "none";
-				var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 400 ? 2 : 1;
+				var videosShown = window.innerWidth > 768 ? 3 :window.innerWidth > 390 ? 2 : 1;
 				var rect = episodeItems[episodeIndex].querySelector("video").getBoundingClientRect(); 
 				var lastIndex = Math.min(episodeCount-1, episodeIndex+(videosShown-1));
 				var endRect = episodeItems[lastIndex].querySelector("video").getBoundingClientRect(); 

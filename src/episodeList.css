@@ -181,10 +181,17 @@
 	}
 	.fm-episode {
 		width: 50vw;
-		min-width: 285px;
+		min-width: 200px;
 		margin-right: 7px;
 	}
 	.fm-episodes {
 		margin: 150px 16px 130px;
 	} 
+} 
+@media screen and (max-width: 390px) { 
+	.fm-episode {
+		width: 50vw;
+		min-width: 285px;
+		margin-right: 7px;
+	}
 } 
