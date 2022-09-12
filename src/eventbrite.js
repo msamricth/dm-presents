@@ -46,9 +46,9 @@ var settings = {
           var tr_str = "<div class='eb-event'>" +
           "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
           "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>" + city + ": " + venueName +"</h3>" +
-          "<p>" + description + "</p>" +
           "<p>" + address + " &bull; "+ title +"</p>" +
-          "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to event ></a></div>"+
+          "<p>" + description + "</p>" +
+          "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to show ></a></div>"+
           "<div class='event-meta text-center'>" + edate + "</div>" +
           "</div></div><hr />";
           if(i < 6){
