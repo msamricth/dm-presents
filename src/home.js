@@ -99,7 +99,7 @@ ready(function(){
 		}
 	};
 
-	var episodeSelectors = document.querySelectorAll(".fm-episodes-selector h2")
+	var episodeSelectors = document.querySelectorAll(".fm-episodes-selector h3")
 	for(var i = 0; i < episodeSelectors.length; i++) {
 		episodeSelectors[i].addEventListener("click", handleEpisodeSelectorClick); 
 	}
@@ -127,7 +127,7 @@ ready(function(){
 		// show new container
 		episodeItemContainer.style.display = "inline-flex";
 
-		var seasonLinks = document.querySelectorAll(".fm-episodes-selector h2");
+		var seasonLinks = document.querySelectorAll(".fm-episodes-selector h3");
 		for(var i = 0; i < seasonLinks.length; i++) {
 			var linkSeason = seasonLinks[i].dataset.season;
 			if(linkSeason === season) 
