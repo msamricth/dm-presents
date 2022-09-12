@@ -194,7 +194,7 @@ ready(function(){
 			else if(window.innerWidth > 480)
 				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
 			else if(window.innerWidth > 390)
-				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
+				episodeItemContainer.style.left = "calc(200px * " + (-episodeIndex).toString() + " - " + mo + "px)";
 			else
 				episodeItemContainer.style.left = "calc(285px * " + (-episodeIndex).toString() + " - " + mo + "px)";  
 
