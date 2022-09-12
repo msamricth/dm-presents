@@ -156,7 +156,7 @@ ready(function(){
 
 	var episodeCount = 0;
 
-	var videosShown = window.innerWidth > 768 ? 3 : 2;
+	var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 400 ? 2 : 1;
 
 
 
@@ -201,7 +201,7 @@ ready(function(){
 
 			setTimeout(function() {
 				episodeItemContainer.style.transition = "none";
-				var videosShown = window.innerWidth > 768 ? 3 : 2;
+				var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 400 ? 2 : 1;
 				var rect = episodeItems[episodeIndex].querySelector("video").getBoundingClientRect(); 
 				var lastIndex = Math.min(episodeCount-1, episodeIndex+(videosShown-1));
 				var endRect = episodeItems[lastIndex].querySelector("video").getBoundingClientRect(); 

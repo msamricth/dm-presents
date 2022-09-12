@@ -7,7 +7,7 @@
 		text-decoration: none;
 	}
 
-	.fm-episodes h2{
+	.fm-episodes h2, .fm-episodes h3{
 		text-transform: uppercase;
 		margin-bottom: 30px;
 		height: 30px;
@@ -64,15 +64,17 @@
 		display: flex;
 	}
 
-		.fm-episodes-selector h2 {
+		.fm-episodes-selector h3 {
 			cursor: pointer;
+			font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
+			font-weight: 400;
 		}
 
-		.fm-episodes-selector h2:not(last-child) {
+		.fm-episodes-selector h3:not(last-child) {
 			margin-right: 30px;
 		}
 
-		.fm-episodes-selector h2.active {
+		.fm-episodes-selector h3.active {
 			padding-bottom: 4px;
 			border-bottom: 3px solid rgb(255, 230, 0);
 		}
@@ -182,5 +184,7 @@
 		min-width: 285px;
 		margin-right: 7px;
 	}
-
+	.fm-episodes {
+		margin: 150px 16px 130px;
+	} 
 } 
