@@ -154,7 +154,14 @@
 		min-width: calc(33.33vw - 46px);
 	}
 } 
-
+@media screen and (max-width: 1024px) { 
+	.event-image a {
+		display: block;
+	}
+	.event-image a img {
+		width: 100%;
+	}
+}
 @media screen and (max-width: 768px) { 
 
 	.fm-episodes {
