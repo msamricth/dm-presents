@@ -184,7 +184,7 @@
     .eb-events-list .eb-event .event-image {
         padding-right: 23px;
 		padding-bottom: 0px;
-		flex-basis:33%;
+		flex-basis:45%;
     }
     .eb-events-list .eb-event .event-details {
         flex-basis: 77%;
@@ -192,6 +192,9 @@
 }
 
 @media screen and (min-width: 1290px) {
+    .eb-events-list .eb-event .event-image {
+		flex-basis:33%;
+    }
 	.fm-message {
 		width: 800px;
 	}
