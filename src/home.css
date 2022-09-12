@@ -109,8 +109,9 @@
 			padding: 10px 30px;
 			margin-top: 30px;
 		}
-
-
+		.fm-message {
+			font-size: 17px;
+		} 
 .fm-message, .eb-events-list {
 	padding-left: 40px;
 	padding-right: 40px;
@@ -144,6 +145,9 @@
     flex-basis: 20%;
 	line-height: 1;
 	padding-left: 10px;
+}
+.eb-events-list .eb-event .event-meta h3 {
+	font-weight: 900;
 }
 .eb-events-list .eb-event .event-meta h1 {
 	margin-bottom: 12px;

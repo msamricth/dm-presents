@@ -182,12 +182,6 @@ ready(function(){
 
 	function adjustEpisodeCarouselArrows(delay) { 
 		delay = delay | 0;
-		if( window.innerWidth <= 480 || episodeCount <= videosShown ) {
-			nextArrow.style.display = "none";
-			prevArrow.style.display = "none";
-			episodeItemContainer.style.left = "0"; 
-		}
-		else {
 			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
 			if(episodeIndex == 0) mo = 0; // ignore if we're at the first item, otherwise the math is confused
 
@@ -195,7 +189,7 @@ ready(function(){
 				episodeItemContainer.style.left = parseInt(-episodeIndex * 390 - mo).toString() + "px";
 			else if(window.innerWidth > 768)
 				episodeItemContainer.style.left = "calc((33.33vw - 46px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
-			else if(window.innerWidth > 480)
+			else
 				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)"; 
 
 			episodeItemContainer.style.transition = "left ease-in-out 0.25s";
@@ -217,7 +211,7 @@ ready(function(){
 				prevArrow.style.display = (episodeIndex > 0) ? "flex" : "none";
 				nextArrow.style.display = (episodeIndex < episodeCount - videosShown) ? "flex" : "none"; 
 			}, delay); 
-		}
+		
 
 	};
 

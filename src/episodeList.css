@@ -163,74 +163,24 @@
 		min-width: calc(50vw - 50px);
 	}
 } 
-
 @media screen and (max-width: 480px) { 
-	.fm-episodes {
-		margin: 100px 16px 55px;
+	a.fm-episodes-n {
+		top: 27% !important;
+		position: absolute;
+		right: 0;
+		left: unset !important;
+		z-index: 9999;
 	}
-
-	.fm-episodes h2 {
-		margin-bottom: 40px;
+	a.fm-episodes-p {
+		top: 27% !important;
+		position: absolute;
+		left: 0 !important;
+		z-index: 9999;
 	}
-
-	.fm-episodes-hug {
-		flex-direction: column;
-		left: 0;
-	}
-
-	.fm-video-thumbnail {
-		width: 108px;
-		height: 61px;
-		margin-right: 10px;
-		margin-bottom: 0px;
-		padding-top: 0px;
-	}
-
 	.fm-episode {
-		border-bottom: 1px solid rgb(25, 28, 29); 
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		margin-right: 16px;
-		max-width: 100%;
-		padding: 20px 0;
-	} 
-
-	.fm-episode-title {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding-top: 11px;
-	}
-
-	.fm-episode-title h3 {
-		margin: -6px 0px 8px;
-	}
-
-	.fm-episode p {
-		margin-bottom: 0px;
-	}
-
-	.fm-video-thumbnail-new-tag {
-		position: static;
-	}
-
-	.fm-episode-main {
-		display: flex;
-		flex-direction: row;
-		margin-bottom: 10px;
-	}
-
-	.fm-video-thumbnail-play-icon { 
-		width: 34px;
-		height: 34px;
-		margin: 0;
-		top: 14px;
-		left: 38px;
-	}
-
-	a.fm-episodes-n, a.fm-episodes-p {
-		display: none; 
+		width: 50vw;
+		min-width: 285px;
+		margin-right: 7px;
 	}
 
 } 

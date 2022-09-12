@@ -7,7 +7,6 @@ var settings = {
     };
     var venue_col;
     $.ajax(settings).done(function (response) {
-    console.log(response);
     var data = response.events;
     var len = data.length;
         for(var i=0; i<len; i++){
