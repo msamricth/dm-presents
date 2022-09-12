@@ -215,20 +215,6 @@
 	.fm-hero-background {
 		position: absolute;
 	}
-
-	.fm-hero-video {
-		left: -25%;
-		width: 150%;
-	}
-
-	.fm-hero h1 {
-		margin: 0px auto;
-		padding: 8px 32px 8px 40px;
-	}
-
-	.fm-message {
-		width: 57%;
-	} 
 }
 
 @media screen and (max-width: 480px) {
@@ -241,29 +227,8 @@
 		width: 100%;
 	} 
 
-	.fm-hero-details {
-		padding: 0 32px;
-	}
-
-	.fm-hero h1 {
-		padding: 8px 32px;
-	}
-
-	.fm-hero-tear {
-		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile.png");
-	} 
 } 
 
-
-@media screen and (max-width: 375px) { 
-	a.fm-hero-play {
-		margin-top: 20px;
-	}
-
-	.fm-hero-details h3 {
-		margin-top: 6px;
-	}
-}
 .event-details {
 	display: flex;
     align-items: center;

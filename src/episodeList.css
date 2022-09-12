@@ -167,20 +167,20 @@
 } 
 @media screen and (max-width: 480px) { 
 	a.fm-episodes-n {
-		top: 27% !important;
+		top: 152px !important;
 		position: absolute;
 		right: 0;
 		left: unset !important;
 		z-index: 9999;
 	}
 	a.fm-episodes-p {
-		top: 27% !important;
+		top: 152px !important;
 		position: absolute;
 		left: 0 !important;
 		z-index: 9999;
 	}
 	.fm-episode {
-		width: 50vw;
+		width: 200px;
 		min-width: 200px;
 		margin-right: 7px;
 	}
@@ -189,6 +189,19 @@
 	} 
 } 
 @media screen and (max-width: 390px) { 
+	a.fm-episodes-n {
+		top: 37% !important;
+		position: absolute;
+		right: 0;
+		left: unset !important;
+		z-index: 9999;
+	}
+	a.fm-episodes-p {
+		top: 37% !important;
+		position: absolute;
+		left: 0 !important;
+		z-index: 9999;
+	}
 	.fm-episode {
 		width: 50vw;
 		min-width: 285px;
