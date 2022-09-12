@@ -161,7 +161,7 @@ ready(function(){
 
 
 	function moveEpisodeCarousel(direction) { 
-		var videosShown = window.innerWidth > 768 ? 3 : 2;
+		var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 400 ? 2 : 1;
 		if(direction < 0)
 			episodeIndex = Math.max(0, episodeIndex - videosShown); 
 		else
@@ -183,14 +183,19 @@ ready(function(){
 	function adjustEpisodeCarouselArrows(delay) { 
 		delay = delay | 0;
 			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
+			if(window.innerWidth < 480)
+				var mo = 7 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
 			if(episodeIndex == 0) mo = 0; // ignore if we're at the first item, otherwise the math is confused
 
 			if(window.innerWidth > 1440)
 				episodeItemContainer.style.left = parseInt(-episodeIndex * 390 - mo).toString() + "px";
 			else if(window.innerWidth > 768)
 				episodeItemContainer.style.left = "calc((33.33vw - 46px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
+			else if(window.innerWidth > 480)
+				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)";
 			else
-				episodeItemContainer.style.left = "calc((50vw - 50px) * " + (-episodeIndex).toString() + " - " + mo + "px)"; 
+				episodeItemContainer.style.left = "calc(285px * " + (-episodeIndex).toString() + " - " + mo + "px)";  
+
 
 			episodeItemContainer.style.transition = "left ease-in-out 0.25s";
 
