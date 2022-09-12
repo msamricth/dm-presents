@@ -60,7 +60,9 @@
 }
 
 .eb-events-list .eb-event .event-content h3 {
+	font-size: 17px;
 	margin-bottom: 12px;
+	line-height: 1.875;
 }
 .eb-events-list .eb-event .event-meta {
     flex-basis: 20%;
@@ -73,10 +75,16 @@
 .eb-events-list .eb-event .event-meta h1 {
 	margin-bottom: 12px;
 }
+.eb-events-list .eb-event .event-content p {
+	font-size: 15px;
+	line-height: 1.875;
+}
 .eb-events-list .eb-event .event-content p, .eb-events-list .eb-event .event-meta span{
     margin-bottom: 12px;
-    font-size: 12px;
     color: #a8a8a8;
+}
+.eb-events-list .eb-event .event-meta span{
+    font-size: 12px;
     line-height: 1.67;
 }
 .eb-events-list .eb-event + hr {
@@ -159,6 +167,7 @@
 	.fm-message {
 		font-size: 17px;
 		margin-bottom: 150px;
+		width: 524px;
 	}
 	.fm-message, .eb-events-list {
 		padding-left: 122px;
@@ -166,6 +175,13 @@
 	}
 }
 @media screen and (min-width: 1024px) {
+	.fm-message {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+		width: 524px;
+	}
 	.eb-events-list .eb-event + hr {
 		margin-bottom: 22px;
 	}
