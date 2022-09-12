@@ -147,20 +147,6 @@
 		font-size: 17px;
 		margin-bottom: 230px;
 	}
-
-	.fm-message span, .eb-events-list span {
-		display: inline-block;
-		width: 492px;
-	}
-	.fm-hero-content { 
-		left: 50%;
-		margin: 0px auto 0px -642px;
-	}
-	
-	.fm-message, .eb-events-list {
-		margin: 0px auto; 
-		padding: 0px;
-	} 
 } 
 
 @media screen and (min-width: 768px) {
