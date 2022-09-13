@@ -15,7 +15,7 @@
 	max-height: 576px;
 }
 .fm-hero {
-    background-image: url(assets/header375.png);
+    background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/header375.png);
     background-size: cover;
     aspect-ratio: 4/5;
 }
@@ -109,7 +109,7 @@
 }
 .eb-events-list .eb-event .event-cta:after {
     content: "";
-    background-image: url(assets/caret.png);
+    background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/caret.png);
     background-size: 10px 17px;
     border: none;
     width: 10px;
@@ -119,10 +119,10 @@
     top: 6px;
     right: -14px;
 }
-.eb-events-list .eb-event a.event-cta:hover {
+.eb-events-list .eb-event a.event-cta:hover,.eb-events-list .eb-event a.event-cta:active,.eb-events-list .eb-event a.event-cta:focus {
     color: white;
 }
-.eb-events-list .eb-event a.event-cta:hover:after {
+.eb-events-list .eb-event a.event-cta:hover:after,.eb-events-list .eb-event a.event-cta:active:after,.eb-events-list .eb-event a.event-cta:focus:after {
     background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-arrow.png);
 }
 .eb-hidden {
@@ -149,7 +149,7 @@
 		margin-bottom: 30px;
 	}
 	.fm-hero {
-		background-image: url(assets/header480.png);
+		background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/header480.png);
 		background-size: cover;
 		aspect-ratio: 4/5;
 	}
@@ -185,7 +185,7 @@
 		margin-bottom: 25px;
 	}
 	.fm-hero {
-		background-image: url(assets/header.png);
+		background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/header.png);
 		aspect-ratio: 2/1;
 		margin-bottom: 75px;
 	}
