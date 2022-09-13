@@ -59,8 +59,9 @@ mixin episodeSelector(seasons)
 					h3.active(data-season=`${season.number}`) Season #{season.number}
 
 .fm-episodes
-	h2 FILMMAKER SERIES
-	+episodeSelector(seasons)
+	.fm-episodes-header
+		h2 FILMMAKER SERIES
+		+episodeSelector(seasons)
 	.fm-episodes-collection
 		a.fm-episodes-p(href="#")
 			+svgLeftArrow()

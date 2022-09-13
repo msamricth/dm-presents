@@ -48,7 +48,7 @@ var settings = {
           "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>" + city + ": " + venueName +"</h3>" +
           "<p>" + address + " &bull; "+ title +"</p>" +
           "<p>" + description + "</p>" +
-          "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to show ></a></div>"+
+          "<a class='event-cta' href='"+url+"' target='_blank'>RSVP to show</a></div>"+
           "<div class='event-meta text-center'>" + edate + "</div>" +
           "</div></div><hr />";
           if(i < 6){
