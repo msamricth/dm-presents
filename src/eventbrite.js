@@ -44,15 +44,20 @@ var settings = {
           if (eImage == null){
             var eImage = "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F352792589%2F233619576249%2F1%2Foriginal.20220912-182657?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C640%2C320&s=1413b1b9d22715a61f9d3ee1963cd33d";
           }
-          var tr_str = "<div class='eb-event'>" +
-          "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
-          "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>" + city + ": " + venueName +"</h3>" +
-          "<span class='mobile-date'>"+ mdate +"</span>"+
-          "<p class='desc'>" + description + "</p>" +
-          "<p>" + address + " &bull; "+ title +"</p>" +
-          "<a class='event-cta' href='"+url+"' target='_blank'>RSVP</a></div>"+
-          "<div class='event-meta text-center'>" + edate + "</div>" +
-          "</div></div><hr />";
+          if (description.indexOf('Dr. Martens Presents:') > -1)
+          {
+            var tr_str = "<div class='eb-event'>" +
+            "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
+            "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>" + city + ": " + venueName +"</h3>" +
+            "<span class='mobile-date'>"+ mdate +"</span>"+
+            "<p class='desc'>" + description + "</p>" +
+            "<p>" + address + " &bull; "+ title +"</p>" +
+            "<a class='event-cta' href='"+url+"' target='_blank'>RSVP</a></div>"+
+            "<div class='event-meta text-center'>" + edate + "</div>" +
+            "</div></div><hr />";
+          } else {
+            var tr_str = '';
+          }
           if(i < 6){
             var container = tr_str;
           } else {
