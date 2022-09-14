@@ -4,7 +4,7 @@ build/
 .vscode/
 
 # Ignore assets folder (this is where I keep originals for images/videos
-#assets/
+assets/
 
 # Lock is local
 package-lock.json

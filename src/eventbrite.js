@@ -41,7 +41,7 @@ var settings = {
               var venue_col = address + ", " + address2 + " " + city + " " + state + ", " + zip + " " + country;
               var title = city + ', ' + state;
           if (eImage == null){
-            var eImage = "assets/missing.png";
+            var eImage = "https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/missing.png";
           }
           var tr_str = "<div class='eb-event'>" +
           "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
