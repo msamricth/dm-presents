@@ -60,14 +60,8 @@
     width: 100%;
 	line-height: 1;
 }
-.eb-events-list .eb-event .event-content {
-    flex-basis: 80%;
-	padding-right: 10px;
-}
-
 .eb-events-list .eb-event .event-content h3 {
 	font-size: 20px;
-	margin-bottom: 12px;
 	line-height: 1.875;
 }
 .eb-events-list .eb-event .event-meta {
@@ -83,7 +77,10 @@
 }
 .eb-events-list .eb-event .event-content p {
 	font-size: 15px;
-	line-height: 1.875;
+	line-height: 1.467;
+}
+.eb-events-list .eb-event .event-content .desc {
+	margin-bottom: 10px;
 }
 .eb-events-list .eb-event .event-content p, .eb-events-list .eb-event .event-meta span{
     margin-bottom: 12px;
@@ -136,8 +133,10 @@
     width: fit-content;
     margin-right: auto;
 }
-.eb-events-list .eb-event .event-content p:first-of-type {
-	margin-bottom: 0px;
+span.mobile-date {
+    font-size: 17px;
+    margin-bottom: 12px;
+    display: inline-block;
 }
 @media screen and (min-width: 2440px) { 
 	.fm-hero-tear {
@@ -148,6 +147,10 @@
 	.fm-message, .eb-events-list {
 		padding-left: 32px;
 		padding-right: 32px;
+	}
+	.fm-container .fm-episodes {
+		margin-left: 32px;
+		margin-right: 32px;
 	}
 	.fm-episodes h2, .fm-episodes h3{
 		margin-bottom: 30px;
@@ -185,7 +188,16 @@
 	}
 } 
 @media screen and (min-width: 768px) {
-	
+	.eb-events-list .eb-event .event-content h3 {
+		margin-bottom: 12px;
+	}
+	span.mobile-date {
+		display: none;
+	}
+	.eb-events-list .eb-event .event-content {
+		flex-basis: 80%;
+		padding-right: 10px;
+	}
 	.fm-message, .eb-events-list {
 		padding-left: 122px;
 		padding-right: 122px;
@@ -253,12 +265,15 @@
 	}
 }
 @media screen and (max-width: 768px) {
-
+	.eb-events-list .eb-event .event-meta {
+		display: none;
+	}
 	.fm-hero-background {
 		position: absolute;
 	}
 }
 @media screen and (max-width: 480px) {
+	
 	h1 {
 		font-size: 36px;
 	}
