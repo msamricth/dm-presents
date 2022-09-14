@@ -4,31 +4,6 @@ This is a central repo for development of promotional websites for use with Doc 
 
 ## Branches
 
-The dev branch has additional html tags (below) in the src\black-history-month pug files for testing and debugging on local enviroments. 
-
-> html
-  	head
-		  	meta(charset='utf-8')
-		  	meta(http-equiv='X-UA-Compatible', content='IE=edge')
-	  		meta(name='description', content='Some description')
-	  		meta(name='viewport', content='width=device-width, initial-scale=1')
-
-  	style 
-	  	include bhm.css
-  	script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
-  	script(src="https://kit.fontawesome.com/1f2b77633b.js" crossorigin="anonymous")
-  	script(type="text/javascript")
-	  	include bhm.js
-
-
-Its important before merging with master that you remove these tags as they are not needed on drmartens.com and will break things. Correct tags for master are below. Before merging, make a branch of development; replace the code above with the code before, then do a pull-request.
-
-> style 
-	  include bhm.css
-  script(type="text/javascript")
-  	include bhm.js
-
-There is a netlify instance that automatically updates from the development branch. You can view it here: https://starlit-kangaroo-dfcebe.netlify.app/bhm-landing.html (https://starlit-kangaroo-dfcebe.netlify.app/{name of pugfile}.html)
 
 ### Hybris
 
