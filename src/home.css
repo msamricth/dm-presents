@@ -177,6 +177,10 @@ span.mobile-date {
 	}
 }
 @media screen and (min-width: 1440px) {
+	.fm-container .fm-episodes {
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.fm-hero-content,
 	.fm-message, 
 	.eb-events-list {
