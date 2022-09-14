@@ -107,7 +107,7 @@
 .eb-events-list .eb-event .event-cta:after {
     content: "";
     background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/caret.png);
-    background-size: 10px 17px;
+    background-size: 10px 16px;
     border: none;
     width: 10px;
     height: 16px;
