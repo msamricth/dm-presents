@@ -215,3 +215,8 @@
 		margin-right: 7px;
 	}
 } 
+/*hybris workaround */
+.fm-video-thumbnail-play-icon svg[disabled] {
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
