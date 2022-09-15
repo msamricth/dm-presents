@@ -22,7 +22,7 @@ var settings = {
             '<h3>' +month + '</h3>' + 
             '<span>' + time + '</span>';
             var mdate = month + ' ' + day + ', ' + time;
-
+            var ebTitle = data[i].name.text;
             var description = data[i].description.html;
             var url = data[i].url;
             var venue_id = data[i].venue_id;
@@ -44,7 +44,7 @@ var settings = {
           if (eImage == null){
             var eImage = "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F352792589%2F233619576249%2F1%2Foriginal.20220912-182657?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C640%2C320&s=1413b1b9d22715a61f9d3ee1963cd33d";
           }
-          if (description.indexOf('Dr. Martens Presents:') > -1)
+          if (ebTitle.indexOf('Performances by:') > -1)
           {
             var tr_str = "<div class='eb-event'>" +
             "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
