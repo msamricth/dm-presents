@@ -84,7 +84,7 @@
 		width: 100%;
 	}
 
-	a.fm-episodes-n, a.fm-episodes-p{
+	a.fm-episodes-n, a.fm-episodes-p, a.fm-events-n, a.fm-events-p{
 		width: 42px;
 		height: 48px;
 		position: fixed;
@@ -95,7 +95,7 @@
 		align-items: center;
 		z-index: 1;
 	} 
-		a.fm-episodes-n svg, a.fm-episodes-p svg {
+		a.fm-episodes-n svg, a.fm-episodes-p svg, a.fm-events-n svg, a.fm-events-p svg {
 			overflow: visible;
 		} 
 
@@ -173,14 +173,14 @@
 	}
 } 
 @media screen and (max-width: 480px) { 
-	a.fm-episodes-n {
+	a.fm-episodes-n, a.fm-events-n {
 		top: 152px !important;
 		position: absolute;
 		right: 0;
 		left: unset !important;
 		z-index: 9999;
 	}
-	a.fm-episodes-p {
+	a.fm-episodes-p, a.fm-events-p {
 		top: 152px !important;
 		position: absolute;
 		left: 0 !important;
@@ -196,14 +196,14 @@
 	} 
 } 
 @media screen and (max-width: 390px) { 
-	a.fm-episodes-n {
+	a.fm-episodes-n, a.fm-events-n {
 		top: 37% !important;
 		position: absolute;
 		right: 0;
 		left: unset !important;
 		z-index: 9999;
 	}
-	a.fm-episodes-p {
+	a.fm-episodes-p, a.fm-events-p {
 		top: 37% !important;
 		position: absolute;
 		left: 0 !important;

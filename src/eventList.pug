@@ -1,0 +1,36 @@
+include video-mixins
+include svg-mixins
+
+- var ali = { season: 3, isNew: true, url: "/us/en/dm-presents-ali-roberto", relativePath: "Alia/aliTeaser", altText:"Image from last event", title: "1. Ali Roberto", description: "Director Alison Roberto takes a dive into the grit and passion of the LA music scene with her films, the product of a lifelong vision." }
+- var gabe = { season: 3, isNew: false, url: "/us/en/dm-presents-gabriel-gomez", relativePath: "Gabe/gabrielTeaser", altText:"Image from last event", title: "2. Gabriel Gomez", description: "NY Filmmaker Gabriel Gomez uses these unprecedented times to hone in on what matters to him and the musicians in his community." }
+- var lrw = { season: 3, isNew: false, url: "/us/en/dm-presents-lauren-ruth-ward", relativePath: "LRW/lrwTeaser", altText:"Image from last event", title: "3. Lauren Ruth Ward", description: "Lauren Ruth Ward is a musician, stylist, photographer, and more than the sum of her parts, seeking ways to connect without in-person shows." }
+- var rosehardt = { season: 3, isNew: false, url: "/us/en/dm-presents-rosehardt", relativePath: "Rosehardt/rosehardtTeaser", altText:"Image from last event", title: "4. Rosehardt", description: "Caleb Eberhardt has always used his music to connect with others. Now, he's working to use his platform and leave a legacy of social change." }
+
+- var season3 = { number: 3, events: [ali, gabe, lrw, rosehardt]}
+- var seasons = [season3]
+
+mixin eventItem(event)
+	.fm-event(data-href!=`${event.url}`)
+		.fm-event-main
+			.fm-event-thumbnail
+				+eventListImage(event.relativePath, event.altText)
+			.fm-event-title
+				h3= event.title
+				if event.isNew
+					span.fm-video-thumbnail-new-tag new
+		p!= event.description 
+
+.fm-events
+	.fm-events-header
+		h2 Past Events
+	.fm-events-collection
+		a.fm-events-p(href="#")
+			+svgLeftArrow()
+		a.fm-events-n(href="#")
+			+svgRightArrow()
+		each season in seasons
+			.fm-event-hug
+				each event in season.events
+					+eventItem(event) 
+script(type="text/javascript")
+	include eventList.js
