@@ -38,10 +38,10 @@ ready(function(){
 
 
 	var eventDetails = document.querySelector(".fm-event-details");
-	var nextArrow = document.querySelector(".fm-episodes-n");
-	var prevArrow = document.querySelector(".fm-episodes-p"); 
+	var nextArrow = document.querySelector(".fm-events-n");
+	var prevArrow = document.querySelector(".fm-events-p"); 
 	var eventItems = [];
-    
+
 	var handleeventSelectorClick = function(e) {
 		var selectedSeason = e.currentTarget.dataset.season;
 		if(selectedSeason !== season) {
@@ -54,21 +54,21 @@ ready(function(){
 		eventSelectors[i].addEventListener("click", handleeventSelectorClick); 
 	}
 
-	var eventItemContainer = null;
+	var eventItemContainer = document.querySelector(".fm-event-hug");
 	function setSeason(_season) {
 		season = _season;
 
 		// hide old container
-		var eventItemContainers = document.querySelectorAll(".fm-events-hug");
+		var eventItemContainers = document.querySelectorAll(".fm-event-hug");
 		for(var i = 0; i < eventItemContainers.length; i++){
 			eventItemContainers[i].style.display = "none";
 		}
 
-		eventItemContainer = document.querySelector(".fm-events-hug[data-season='" + season + "']");
+		eventItemContainer = document.querySelector(".fm-event-hug");
 		eventItems = eventItemContainer.querySelectorAll(".fm-event");
 		realeventItems = [];
 		for(var i = 0; i < eventItems.length; i++) {
-			if(eventItems[i].querySelector("video"))
+			if(eventItems[i].querySelector(".fm-event-thumbnail"))
 				realeventItems.push(eventItems[i]);
 		}
 		eventItems = realeventItems;
@@ -142,9 +142,9 @@ ready(function(){
 			setTimeout(function() {
 				eventItemContainer.style.transition = "none";
 				var videosShown = window.innerWidth > 768 ? 3 :window.innerWidth > 390 ? 2 : 1;
-				var rect = eventItems[eventIndex].querySelector("video").getBoundingClientRect(); 
+				var rect = eventItems[eventIndex].querySelector(".fm-event-thumbnail").getBoundingClientRect(); 
 				var lastIndex = Math.min(eventCount-1, eventIndex+(videosShown-1));
-				var endRect = eventItems[lastIndex].querySelector("video").getBoundingClientRect(); 
+				var endRect = eventItems[lastIndex].querySelector(".fm-event-thumbnail").getBoundingClientRect(); 
 				var top = parseInt(rect.top + rect.height / 2.0 - 24).toString() + "px"; 
 				var left = parseInt(rect.left - 20).toString() + "px";
 				var right = parseInt(endRect.right - 20).toString() + "px";
@@ -167,7 +167,7 @@ ready(function(){
 	window.addEventListener('resize', function(e){ handleResize(); });
 	window.addEventListener('orientationchange', function(e){ handleResize(); });
 	window.addEventListener("scroll", adjusteventCarouselArrows );
-	
+    setSeason(1);
 
 	// NOTE: This is for debugging on Hybris. Since when connected over VPN Vimeo won't load videos
 	// so you have to disconnect from VPN and then reload all iframes. This is just a handy shortcut. 

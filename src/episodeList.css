@@ -1,19 +1,19 @@
-.fm-episodes {
+.fm-episodes, .fm-events {
 	margin: 150px 40px 130px;
 	position: relative;
 	z-index: 0;
 }
-	.fm-episodes a:hover {
+	.fm-episodes a:hover , .fm-events a:hover {
 		text-decoration: none;
 	}
 
-	.fm-episodes h2, .fm-episodes h3{
+	.fm-episodes h2, .fm-episodes h3, .fm-events h2, .fm-events h3{
 		text-transform: uppercase;
 		margin-bottom: 20px;
 		height: 30px;
 	}
 
-	.fm-video-thumbnail {
+	.fm-video-thumbnail, .fm-event-thumbnail {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -60,11 +60,11 @@
 		left: 1px;
 	}
 
-	.fm-episodes-selector {
+	.fm-episodes-selector, .fm-events-selector{
 		display: flex;
 	}
 
-		.fm-episodes-selector h3 {
+		.fm-episodes-selector h3, .fm-events-selector h3 {
 			cursor: pointer;
 			font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
 			font-weight: 400;
@@ -79,7 +79,7 @@
 			border-bottom: 3px solid rgb(255, 230, 0);
 		}
 
-	.fm-episodes-collection {
+	.fm-episodes-collection, .fm-events-collection{
 		overflow: hidden;
 		width: 100%;
 	}
@@ -98,8 +98,10 @@
 		a.fm-episodes-n svg, a.fm-episodes-p svg, a.fm-events-n svg, a.fm-events-p svg {
 			overflow: visible;
 		} 
-
-	.fm-episodes-hug {
+		.fm-event-thumbnail img {
+			max-width: 100%;
+		}
+	.fm-episodes-hug, .fm-event-hug{
 		display: inline-flex;
 		position: relative;
 	}
@@ -109,7 +111,7 @@
 		flex-basis: 33%;
 	}
 
-	.fm-episode {
+	.fm-episode, .fm-event {
 		cursor: pointer;
 		display: inline-block;
 		margin-right: 20px;
@@ -118,39 +120,39 @@
 		min-width: 390px;
 	}
 
-	.fm-episode:last-child {
+	.fm-episode:last-child, .fm-event:last-child {
 		margin-right: 0;
 	}
 
-	.fm-episode h3 {
+	.fm-episode h3, .fm-event h3 {
 		color: #fff;
 		margin: -8px 0px 10px; 
 	}
 
-	.fm-episode p {
+	.fm-episode p, .fm-event p {
 		color: rgb(168, 168, 168);
 		font-size: 12px;
 		line-height: 20px;
 	} 
 
-	a.fm-episode:hover p {
+	a.fm-episode:hover p, .fm-event:hover p {
 		color: rgb(168, 168, 168);
 		text-decoration: none;
 	}
-	a.fm-episode:hover h3 {
+	a.fm-episode:hover h3, .fm-event:hover h3{
 		color: #fff;
 		text-decoration: none;
 	}
 
 @media screen and (min-width: 1441px) {
-	.fm-episodes {
+	.fm-episodes, .fm-events {
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
 } 
 
 @media screen and (max-width: 1440px) {
-	.fm-episode {
+	.fm-episode, .fm-event {
 		min-width: calc(33.33vw - 46px);
 	}
 } 
@@ -164,11 +166,11 @@
 }
 @media screen and (max-width: 768px) { 
 
-	.fm-episodes {
+	.fm-episodes, .fm-events {
 		margin: 150px 32px 130px;
 	} 
 
-	.fm-episode {
+	.fm-episode, .fm-event {
 		min-width: calc(50vw - 50px);
 	}
 } 
@@ -186,12 +188,12 @@
 		left: 0 !important;
 		z-index: 9999;
 	}
-	.fm-episode {
+	.fm-episode, .fm-event {
 		width: 200px;
 		min-width: 200px;
 		margin-right: 7px;
 	}
-	.fm-episodes {
+	.fm-episodes, .fm-events {
 		margin: 150px 16px 130px;
 	} 
 } 
@@ -209,7 +211,7 @@
 		left: 0 !important;
 		z-index: 9999;
 	}
-	.fm-episode {
+	.fm-episode, .fm-event {
 		width: 50vw;
 		min-width: 285px;
 		margin-right: 7px;
