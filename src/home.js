@@ -180,6 +180,7 @@ ready(function(){
 		moveEpisodeCarousel(1);
 	}); 
 
+	
 	function adjustEpisodeCarouselArrows(delay) { 
 		delay = delay | 0;
 			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
