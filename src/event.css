@@ -1,0 +1,293 @@
+
+.collapse {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  }
+  .collapse.show {
+    max-height: 99em;
+    transition: max-height 0.5s ease-in-out;
+  }
+  .block__content {
+    height: 100%;
+  }
+  .fm-container {
+	/* -60 bottom margin to compensate for something weird in the hybris template */
+	margin: 0px auto -60px;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+} 
+
+.fm-hero-video {
+	position: relative;
+	width: 100%; 
+	/* This padding assumes a 16:9 video, adjust accordingly */
+	padding-bottom: 56.25%;
+	overflow: hidden;
+}
+	.fm-hero-video iframe, 
+	.fm-hero-video object, 
+	.fm-hero-video video, 
+	.fm-hero-video embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%; 
+		height: 100%;
+		margin: 0px auto;
+	} 
+
+.fm-episode-header-video { 
+	position: relative;
+	cursor: pointer;
+} 
+
+.fm-big-play-button {
+	position: absolute;
+	pointer-events: none;
+	left: 50%;
+	top: 50%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin: -32px 0 0 -32px;
+	background: rgb(255, 230, 0);
+	z-index: 1;
+	width: 64px;
+	height: 64px;
+	border-radius: 32px;
+}
+
+	.fm-big-play-button svg {
+		position: relative;
+		left: 2px;
+	}
+
+.fm-episode-details-container {
+	width: 100%;
+	background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@2x.jpg");
+	background-size: contain, 100%, cover;
+	/* NOTE(AJ): the position of the rip bg is set to 101% because 'bottom' sometimes caused a 1px gap 
+		Short on time, so that's the fix for now. If you have a better idea, by all means. :) 
+	*/
+	background-position: 0 101%, top, center;
+	background-repeat: no-repeat;
+	padding: 30px 40px 100px;
+	max-height: 400px;
+} 
+
+.fm-episode-details {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+cite { 
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+	color: #b9b9b9;
+	display: block;
+	font-size: 12px; 
+	font-style: normal;
+	margin-top: 10px;
+}
+
+.fm-title {
+	margin-bottom: 10px;
+}
+
+.fm-title h1 {
+	background: #000;
+	color: #fff;
+	display: inline-block; 
+	padding: 8px 30px;
+	margin: 0 auto 0 8px;
+	width: auto;
+	position: relative;
+	left: -40px;
+}
+
+.fm-episode-details p {
+	width: 45%;
+	height: 90px;
+}
+
+.fm-episode-details h2 {
+	padding: 0 0 30px 0;
+}
+
+.fm-episode-text {
+	margin: 150px auto 75px;
+	width: 55%;
+	max-width: 600px;
+}
+
+.fm-episode-quote {
+	margin: 75px auto;
+	padding: 0 5%;
+	font-family: "DrMartensHandwritingRounder", serif;
+	font-weight: normal;
+	font-size: 40px;
+	text-align: center;
+	line-height: 48px;
+	max-width: 800px;
+}
+
+img.fm-episode-big-image {
+	width: 100%;
+
+	/* TODO(AJ)[FIX]: This is a fix for some images uploaded to S3 with a white border
+		Photoshop did me wrong. We can get rid of this when we do our next batch upload to S3
+	*/
+	outline: 3px solid #000;
+	outline-offset: -3px;
+	/* ENDFIX */
+}
+.fm-event-btn {
+	background-color: rgb(255, 230, 0);
+	color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    text-transform: uppercase;
+	height: 42px;
+    transition: 0.15s ease background-color;
+}
+.fm-event-btn:hover{
+	background-color: rgb(205, 185, 3);
+}
+a.fm-episode-back {
+	background-color: rgb(255, 230, 0);
+	color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+	.fm-episode-back svg {
+		margin-right: 10px;
+		overflow: visible;
+		position: relative;
+		top: 1px;
+	}
+
+	.fm-episode-back span {
+		color: #000; 
+		font-family: "Oswald", "Trade Gothic Bold", sans-serif;
+		font-size: 18px;
+		letter-spacing: 0.05em; 
+	}
+
+@media screen and (min-width: 1441px) { 
+	.fm-episode-details {
+		width: 1210px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 1440px) { 
+	.fm-episode-details-container {
+		padding: 30px 114px 100px;
+	} 
+
+	.fm-hero-content { 
+		left: 50%;
+		margin: 0px auto 0px -605px;
+	}
+	
+	.fm-message {
+		margin: 0px auto; 
+		padding: 0px;
+	} 
+} 
+
+@media screen and (max-width: 1290px) { 
+	.fm-episode-details-container {
+		padding: 30px 40px 100px;
+	} 
+}
+
+@media screen and (max-width: 1024px) { 
+	.fm-episode-details p {
+		width: 55%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.fm-episode-header-video {
+		overflow: hidden;
+	}
+
+	.fm-hero-video.preview {
+		left: -25%;
+		width: 150%;
+	} 
+
+	.fm-episode-details-container {
+		padding: 30px 30px 100px;
+	} 
+
+	.fm-title h1 {
+		margin: 0px auto;
+		padding: 8px 38px 8px;
+	}
+
+	.fm-episode-details p {
+		width: 100%;
+	}
+
+	.fm-episode-text {
+		margin: 150px 32px 75px;
+		max-width: none;
+		width: initial;
+	}
+
+	.fm-episode-quote {
+		font-size: 36px;
+	} 
+}
+
+/* Hack to compensate for weirdness in hybris template */
+@media screen and (max-width: 767px) {
+	.fm-container {
+		margin-bottom: -90px;
+	} 
+}
+
+@media screen and (max-width: 480px) {
+	.fm-episode-details-container {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@2x.jpg");
+		padding: 30px 16px 100px; 
+	}
+
+	h1 {
+		font-size: 36px;
+	}
+
+	.fm-episode-text {
+		margin: 125px 16px 75px;
+	}
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
+	}
+
+	@media screen and (max-width: 480px) {
+		.fm-episode-details-container {
+			background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@3x.jpg");
+		}
+	}
+}
