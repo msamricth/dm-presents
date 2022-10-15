@@ -17,6 +17,7 @@ mixin eventHeaderVideo(teaserURL, youtubeURL, videoTitle)
 		.fm-hero-video.youtube(style="display:none;")
 			iframe.youtube(src=`${youtubeURL}?enablejsapi=1` title=videoTitle frameborder="0" allow="autoplay; fullscreen; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 		+bigPlayButton()
+
 mixin eventDescription(beforeText, afterText)
 	.fm-episode-text 
 		p!= beforeText
@@ -24,6 +25,7 @@ mixin eventDescription(beforeText, afterText)
 			.block__content
 				p!= afterText 			
 		a(href="javascript:void(0);" data-toggle="collapse" data-target=".collapse" data-text="Collapse") Read more
+
 mixin eventQuote(quote, author, title= null)
 	p.fm-episode-quote!= quote
 		if title
@@ -60,13 +62,14 @@ style
 .fm-container
 	block header
 	block content 
-
-	include episodeList
+	.fm-episode-text 
+		h1 Make it yours
+		a.fm-event-btn(href="/us/en/dm-presents") Shop icons
 
 	a.fm-episode-back(href="/us/en/dm-presents")
 		svg(width="9" height="17")
 			polyline(points="9,0,0,8.5,9,17" style="stroke:#000;fill:transparent;stroke-width:4px;")
-		span Back to Filmmaker Series
+		span Back to DM Presents
 
 script(type="text/javascript")
 	include event.js

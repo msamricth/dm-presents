@@ -145,7 +145,19 @@ img.fm-episode-big-image {
 	outline-offset: -3px;
 	/* ENDFIX */
 }
-
+.fm-event-btn {
+	background-color: rgb(255, 230, 0);
+	color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    text-transform: uppercase;
+	height: 42px;
+    transition: 0.15s ease background-color;
+}
+.fm-event-btn:hover{
+	background-color: rgb(205, 185, 3);
+}
 a.fm-episode-back {
 	background-color: rgb(255, 230, 0);
 	color: #000;
