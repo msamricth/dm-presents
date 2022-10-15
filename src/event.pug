@@ -1,0 +1,72 @@
+include video-mixins
+
+mixin episodeDetails(seasonNumber, episodeNumber, title, description)
+	.fm-episode-details-container
+		.fm-episode-details(data-season=`${seasonNumber}`)
+			.fm-title: h1= title
+			if episodeNumber != 0
+				h2 Filmmaker Series &bull; S#{seasonNumber} E#{episodeNumber}
+			p!= description
+
+
+mixin eventHeaderVideo(teaserURL, youtubeURL, videoTitle)
+	.fm-episode-header-video
+		.fm-hero-video.preview
+			video(loop autoplay muted playsinline)
+				source(src=`${teaserURL}` type="video/mp4")
+		.fm-hero-video.youtube(style="display:none;")
+			iframe.youtube(src=`${youtubeURL}?enablejsapi=1` title=videoTitle frameborder="0" allow="autoplay; fullscreen; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+		+bigPlayButton()
+mixin eventDescription(beforeText, afterText)
+	.fm-episode-text 
+		p!= beforeText
+		.block.collapse 
+			.block__content
+				p!= afterText 			
+		a(href="javascript:void(0);" data-toggle="collapse" data-target=".collapse" data-text="Collapse") Read more
+mixin eventQuote(quote, author, title= null)
+	p.fm-episode-quote!= quote
+		if title
+			cite!= author, title
+		else 
+			cite!= author
+
+mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
+		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` alt=altText)
+	else if backend == "s3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+
+mixin bigImage(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
+		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` srcset=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath} 1x, https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}@2x 2x` alt=altText)
+	else if backend == "s3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.${extension} 2x` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
+
+style
+	include handwritingFont.css
+	include shared.css
+	include event.css 
+	include episodeList.css
+
+.fm-container
+	block header
+	block content 
+
+	include episodeList
+
+	a.fm-episode-back(href="/us/en/dm-presents")
+		svg(width="9" height="17")
+			polyline(points="9,0,0,8.5,9,17" style="stroke:#000;fill:transparent;stroke-width:4px;")
+		span Back to Filmmaker Series
+
+script(type="text/javascript")
+	include event.js
