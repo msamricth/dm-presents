@@ -52,19 +52,19 @@ mixin bigImage(relativePath, altText, backend="s3", extension="jpg")
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
 	else if backend == "s3v3"
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
-
+mixin ctaBtn(url, headertext, label)
+	.fm-footer-text 
+		h1!= headertext
+		a.fm-event-btn(href!=`&{url}`)
+			span!= label
 style
 	include handwritingFont.css
 	include shared.css
 	include event.css 
-	include episodeList.css
 
 .fm-container
 	block header
 	block content 
-	.fm-episode-text 
-		h1 Make it yours
-		a.fm-event-btn(href="/us/en/dm-presents") Shop icons
 
 	a.fm-episode-back(href="/us/en/dm-presents")
 		svg(width="9" height="17")
