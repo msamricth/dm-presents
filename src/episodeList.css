@@ -112,6 +112,8 @@
 	}
 
 	.fm-episode, .fm-event {
+		
+		max-width: 33%;
 		cursor: pointer;
 		display: inline-block;
 		margin-right: 20px;
