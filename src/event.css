@@ -119,11 +119,23 @@ cite {
 }
 
 .fm-episode-text {
-	margin: 150px auto 75px;
+	margin: 0 auto;
+	padding: 150px 0 75px;
 	width: 55%;
 	max-width: 600px;
+    text-align: center;
 }
-
+.fm-episode-text a {
+	color:white;
+	text-decoration: underline;
+    transition: 0.15s ease opacity;
+}
+.fm-episode-text a:hover {
+	opacity: 0.65;
+}
+.fm-episode-text p {
+    font-size: 17px;
+}
 .fm-episode-quote {
 	margin: 75px auto;
 	padding: 0 5%;
