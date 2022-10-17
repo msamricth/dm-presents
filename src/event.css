@@ -253,7 +253,9 @@ a.fm-episode-back {
 	}
 
 	.fm-episode-text {
-		margin: 150px 32px 75px;
+			
+		margin: 0 32px;
+		padding: 150px 0 75px;
 		max-width: none;
 		width: initial;
 	}
@@ -281,7 +283,8 @@ a.fm-episode-back {
 	}
 
 	.fm-episode-text {
-		margin: 125px 16px 75px;
+		margin: 0 16px;
+		padding: 125px 0 75px;
 	}
 }
 
