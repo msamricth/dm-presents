@@ -15,7 +15,7 @@
 	max-height: 576px;
 }
 .fm-hero {
-    background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/header375.png);
+    background-image: url(https://drmartens.a.bigcontent.io/v1/static/lp-dmpresent-header-2-aw22wk25-mobile);
     background-size: cover;
     aspect-ratio: 4/5;
 }
@@ -155,7 +155,7 @@ span.mobile-date {
 		margin-bottom: 30px;
 	}
 	.fm-hero {
-		background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/header480.png);
+		background-image: url(https://drmartens.a.bigcontent.io/v1/static/lp-dmpresent-header-2-aw22wk25-mobile);
 		background-size: cover;
 		aspect-ratio: 4/5;
 	}
@@ -209,7 +209,7 @@ span.mobile-date {
 		margin-bottom: 25px;
 	}
 	.fm-hero {
-		background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/header.png);
+		background-image: url(https://drmartens.a.bigcontent.io/v1/static/lp-dmpresent-header-aw22wk25-desktop);
 		aspect-ratio: 2/1;
 		margin-bottom: 75px;
 	}

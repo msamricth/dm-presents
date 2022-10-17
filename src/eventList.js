@@ -4,13 +4,15 @@ function ready(cb) {
 	} else {
 		document.addEventListener('DOMContentLoaded', cb);
 	}
-}function ready(cb) {
-	if( document.readyState != 'loading' ) {
-		cb();
-	} else {
-		document.addEventListener('DOMContentLoaded', cb);
-	}
 }
+
+var setStart = function(e) {
+	var video = e.currentTarget;
+	var start = parseFloat(video.getAttribute("data-start")); 
+	video.currentTime = start; 
+	video.pause();
+	video.removeEventListener('canplaythrough', setStart); 
+}; 
 
 ready(function(){ 
 	var thumbnails = document.querySelectorAll('.fm-video-thumbnail');
@@ -25,6 +27,14 @@ ready(function(){
 	for( var i = 0; i < items.length; i++ ) {
 		var a = items[i];
 		// play/pause on hover for thumbnails
+		a.addEventListener('mouseenter', function(e){ 
+			var video = e.target.querySelector("video");
+			var res = video.play(); 
+		});
+		a.addEventListener('mouseleave', function(e){ 
+			var video = e.target.querySelector("video");
+			video.pause(); 
+		}); 
 
 		a.addEventListener('click', function(e) {
 			e.preventDefault();
