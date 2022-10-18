@@ -62,6 +62,7 @@ window.addEventListener('click', ev => {
   if (triggers.includes(elm)) {
     const selector = elm.getAttribute('data-target');
     collapse(selector, 'toggle');
+    elm.style.display = "none";
   }
 }, false);
 
