@@ -117,19 +117,20 @@ cite {
 .fm-episode-details h2 {
 	padding: 0 0 30px 0;
 }
-
+.block__content {
+    padding-top: 28px;
+}
 .fm-footer-text {
-	width: 55%;
+	width: 61%;
 	margin: 50px 16px 125px;
-	max-width: 600px;
+	max-width: 623px;
     text-align: center;
 }
 .fm-episode-text {
 	margin: 0 16px;
 	padding: 75px 0 50px;
-	width: 55%;
-	max-width: 600px;
-    text-align: center;
+	width: 61%;
+	max-width: 623px;
 }
 .fm-episode-text a {
 	color:white;
@@ -144,7 +145,7 @@ cite {
 }
 .fm-episode-quote {
 	margin: 50px 16px;
-	width: 55%;
+	width: 61%;
 	font-family: "DrMartensHandwritingRounder", serif;
 	font-weight: normal;
 	font-size: 48px;
@@ -187,6 +188,8 @@ cite {
 	}
 	.fm-episode-quote {
 		margin: 75px auto;
+		font-size: 40px;
+		line-height: 1.2;
 	}
 	.fm-footer-text {
 		margin: 75px auto 150px;
@@ -218,6 +221,9 @@ img.fm-episode-big-image {
     background-color: rgb(255, 230, 0);
     color: #000;
     display: inline-block;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif;;
     text-transform: uppercase;
     transition: 0.15s ease background-color;
 }
@@ -284,7 +290,7 @@ a.fm-episode-back {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.9px) {
 	.fm-episode-text,.fm-episode-quote,.fm-footer-text {
 		max-width: none;
 		width: initial;
