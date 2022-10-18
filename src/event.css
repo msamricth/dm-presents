@@ -211,13 +211,6 @@ cite {
 }
 img.fm-episode-big-image {
 	width: 100%;
-
-	/* TODO(AJ)[FIX]: This is a fix for some images uploaded to S3 with a white border
-		Photoshop did me wrong. We can get rid of this when we do our next batch upload to S3
-	*/
-	outline: 3px solid #000;
-	outline-offset: -3px;
-	/* ENDFIX */
 }
 .fm-event-btn {
     margin-top: 20px;
