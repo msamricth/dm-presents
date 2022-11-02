@@ -1,6 +1,6 @@
 .fm-message {
 	font-size: 17px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 } 
 
 .fm-hero {
@@ -253,6 +253,9 @@ span.mobile-date {
 	.fm-episodes-header .fm-episodes-selector h3 {
 		line-height: 2;
 	}
+	.fm-message {
+		margin-bottom: 100px;
+	}
 }
 @media screen and (min-width: 768px) {
 	.eb-events-list .eb-event .event-content h3 {
@@ -273,10 +276,6 @@ span.mobile-date {
 		margin-bottom: 25px;
 	}
 
-	.fm-message {
-		margin-bottom: 150px;
-	}
-	
 	.eb-events-list {
 		margin-bottom: 125px;
 	}
@@ -348,10 +347,14 @@ span.mobile-date {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.fm-hero-content, 
-	.eb-events-list {
+	.fm-hero-content {
 		width: 1210px;
 		margin: 150px auto 75px; 
+	} 
+	
+	.eb-events-list {
+		width: 1210px;
+		margin: 100px auto 75px; 
 	} 
 	
 	.fm-message {
@@ -379,7 +382,6 @@ span.mobile-date {
 	}
 }
 @media screen and (max-width: 480px) {
-	
 	h1 {
 		font-size: 36px;
 	}
@@ -391,22 +393,16 @@ span.mobile-date {
 .event-details {
 	display: flex;
 }
-
-
-
-
 @media screen and (min-width: 2440px) { 
 	.fm-hero-tear {
 		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
 	}
 }
-
 @media screen and (min-width: 1440px) {
 	.fm-hero-content{
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
-
 	.fm-message span {
 		display: inline-block;
 		width: 492px;
