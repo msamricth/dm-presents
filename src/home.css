@@ -8,7 +8,10 @@
 	margin-bottom: 50px;
 	min-height: 400px;
 }
-
+.fm-logo {
+    display: block;
+    margin: 0 auto 20px;
+}
 .fm-hero-background {
 	position: relative;
 	top: 0px;
@@ -279,7 +282,11 @@ span.mobile-date {
 	}
 }
 @media screen and (min-width: 1024px) {
-	
+	.fm-logo {
+		width: 170px;
+		margin-bottom: 50px;
+		margin-top: 25px;
+	}
 	.fm-message, .eb-events-list {
 		padding-left: 40px;
 		padding-right: 40px;
@@ -329,7 +336,10 @@ span.mobile-date {
 }
 
 @media screen and (min-width: 1440px) {
-	
+	.fm-logo {
+		margin-bottom: 0;
+		width: 195px;
+	}
 	.fm-hero-background {
 		max-height: 810px;
 	}
@@ -348,6 +358,9 @@ span.mobile-date {
 	}
 } 
 @media screen and (min-width: 1920px) {
+	.fm-logo {
+		width: 220px;
+	}
 	.fm-hero-background {
 		max-height: 1080px;
 	}
