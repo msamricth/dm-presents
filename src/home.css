@@ -359,6 +359,9 @@ span.mobile-date {
 	.fm-hero-background {
 		position: absolute;
 	}
+	.fm-hero-title {
+		width: 90%;
+	}
 }
 @media screen and (max-width: 480px) {
 	
