@@ -1,35 +1,4 @@
-.fm-hero {
-	position: relative;
-	margin-bottom: 50px;
-	min-height: 400px;
-}
 
-.fm-hero-background {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-	overflow: hidden;
-	max-height: 576px;
-}
-.fm-hero {
-    background-image: url(https://drmartens.a.bigcontent.io/v1/static/lp-dmpresent-header-2-aw22wk25-mobile);
-    background-size: cover;
-    aspect-ratio: 4/5;
-}
-		a.fm-hero-play {
-			background: rgb(255, 230, 0);
-			text-decoration: none;
-			color: #000;
-			display: block;
-			font-family: "Oswald", "Trade Gothic Bold", sans-serif;
-			font-size: 18px;
-			text-transform: uppercase;
-			padding: 10px 30px;
-			margin-top: 30px;
-		}
 		.fm-message {
 			font-size: 17px;
 			margin-bottom: 100px;
@@ -154,11 +123,7 @@ span.mobile-date {
 	.fm-episodes h2, .fm-episodes h3{
 		margin-bottom: 30px;
 	}
-	.fm-hero {
-		background-image: url(https://drmartens.a.bigcontent.io/v1/static/lp-dmpresent-header-2-aw22wk25-mobile);
-		background-size: cover;
-		aspect-ratio: 4/5;
-	}
+
 	.fm-episodes-header {
 		display: flex;
 		align-items: baseline;
@@ -208,11 +173,7 @@ span.mobile-date {
 	.fm-episodes-header {
 		margin-bottom: 25px;
 	}
-	.fm-hero {
-		background-image: url(https://drmartens.a.bigcontent.io/v1/static/lp-dmpresent-header-aw22wk25-desktop);
-		aspect-ratio: 2/1;
-		margin-bottom: 75px;
-	}
+
 	.fm-message {
 		margin-bottom: 150px;
 	}
@@ -287,4 +248,192 @@ span.mobile-date {
 } 
 .event-details {
 	display: flex;
+}
+
+
+.fm-hero {
+	position: relative;
+	margin-bottom: 50px;
+	min-height: 400px;
+}
+
+.fm-hero-background {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+	max-height: 660px;
+}
+	.fm-hero-video {
+		position: relative;
+		width: 100%; 
+		/* This padding assumes a 16:9 video, adjust accordingly */
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		z-index: 0;
+	}
+		.fm-hero-video video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%; 
+			height: 100%;
+			min-width: 711px;
+			z-index: 0;
+			margin: 0px auto;
+		} 
+
+	.fm-hero-tear {
+		position: absolute;
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png");
+		background-size: 100%;
+		background-position: bottom;
+		background-repeat: no-repeat;
+		left: 0px;
+		bottom: 0px;;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		image-rendering: crisp-edges;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -webkit-optimize-contrast;
+	}
+
+	.fm-hero-fade {
+		position: absolute;
+		z-index: 1;
+		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 255));
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: bottom, top;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+	}
+
+.fm-hero-content {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 85%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+}
+
+	.fm-hero h1 {
+		background: #000;
+		color: #fff;
+		display: inline-block; 
+		padding: 8px 32px;
+		margin: 0 auto 0 8px;
+		width: auto;
+	}
+
+	.fm-hero-details {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0px 40px;
+		margin-bottom: 40px;
+	}
+
+		.fm-hero-details h2 {
+			display: inline-block;
+			margin-top: 10px;
+			height: 30px;
+		}
+
+		a.fm-hero-play {
+			background: rgb(255, 230, 0);
+			text-decoration: none;
+			color: #000;
+			display: block;
+			font-family: "Oswald", "Trade Gothic Bold", sans-serif;
+			font-size: 18px;
+			text-transform: uppercase;
+			padding: 10px 30px;
+			margin-top: 30px;
+		}
+
+
+@media screen and (min-width: 2440px) { 
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.fm-hero-content{
+		width: 1210px;
+		margin: 150px auto 130px; 
+	} 
+
+	.fm-message span {
+		display: inline-block;
+		width: 492px;
+	}
+	.fm-hero-content { 
+		left: 50%;
+		margin: 0px auto 0px -642px;
+	}
+} 
+
+@media screen and (max-width: 768px) {
+	.fm-hero-content {
+		height: 100%;
+	}
+	.fm-hero-tear {
+		display: none;
+	}
+	.fm-hero-content {
+		height: calc(100% + 60px);
+	}
+	.fm-hero-background {
+		position: absolute;
+	}
+
+	.fm-hero-video {
+		left: -25%;
+		width: 150%;
+	}
+	.fm-hero {
+		margin-bottom: 75px;
+	}
+	.fm-hero h1 {
+		margin: 0px auto;
+		padding: 8px 32px 8px 40px;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 36px;
+	}
+	.fm-hero-details {
+		padding: 0 32px;
+	}
+
+	.fm-hero h1 {
+		padding: 8px 32px;
+	}
+} 
+
+
+@media screen and (max-width: 375px) { 
+	a.fm-hero-play {
+		margin-top: 20px;
+	}
+
+	.fm-hero-details h3 {
+		margin-top: 6px;
+	}
 }

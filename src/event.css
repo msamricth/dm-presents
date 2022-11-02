@@ -5,7 +5,7 @@
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
   }
-  .collapse.show {
+  .collapse.show, .collapse.in {
     max-height: 99em;
     transition: max-height 0.5s ease-in-out;
   }
@@ -89,7 +89,7 @@ cite {
 	font-family: "Overpass", "Interstate Reg", sans-serif;
 	color: #b9b9b9;
 	display: block;
-	font-size: 12px; 
+	font-size: 14px; 
 	font-style: normal;
 	margin-top: 10px;
 }
