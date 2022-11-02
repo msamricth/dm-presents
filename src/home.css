@@ -337,7 +337,7 @@ span.mobile-date {
 
 @media screen and (min-width: 1440px) {
 	.fm-logo {
-		margin-top: 50px;
+		padding-top: 50px;
 		margin-bottom: 0;
 		width: 195px;
 	}
