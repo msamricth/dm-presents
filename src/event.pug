@@ -18,13 +18,14 @@ mixin eventHeaderVideo(teaserURL, youtubeURL, videoTitle)
 			iframe.youtube(src=`${youtubeURL}?enablejsapi=1` title=videoTitle frameborder="0" allow="autoplay; fullscreen; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 		+bigPlayButton()
 
-mixin eventDescription(beforeText, afterText)
+mixin eventDescription(beforeText, afterText= null)
 	.fm-episode-text 
 		p!= beforeText
-		.block.collapse 
-			.block__content
-				p!= afterText 			
-		a(href="javascript:void(0);" data-toggle="collapse" data-target=".collapse" data-text="Collapse") Read more
+		if afterText
+			.block.collapse 
+				.block__content
+					p!= afterText 			
+			a(href="javascript:void(0);" data-toggle="collapse" data-target=".collapse" data-text="Collapse") Read more
 
 mixin eventQuote(quote, author, title= null)
 	p.fm-episode-quote!= quote
@@ -32,6 +33,16 @@ mixin eventQuote(quote, author, title= null)
 			cite!= author, title
 		else 
 			cite!= author
+mixin eventFeature(imageURL, altText, title, location, text)
+	.fm-artist-block 
+		.fm-artist-main
+			.fm-artist-header 
+				.fm-artist-header-content
+					h1!= title
+					h2!= location
+			img(src!=`${imageURL}` alt=altText)
+		.fm-artist-content
+			p!= text
 
 mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg") 
 	if backend == "amplience"
