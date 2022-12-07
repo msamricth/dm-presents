@@ -29,32 +29,30 @@ window.onYouTubeIframeAPIReady = function() {
           'onStateChange': onPlayerStateChange
         }
       });
+      function onPlayerReady(index, value) {
+        if(episodePlaceholderTeaser !== null) {
+            episodePlaceholderTeaser.addEventListener("click", function(e) { 
+                youtubeVideo.style.display = "block";
+                placeholder.style.display = "none";
+                playButton.style.display = "none";
+    
+                        yt_player[index].mute();
+                        setTimeout(
+                            function() {
+                                yt_player[index].unMute();
+                        }, 800);
+                    yt_player[index].playVideo();
+                
+                });
+            }
+        }
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.PLAYING) {
+          }
+        }
     });
-  }
-  
-  function onPlayerReady(index, value) {
-    if(episodePlaceholderTeaser !== null) {
-        episodePlaceholderTeaser.addEventListener("click", function(e) { 
-            youtubeVideo.style.display = "block";
-            placeholder.style.display = "none";
-            playButton.style.display = "none";
-
-                if (window.navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
-                    yt_player[index].mute();
-                    setTimeout(
-                        function() {
-                            yt_player[index].unMute();
-                    }, 800);
-                }
-                yt_player[index].playVideo();
-            
-            });
-        }
-    } 
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-        }
-      }
+  } 
+    
 const triggers = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
 
 window.addEventListener('click', ev => {
