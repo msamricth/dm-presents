@@ -3,9 +3,10 @@ include svg-mixins
 
 - var s3e1 = { season: 3, isNew: false, url: "/us/en/dm-presents-september-la", relativePath: "S3E2/la_event_01_teaser_1920x1080", videoStart:"0", title: "Latin Heritage - silverlake, LA", description: "For our first Dr. Martens Presents Tour stop in L.A., folx filled every corner of Dr. Martens Silverlake. Doris Anahí’s voice filled the room and carried out into the streets. She spoke about her family’s love of music and her uncle joined her in a song that had everyone singing along with tears in their eyes.", backend: "s3v3" }
 - var s3e2 = { season: 3, isNew: false, url: "/us/en/dm-presents-october-chicago", relativePath: "S3E3/chicago_event_02_teaser_1920x1080", videoStart:"0", title: "CHICAGO MUSIC - Pilsen, Chicago", description: "For our next stop on The Dr. Martens Presents Tour, we touched down in Chicago. Folx brought the raddest, most electric energy for our artists — we’re talking lines four blocks long, encores, out of state fans and family members in attendance. Child Seat and The Regrettes killed it at the historic Thalia Hall, and bands Lifeguard and Deeper sold out the Dr. Martens Southport store. These were shows we won’t soon forget.", backend: "s3v3" }
+- var s3e3 = { season: 3, isNew: false, url: "/us/en/dm-presents-november-nyc", relativePath: "S3E4/S3E3_H264_1920X1080", videoStart:"0", title: "dm-presents-november-nyc", description: "The Dr. Martens Presents Tour: New York edition. We started the show in the heart of Bushwick with Freakquencee and Big Freedia. 500 fans turned the energy turned up to 11, and we brought that straight to our next show at Smith Street. Sorry Mom, Control Top and Foyer Red played to a very special crowd, including mom to Sorry Mom vocalist. While we only touched down in New York briefly, we're leaving on a cloud.", backend: "s3v3" }
 
 
-- var season3 = { number: 3, events: [s3e2, s3e1]}
+- var season3 = { number: 3, events: [s3e3, s3e2, s3e1]}
 - var seasons = [season3]
 
 mixin eventItem(event)
@@ -25,10 +26,7 @@ mixin eventItem(event)
 				h3= event.title
 				if event.isNew
 					span.fm-video-thumbnail-new-tag new
-		p!= event.description 
-
-
-		
+		p!= event.description 	
 .fm-events
 	.fm-events-header
 		h2 Live Events Series

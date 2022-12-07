@@ -26,7 +26,8 @@ window.onYouTubeIframeAPIReady = function() {
       yt_player[index] = new YT.Player(value.id, {
         events: {
           'onReady': onPlayerReady(index, value),
-          'onStateChange': onPlayerStateChange
+          'onStateChange': YTStateChange 
+          
         }
       });
       function onPlayerReady(index, value) {
@@ -42,14 +43,43 @@ window.onYouTubeIframeAPIReady = function() {
                                 yt_player[index].unMute();
                         }, 800);
                     yt_player[index].playVideo();
-                
+                    if (/Android|iPhone/i.test(navigator.userAgent)) {fullScreen();}
                 });
             }
         }
-        function onPlayerStateChange(event) {
-          if (event.data == YT.PlayerState.PLAYING) {
+        function fullScreen() {
+
+          var e = document.querySelector("iframe.youtube"); 
+          if (e.requestFullscreen) {
+              e.requestFullscreen();
+          } else if (e.webkitRequestFullscreen) {
+              e.webkitRequestFullscreen();
+          } else if (e.mozRequestFullScreen) {
+              e.mozRequestFullScreen();
+          } else if (e.msRequestFullscreen) {
+              e.msRequestFullscreen();
           }
+      }
+      
+      function YTStateChange(event) {
+        if (/Android|iPhone/i.test(navigator.userAgent)) {
+          switch(event.data) {
+              case -1:
+                  //fullScreen();
+              break;
+              case 1:
+                fullScreen();
+              break;
+              case 2:
+                document.exitFullscreen();
+              break;
+              default:
+              break;
+          }
+          
+          // This checks if the current device is in fact mobile
         }
+      }
     });
   } 
     
