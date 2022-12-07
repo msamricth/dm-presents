@@ -20,7 +20,10 @@
 	color: #fff;
 	font-family: "Overpass", "Interstate Reg", sans-serif;
 } 
-
+.nomarg {
+	margin-bottom:0 !important;
+	margin-top: 0;
+}
 .fm-hero-video {
 	position: relative;
 	width: 100%; 
@@ -100,6 +103,8 @@
 }
 .fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
 	max-width:644px;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 .fm-artist-block .fm-artist-content {
 	margin: auto;
@@ -148,7 +153,7 @@ cite {
 }
 .fm-footer-text {
 	width: 61%;
-	margin: 50px 16px 125px;
+	margin: 25px 16px 125px;
 	max-width: 623px;
     text-align: center;
 }
@@ -200,7 +205,7 @@ cite {
 		padding-bottom: 75px;
 	}
 	.fm-footer-text {
-		margin: 75px 32px 150px;
+		margin: 37px 32px 150px;
 	}
 	.fm-episode-text {
 		margin: 0 32px;
@@ -242,7 +247,7 @@ cite {
 		margin: 75px auto;
 	}
 	.fm-footer-text {
-		margin: 75px auto 150px;
+		margin: 37px auto 150px;
 	}
 }
 
@@ -264,7 +269,7 @@ cite {
 		margin-top: 75px;
 	}
 	.fm-footer-text {
-		margin: 75px auto 225px;
+		margin: 50px auto 225px;
 	}
 }
 
