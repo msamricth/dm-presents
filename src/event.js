@@ -49,7 +49,7 @@ window.onYouTubeIframeAPIReady = function() {
         }
         function fullScreen() {
 
-          var e = document.querySelector("iframe.youtube"); 
+          var e = document.getElementById('ytplayer-0');
           if (e.requestFullscreen) {
               e.requestFullscreen();
           } else if (e.webkitRequestFullscreen) {
