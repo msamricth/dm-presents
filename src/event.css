@@ -102,13 +102,12 @@
 	padding-bottom: 50px;
 }
 .fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
-	max-width:644px;
-	padding-left: 60px;
-	padding-right: 60px;
+	padding-left: 32px;
+	padding-right: 32px;
 }
 .fm-artist-block .fm-artist-content {
 	margin: auto;
-	padding: 50px 60px 50px;
+	padding: 50px 32px 50px;
 }
 .fm-episode-details {
 	display: flex;
