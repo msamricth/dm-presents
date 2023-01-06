@@ -15,7 +15,7 @@ mixin eventHeaderVideo(teaserURL, youtubeURL, videoTitle)
 			video(loop autoplay muted playsinline)
 				source(src=`${teaserURL}` type="video/mp4")
 		.fm-hero-video.youtube(style="display:none;")
-			iframe.youtube(src=`${youtubeURL}?enablejsapi=1` title=videoTitle frameborder="0" allow="autoplay; fullscreen; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+			iframe.youtube(src=`${youtubeURL}?enablejsapi=1` title=videoTitle frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 		+bigPlayButton()
 
 mixin eventDescription(beforeText, afterText= null)
@@ -53,6 +53,9 @@ mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg")
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
 	else if backend == "s3v3"
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v4"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW22/DMPresents/${relativePath}.${extension}` alt=altText)
+
 
 mixin bigImageTwoSize(relativePath, altText, backend="s3", extension="jpg") 
 	if backend == "amplience"
