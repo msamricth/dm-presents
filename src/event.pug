@@ -54,7 +54,7 @@ mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg")
 	else if backend == "s3v3"
 		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
 	else if backend == "s3v4"
-		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW22/DMPresents/${relativePath}.${extension}` alt=altText)
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW22/DMpresent/${relativePath}.${extension}` alt=altText)
 
 
 mixin bigImageTwoSize(relativePath, altText, backend="s3", extension="jpg") 
