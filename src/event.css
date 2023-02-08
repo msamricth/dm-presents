@@ -188,7 +188,7 @@ cite {
 	width: 100%;
 }
 .fm-episode-big-image {
-	margin-bottom: 50px;
+/*	margin-bottom: 50px; */
 	display: block;
 }
 @media screen and (min-width: 480px) {
@@ -214,7 +214,7 @@ cite {
 		margin: 75px 32px;
 	}
 	.fm-episode-big-image {
-		margin-bottom: 75px;
+		/*	margin-bottom: 75px; */
 	}
 }
 @media screen and (min-width: 768px) { 
@@ -265,7 +265,7 @@ cite {
 @media screen and (min-width: 1024px) { 
 	.fm-episode-big-image {
 		display: inline-block; /* disables collapsing margin */
-		margin-top: 75px;
+	/*		margin-top: 75px; */
 	}
 	.fm-footer-text {
 		margin: 50px auto 225px;
