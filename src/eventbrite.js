@@ -6,9 +6,11 @@ var settings = {
         "Authorization": "Bearer DXYHHESOBVEWZOGTRZBF"    },
     };
     var venue_col;
+    var has_events = 0;
     $.ajax(settings).done(function (response) {
     var data = response.events;
     var len = data.length;
+    //console.log(data);
         for(var i=0; i<len; i++){
             var id = data[i].id;
             var name = data[i].name.text;
@@ -46,6 +48,7 @@ var settings = {
           }
           if (ebTitle.indexOf('Performances by:') > -1)
           {
+            has_events = 1;
             var tr_str = "<div class='eb-event'>" +
             "<div class='event-image'><a href='"+url+"' target='_blank'><img src='" + eImage + "' /></a></div>" +
             "<div class='event-details'><div class='event-content'><h3 role='heading' aria-level='2'>" + city + ": " + venueName +"</h3>" +
@@ -69,7 +72,7 @@ var settings = {
             var loadCTA = '<a href="#" id="more_events" class="fm-hero-play">Load more events</a>';
             $("#upcoming_events").append(loadCTA);
         }
-        if(len < 0){
+        if(has_events == 0 ){
           $('#upcoming_events').hide();
         }
         $( '#more_events' ).on( 'click', function(event) {
