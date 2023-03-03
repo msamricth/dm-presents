@@ -69,6 +69,9 @@ var settings = {
             var loadCTA = '<a href="#" id="more_events" class="fm-hero-play">Load more events</a>';
             $("#upcoming_events").append(loadCTA);
         }
+        if(len < 0){
+          $('#upcoming_events').hide();
+        }
         $( '#more_events' ).on( 'click', function(event) {
             $(".eb-hidden").each(function () {
                $(this).addClass("eb-shown");
