@@ -191,6 +191,12 @@ cite {
 /*	margin-bottom: 50px; */
 	display: block;
 }
+
+.fm-artist-content {
+    position: relative;
+    background-color: #000;
+    z-index: 12;
+}
 @media screen and (min-width: 480px) {
 	.fm-artist-block .fm-artist-header h1 {
 		margin-bottom: 20px;
@@ -263,6 +269,12 @@ cite {
 	}
 }
 @media screen and (min-width: 1024px) { 
+	
+	img.fm-episode-big-image:first-of-type {
+		position: relative;
+		margin-top: -30px;
+		z-index: 8;
+	}
 	.fm-episode-big-image {
 		display: inline-block; /* disables collapsing margin */
 	/*		margin-top: 75px; */
