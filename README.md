@@ -63,16 +63,3 @@ URLs (such as links) are relative to the domain, so that's why it places preview
 
 We have been delivering those blobs to Bahareh Rezaeian (bahareh.rezaeian@drmartens.com) in the form of a .txt files in a single .zip file for ease of deployment to their live site
 
-**TODO**: Modify `gulp.js` to automatically create that .zip file
-
----
-## Delivery to DrMartens
-
-- Create a .zip of the `build/hybris` folder with the naming structrure of `DMPresents_Hybris_S#E#_D##.M##.Y####.zip` 
-  - S for season, E for episode, D for day of month, M for month number, Y for year.
-  - For example: `DMPresents_Hybris_S2E0_07.09.2021.zip` is season 2 episode 0, delivered on Sep 7th, 2021. 
-  - If you need multiple deliveries per day for bug fixes add a `_v#` to the end to indicate the version.
-
-- Post the .zip in the internal drmartens slack channel
-- Coordinate with project lead/manager to deliver .zip for deployment
-- So far our contacts for Hybris have been Bahareh (bahareh.rezaeian@drmartens.com), and Uyen (uyen.ochsner@drmartens.com) 
