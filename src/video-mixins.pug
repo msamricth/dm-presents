@@ -27,6 +27,9 @@ mixin thumbnailVideo(relativePath, startTime, backend="s3")
 		else if backend == "s3v3"
 			source(src=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.mp4` type="video/mp4")
 
+		else if backend == "s3v4"
+			source(src=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW22/DMpresent/${relativePath}.mp4` type="video/mp4")
+
 mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle, backend="s3")
 	.fm-episode-header-video
 		.fm-hero-video.preview
@@ -42,3 +45,5 @@ mixin episodeHeaderVideo(relativePath, vimeoId, vimeoTitle, backend="s3")
 		.fm-hero-video.vimeo(style="display:none;")
 			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
 		+bigPlayButton()
+mixin eventListImage(relativePath, altTag)
+	img(src=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.png` alt=`${altTag}`)

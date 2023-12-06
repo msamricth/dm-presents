@@ -1,0 +1,99 @@
+include video-mixins
+
+mixin episodeDetails(seasonNumber, episodeNumber, title, description)
+	.fm-episode-details-container
+		.fm-episode-details(data-season=`${seasonNumber}`)
+			.fm-title: h1= title
+			if episodeNumber != 0
+				h2 Filmmaker Series &bull; S#{seasonNumber} E#{episodeNumber}
+			p!= description
+
+
+mixin eventHeaderVideo(teaserURL, youtubeURL, videoTitle)
+	.fm-episode-header-video
+		.fm-hero-video.preview
+			video(loop autoplay muted playsinline)
+				source(src=`${teaserURL}` type="video/mp4")
+		.fm-hero-video.youtube(style="display:none;")
+			iframe.youtube(src=`${youtubeURL}?enablejsapi=1` title=videoTitle frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+		+bigPlayButton()
+
+mixin eventDescription(beforeText, afterText= null)
+	.fm-episode-text 
+		p!= beforeText
+		if afterText
+			.block.collapse 
+				.block__content
+					p!= afterText 			
+			a(href="javascript:void(0);" data-toggle="collapse" data-target=".collapse" data-text="Collapse") Read more
+
+mixin eventQuote(quote, author, title= null)
+	p.fm-episode-quote!= quote
+		if title
+			cite!= author, title
+		else 
+			cite!= author
+mixin eventFeature(imageURL, altText, title, location, text)
+	.fm-artist-block 
+		.fm-artist-main
+			.fm-artist-header 
+				.fm-artist-header-content
+					h1!= title
+					h2!= location
+			img(src!=`${imageURL}` alt=altText)
+		.fm-artist-content
+			p!= text
+
+mixin bigImageOneSize(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
+		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` alt=altText)
+	else if backend == "s3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v4"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW22/DMpresent/${relativePath}.${extension}` alt=altText)
+
+
+mixin bigImageTwoSize(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
+		img.fm-episode-big-image.nomarg(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` alt=altText)
+	else if backend == "s3"
+		img.fm-episode-big-image.nomarg(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image.nomarg(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image.nomarg(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` alt=altText)
+
+mixin bigImage(relativePath, altText, backend="s3", extension="jpg") 
+	if backend == "amplience"
+		img.fm-episode-big-image(src!=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}` srcset=`https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath} 1x, https://cdn.media.amplience.net/i/drmartens/ss21-dmpresents-${relativePath}@2x 2x` alt=altText)
+	else if backend == "s3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/${relativePath}@2x.${extension} 2x` alt=altText)
+	else if backend == "s3v2"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
+	else if backend == "s3v3"
+		img.fm-episode-big-image(src!=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension}` srcset=`https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}.${extension} 1x, https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/${relativePath}@2x.${extension} 2x` alt=altText)
+mixin ctaBtn(url, headertext, label)
+	.fm-footer-text 
+		h1!= headertext
+		a.fm-event-btn(href!=`${url}`)
+			span!= label
+style
+	include handwritingFont.css
+	include shared.css
+	include event.css 
+
+.fm-container
+	block header
+	block content 
+
+	a.fm-episode-back(href="/us/en/dm-presents")
+		svg(width="9" height="17")
+			polyline(points="9,0,0,8.5,9,17" style="stroke:#000;fill:transparent;stroke-width:4px;")
+		span Back to DM Presents
+script(src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous")
+script(type="text/javascript")
+	include event.js

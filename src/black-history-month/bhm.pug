@@ -1,0 +1,209 @@
+style 
+	include bhm.css
+
+script(type="text/javascript")
+	include bhm.js
+
+mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
+	.bhm-vimeo-video
+		+iconPlayButton()
+		img.bhm-video-placeholder(src=`${placeholderImgSrc}`)
+		.bhm-video
+			iframe(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+
+mixin iconPlayButton()
+	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+		defs
+			circle(id="path-1" cx="32" cy="32" r="32")
+		g(id="Button/Play/BigBIG-Round/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+			g(id="Oval")
+				use(fill="#FFE600" xlink:href="#path-1")
+				use(fill-opacity="0.07" fill="#000000" xlink:href="#path-1")
+			g(id="Icon/Play/Large" transform="translate(24.000000, 20.000000)" fill="#000000")
+				path(d="M12.1536682,4.45755789 L21.5412984,19.3513942 C21.8357883,19.8186138 21.6957632,20.4361014 21.2285436,20.7305913 C21.0688969,20.8312171 20.8840355,20.8846154 20.6953225,20.8846154 L1.92006213,20.8846154 C1.36777738,20.8846154 0.920062134,20.4369001 0.920062134,19.8846154 C0.920062134,19.6959023 0.973460457,19.5110409 1.07408625,19.3513942 L10.4617164,4.45755789 C10.7562063,3.99033831 11.3736939,3.85031325 11.8409135,4.14480317 C11.9672026,4.22440356 12.0740678,4.33126881 12.1536682,4.45755789 Z" id="Triangle" transform="translate(11.307692, 12.000000) rotate(-270.000000) translate(-11.307692, -12.000000)")
+
+section.bhm
+	header.bhm-header(aria-level="2")
+		h1 Celebrating Black Voices 
+		p During Black History Month and beyond, Dr. Martens is celebrating our Black employees and the talented Black creators from our community. They'll speak to us about historical Black figures who have shaped Black culture and the artists, activists and organizations who are pushing the conversation forward.
+
+	article#jeantrix
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") jeantrix
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/hero-collage.jpg" alt="Jeantrix standing in front of a wall that is covered in graffiti. One man is leaning on the other, showing a closeness between them. Clothes have an edge of street fashion, with tears, patches, and paint. ")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden jeantrix
+				p Philly natives and creators of Jeantrix, Designers Homm and Nyce customize clothing and accessories into wearable works of art. For years, they’ve created pieces worn by the likes of Lizzo, Alicia Keyes, and Janet Jackson. More recently, they opened their first brick-and-mortar store at the King of Prussia Mall to make their artwork even more available to the masses. Always encouraging others to follow their dreams, here they are sharing the designers who inspired them to pursue their own.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://www.jeantrix.com/" target="_blank" noopener noreferrer aria-label="Visit Jeantrix's website") Jeantrix Website
+					a.bhm-icon-insta(href="https://www.instagram.com/jeantrix/?hl=en" target="_blank" noopener noreferrer aria-label="Visit Jeantrix on Instagram") Jeantrix Instagram
+
+		+vimeoVideo("690334365", "jeantrix", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/jeantrix-video.jpg")
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/module1-patrick-kelly.jpg" aria-description="")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Patrick Kelly
+				p A celebrated Black fashion designer who came to fame in the 1980s, #[a(href="https://www.philamuseum.org/exhibitions/799.html" target="_blank" noopener noreferrer) Patrick Kelly's] designs are exuberant, light-hearted and often pushed racial and cultural boundaries. He had many impressive accomplishments throughout his career including being the first American admitted to the chambre syndicale du prêt-à-porter, which governs the French ready-to-wear industry. One of his most notable designs is a Josephine Baker-inspired ensemble displayed in the Philadelphia Museum of Art.
+
+		section.bhm-quote
+			.bhm-quote-body You can tell that [Basquiat] was very free when he created his art.. he was the type of artist that went and did what he felt and I could actually see that in his art.. He’s the GOAT, honestly.
+			.bhm-quote-citation JEANTRIX
+
+		section.bhm-photo(data-src="http://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d4/module-2-basquiat.jpg")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Basquiat
+				p A young artist known for redefining the art world during the Neo-Expressionist movement in the 1980s. #[a(href="https://www.basquiat.com/" target="_blank" noopener noreferrer) Basquiat] is most recognized as a cultural icon, graffiti artist, and painter who combined symbols, signs, and text in his works. He is considered one of the most influential artists of the century.
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d4/module3-these-pink-lips.jpg")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Iris “Barbee” Bonner
+				p The Philly-based artist and designer behind #[a(href="https://thesepinklips.com/blogs/pussy-on-the-go" target="_blank" noopener noreferrer) These Pink Lips] , Iris Bonner is often compared to Andy Warhol. Using words as visual tools to design wearable works of art that shed stereotypes and empower women, her eye-catching designs have sparked conversations and encouraged women to wear their confidence.
+
+		footer.bhm-footer
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d4/haircuts-4-homeless-logo.jpg" style="width:180px;margin-bottom:30px;")
+			p Dr. Martens will be donating $5,000 to Brennon Jones, a lifelong friend of Nyce and the founder of Haircuts 4 Homeless, a non-profit organization in Philadelphia that gives haircuts to people facing houselessness.
+			a.bhm-external(href="https://www.haircuts4homeless.com/" target="_blank" noopener noreferrer) Learn More
+
+	article#luda
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Luda
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d3/hero.jpg")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden Luda
+				p You may recognize Luda as the effervescent personality repping Docs at our Smith St. location in Brooklyn. What you may not know is he is also a Hip-Hop producer. Influenced by his Haitian roots Luda shares his inspirations and what got him into music.
+
+		+vimeoVideo("686064583", "Luda", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d3/video-play-button.jpg")
+
+		section.bhm-photo-transparent(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d3/module1-haiti.jpg")
+			img.bhm-photo-image-transparent
+			.bhm-photo-cover-transparent
+
+		section.bhm-quote
+			.bhm-quote-body My heart was born in Haiti... The music in Haiti is everlasting... when I was kid I remember dancing to the carnival music.
+			.bhm-quote-citation Luda
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d3/module2-king-posse.jpg")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 King Posse
+				p One of the most legendary music groups in Haiti during the 1990s. Uniting the country with a mixture of Rap and Reggae. Check out their song #[a(href="https://open.spotify.com/artist/76TlFealriTlICvSEcsbE1?si=4VjuJoJ4SXKuiePRXiz9Jw&nd=1" target="_blank" noopener noreferrer) Retounen] to get a taste of their energy and sound.
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d3/module3-kromxy.jpg")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Kromxy
+				p A Black-owned business in Brooklyn that specializes in creating custom apparel and designs. In addition to being a small business themselves, #[a(href="https://www.instagram.com/kromxyscloset/?hl=en" target="_blank" noopener noreferrer) the shop] regularly shouts out other local brands and support design programs for kids.
+
+		footer.bhm-footer
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d3/rev-foundation-logo.jpg" style="width:180px;margin-bottom:30px;")
+			p Dr. Martens is donating $5,000 to the Rev Foundation, an organization that aims to improve the livelihood of children in Haiti by providing food, clothing, shelter, and school supplies. Please consider joining us and Luda in supporting their work.
+			a.bhm-external(href="https://www.instagram.com/revfoundation/?hl=en" target="_blank" noopener noreferrer) Learn More
+
+	article#daizsa-jackson
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Daizsa Jackson 
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/1-intro-collage.jpg" alt="")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden Daizsa Jackson 
+				p Social Media Specialist, Daizsa Jackson manages Dr. Martens social influencer program. Self-proclaimed bookworm and textbook bibliophile, Daizsa is passionate about Black literature. No matter the genre, you can count on her recommendations. Daizsa kindly shared her reading list which features some of her favorite Black writers. 
+		
+		+vimeoVideo("681098837", "Daizsa Jackson", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/daizsa-film-overlay.jpg")
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/2-zora.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Zora Neale Hurston
+				p Was a #[a(href="https://www.zoranealehurston.com/" target="_blank" noopener noreferrer) world-renowned author], anthropologist, and filmmaker during the Harlem Renaissance of the 1920s in New York City. She wrote four novels and over fifty short stories, plays, and essays over the course of her life. She is an inspiration for many writers and readers. 
+		
+		section.bhm-looping-video
+			video(loop autoplay muted playsinline)
+				source(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/harlem-web.mp4" type="video/mp4")
+			.bhm-looping-video-text
+				h2 Harlem Renaissance 
+				p A #[a(href="https://www.history.com/topics/roaring-twenties/harlem-renaissance" target="_blank" noopener noreferrer) cultural revival] of new ideas and Black artistic expression during the 1920s centered in the Harlem neighborhood of New York City. It was an explosion of talent! This era is responsible for some of the greatest American artists of all time; Louis Armstrong, Zora Neale Hurston, and Langston Hughes to name a few.
+			
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/3-kiese.jpg" aria-description="Archival image of Zora Neale Houston wearing a hat and wood bead necklace looking down and off to the side.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Kiese Laymon 
+				p #[a(href="https://www.kieselaymon.com/" target="_blank" noopener noreferrer) Kiese] is a Black southern writer whose work has garnered multiple awards and accolades. His book Heavy: An American Memoir was named one of the 50 Best Memoirs of the Past 50 Years by The New York Times. He has several new projects in the works including a reading and writing program for kids and their parents. 
+		
+		section.bhm-quote
+			.bhm-quote-body So much content has been centered around our struggles, but over time Black authors have ventured outside of that box and have told more honest stories. The good and the bad and everything in between.
+			.bhm-quote-citation Daizsa Jackson
+		
+		section.bhm-reading-list(style="background-image:url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/bg-reading-list.jpg);")
+			h2 Daizsa's Recommended Reading List:
+			h3 Find your next favorite author.
+			ul
+				li #[strong Homegoing] by #[a(href="https://www.penguinrandomhouse.com/authors/2117741/yaa-gyasi/" target="_blank" noopener noreferrer) Yaa Gyasi]
+				li #[strong Heavy: An American Memoir] by #[a(href="https://www.kieselaymon.com/heavy" target="_blank" noopener noreferrer) Kiese Laymon]
+				li #[strong The Secret Lives of Church Ladies] by #[a(href="https://www.deeshaphilyaw.com" target="_blank" noopener noreferrer) Deesha Philyaw]
+				li #[strong The Vanishing Half] by #[a(href="https://britbennett.com" target="_blank" noopener noreferrer) Brit Bennett]
+				li #[strong Open Water] by #[a(href="https://www.instagram.com/caleb_anelson/?hl=en" target="_blank" noopener noreferrer) Caleb Azumah Nelson]
+				li #[strong Everything Inside] by #[a(href="https://edwidgedanticat.com" target="_blank" noopener noreferrer) Edwidge Danticat]
+				li #[strong Love in Color] by #[a(href="https://www.bolubabalola.com" target="_blank" noopener noreferrer) Bolu Babalola]
+				li #[strong Caul Baby] by #[a(href="http://www.morgan-jerkins.com" target="_blank" noopener noreferrer) Morgan Jerkins]
+				li #[strong Children of Blood and Bone] by #[a(href="https://www.tomiadeyemi.com" target="_blank" noopener noreferrer) Tomi Adeyemi]
+				li #[strong When No One is Watching: A Thriller] by #[a(href="https://alyssacole.com/" target="_blank" noopener noreferrer) Alyssa Cole]
+
+		footer.bhm-footer
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/fbwl-charity.png" style="width:180px;margin-bottom:30px;")
+			p Upon Daizsa's recommendation, Dr. Martens is donating $5,000 to The Free Black Women's Library. &#x22;There's a lack of community and spaces dedicated to uplifting and celebrating Black female writers specifically. I love that this organization is committed to creating those spaces.&#x22; &#x2014; Daizsa Jackson 
+			a.bhm-external(href="https://www.thefreeblackwomenslibrary.com/" target="_blank" noopener noreferrer) Learn More
+	
+	article#phony-ppl
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Phony Ppl
+			img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/1-bhm-hero-collage.jpg" alt="Grid of portraits showcasing all five member of the band Phony Ppl")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden Phony Ppl
+				p We met Brooklyn-based Phony Ppl in 2015 when we were introduced to their genre-defying music. Since then, we've worked on a number of projects and performances. They bring enthusiasm and precision to everything they do. Equipped with a variety of musical training and experience, Phony Ppl share the Black artists of the past they admire and fresh new talent to watch.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://www.phony-ppl.com/" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl's website") PhonyPpl Website
+					a.bhm-icon-insta(href="https://www.instagram.com/phonyppl" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Instagram") PhonyPpl Instagram
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/0oBsnAC3fzYkTHF3bkfNx6" target="_blank" noopener noreferrer aria-label="Visit Phony Ppl on Spotify") PhonyPpl Spotify
+
+		+vimeoVideo("676372750", "Phony Ppl", "https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d2/phony-ppl-film-overlay.jpg")
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/2-bhm-motown.jpg" aria-description="Two Archival photos arranged side by side: One of Quincy Jones sitting in a chair in a sound studio with his hands raised in the air. The other, of Berry Gordy sitting in a recliner reading papers while spinning a world globe sitting next to him.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Motown
+				p Berry Gordy Jr. founded #[a(href="https://classic.motown.com/" target="_blank" noopener noreferrer) Motown Records] 1959 in Detroit, Michigan. Later referred to as Hitsville, USA, the music created here by Black artists shaped the music industry and society.
+				
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/4-bhm-theo.jpg" aria-description="Thelonious Monk sitting at a piano on a dark stage wearing sunglasses with his hands on the keys looking back over his shoulder into the camera")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Thelonious Monk
+				p A #[a(href="https://www.theloniousmonkmusic.com/" target="_blank" noopener noreferrer) jazz legend] and one of the most inventive composers and pianists in the history of any musical genre.
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/3-bhm-spinners.jpg" aria-description="Vintage band photo of the spinners posing together in baby blue suits.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Blue Magic and the Spinners
+				p Blue Magic and the Spinners were two influential vocal groups who dominated music in the 1960s and 70s with lush Philly soul and R&amp;B hits.
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/5-bhm-salim.jpg" aria-description="Salim Washington smiling and holding his saxophone closely to his chest.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Salim Washington
+				p #[a(href="https://cliffbells.com/shows/salim/" target="_blank" noopener noreferrer) Salim Washington] is the current leader of the Harlem Jazz Ensemble, a professor at the #[a(href="https://www.brooklyn.cuny.edu/web/academics/schools/mediaarts/departments/music/about.php" target="_blank" noopener noreferrer) Brooklyn College Conservatory of Music], and an inspiration to young musicians like Phony Ppl.
+
+		section.bhm-photo(data-src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/6-bhm-keiyaa.jpg" aria-description="KeiyaA confidently laying on her side looking into the camera.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 KeiyaA
+				p KeiyaA is a New York-based singer, songwriter, composer, instrumentalist, and producer with a focus on rich, introspective R&amp;B. Check out her debut album #[em Forever your Girl].
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://keiyaa.xyz/" target="_blank" noopener noreferrer aria-label="Visit Keiya A's website") KeiyaA Website
+					a.bhm-icon-insta(href="https://www.instagram.com/keiyaa/?hl=en" target="_blank" noopener noreferrer aria-label="Visit Keiya A on Instagram") KeiyaA Instagram
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/542BY6B2YGEdf2XWvBFUJV?si=HAKpvvSMQ8yyF39lEfkSsQ" target="_blank" noopener noreferrer aria-label="Visit Keiya A on Spotify") KeiyaA Spotify
+
+	footer.bhm-footer.bhm-last-footer
+		img(src="https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/charity-logo.png")
+		p In honor of our partners Phony Ppl, Dr. Martens is donating $5000 to: Children of Promise, NYC. A community-centered organization that partners with children and families impacted by mass incarceration.
+		a.bhm-external(href="https://www.cpnyc.org/" target="_blank" noopener noreferrer) Learn More

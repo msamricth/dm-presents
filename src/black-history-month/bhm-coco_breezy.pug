@@ -1,0 +1,256 @@
+style 
+	include bhm.css
+
+script(type="text/javascript")
+	include bhm.js
+
+
+mixin vimeoVideo(vimeoId, vimeoTitle, placeholderImgSrc)
+	.bhm-vimeo-video
+		+iconPlayButton()
+		img.bhm-video-placeholder.vimeo(src=`${placeholderImgSrc}`)
+		.bhm-video
+			iframe.vimeo(src=`https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0&playsinline=0&muted=0&autoplay=0&autopause=0&controls=1&loop=0` allow="autoplay; fullscreen" frameborder="0" title=vimeoTitle)
+
+mixin youtubeVideo(ytId, ytTitle, placeholderImgSrc)
+	.bhm-yt-video.wrapper
+		img.bhm-video-placeholder(id="video-cover" src=`${placeholderImgSrc}` alt=ytTitle)
+		iframe.youtube(data-ytvideoid=ytId width="560" height="315" src=`https://www.youtube.com/embed/${ytId}?enablejsapi=1` title=ytTitle frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+		button.play-btn
+			+iconPlayButton()
+
+mixin iconPlayButton()
+	svg.bhm-video-placeholder-icon(width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink")
+		defs
+			circle(id="path-1" cx="32" cy="32" r="32")
+		g(id="Button/Play/BigBIG-Round/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+			g(id="Oval")
+				use(fill="#FFE600" xlink:href="#path-1")
+				use(fill-opacity="0.07" fill="#000000" xlink:href="#path-1")
+			g(id="Icon/Play/Large" transform="translate(24.000000, 20.000000)" fill="#000000")
+				path(d="M12.1536682,4.45755789 L21.5412984,19.3513942 C21.8357883,19.8186138 21.6957632,20.4361014 21.2285436,20.7305913 C21.0688969,20.8312171 20.8840355,20.8846154 20.6953225,20.8846154 L1.92006213,20.8846154 C1.36777738,20.8846154 0.920062134,20.4369001 0.920062134,19.8846154 C0.920062134,19.6959023 0.973460457,19.5110409 1.07408625,19.3513942 L10.4617164,4.45755789 C10.7562063,3.99033831 11.3736939,3.85031325 11.8409135,4.14480317 C11.9672026,4.22440356 12.0740678,4.33126881 12.1536682,4.45755789 Z" id="Triangle" transform="translate(11.307692, 12.000000) rotate(-270.000000) translate(-11.307692, -12.000000)")
+
+section.bhm.featured-filmaker
+	header.bhm-header(aria-level="2")
+		.d-flex
+			.bhm-header-content
+				h4 Celebrating Black Voices 
+				h2 Chelsea Odufu
+				p Chelsea Odufu is a Guyanese Nigerian American Filmmaker and Visual Artist  whose work aims to showcase magical depictions of BIPOC.  
+				p Her first two films were both official selections in over 20 film festivals worldwide. In 2021, Chelsea was one of 12 chosen artists to join Black Rock Senegal – a residency program created by Kehinde Wiley where she created a multi channel video installation recently exhibited at the Dakar Biennale. Chelsea’s work confronts past histories while reimagining Black futures. Her work challenges our ideas about marginalized identities and empowers BIPOC to reconnect with their cultural roots through her Afro-futuristic approach. 
+				p
+					a.bhm-icon-insta(href="https://www.instagram.com/chelseaodufu/" target="_blank" noopener noreferrer aria-label="Visit Chelsea Odufu on Instagram") Chelsea Odufu Instagram
+			.bhm-header-image
+				img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/Filmmaker_Chelsea-Odufu.png" alt="A photo of Chelsea Odufu sitting in front of a white background while looking into the camera. Chelsea is wearing a long white puffer jacket with black pants.")
+		section.bhm-quote
+			.bhm-quote-body Creating with other Black creatives allows us to show up comfortably when telling stories about our life experiences. Empowering others to claim their dreams, communicate their gratitude for the family who raised them, and celebrate their peers making big moves is just beautiful. 
+			.bhm-quote-citation Chelsea
+
+	article#langston
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Langston
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_langston_01-Intro-Collage.jpg" alt="A photo of Langston McClarron standing wearing a white crew sweatshirt and jeans while holding a camcorder. ")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden Langston
+				p Named after Langston Hughes and the son of Black activists, Dr. Martens Ecommerce Coordinator, Langston McClarron honors the Black excellence that came before him and those who sustain it, in his installment of Celebrating Black Voices.
+				.bhm-icon-list
+					a.bhm-icon-insta(href="https://www.instagram.com/itslangduhhh/" target="_blank" noopener noreferrer aria-label="Visit Langston on Instagram") Langston Instagram
+		+youtubeVideo("dK9CzEJe2Tw", "Celebrating Black Voices | Langston", "https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_langston.jpg")
+		.bhm-video
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_langston_02.jpg"  role="img" aria-label="A black and white archival photo of Langston Hughes looking into the camera while sitting in a chair in front of a wall of newspaper clippings.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Langston Hughes
+				p Known for is thoughtful descriptions of Black life in the 1920s, #[a(href="https://www.poetryfoundation.org/poets/langston-hughes" target="_blank" noopener noreferrer) Hughes] was synonymous with the Harlem Renaissance. Creating a huge body of work, Hughes’ poetry, novels, short stories, and plays were set apart from his contemporaries due to the almost brutal honesty with which he wrote. His influences can still be seen in literature decades later.
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_langston_03.jpg" role="img" aria-label="A black and white archival photo of members of the Black Panther Party gathering outside.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 The Black Panther Party
+				p #[a(href="https://nmaahc.si.edu/explore/stories/black-panther-party-challenging-police-and-promoting-social-change" target="_blank" noopener noreferrer) The Black Panther Party] started in 1966 by Huey P. Newton and Bobby Seale in Oakland, California. Originally created as a response to police brutality in Black neighborhoods, the party evolved from a resource for community aide to a revolutionary political force. A blueprint for Black empowerment and community mobilization, the impact of The Black Panthers can still be seen today across a variety of minority organizations and movements.
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_langston_04.png" role="img" aria-label="A black and white archival photo of two women standing outside.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Black Student Union
+				p The first #[a(href="https://www.diverseeducation.com/students/article/15082219/celebrating-40-years-of-activism" target="_blank" noopener noreferrer) Black Student Union] was founded in 1966 at San Francisco State University to unify the Black campus community and demand increased campus inclusivity for Black students. BSUs would become a trend across academia soon after. More Black faculty, celebration of Black culture, and a curriculum that acknowledged the contributions of African Americans; were just a few of the changes BSUs focused on. Off campus Black Student Unions were and are integral to combating racial discrimination within the greater community.
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_langston_05.jpg" role="img" aria-label="A photo collage of Donte Thomas & Bocha. Bocha is on the left and is wearing a tie-dyed shirt and a white hat. Donte is on the right and is wearing a black puffer jacket.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Donte Thomas & Bocha
+				p Veterans of ‘Ones to Watch’ lists everywhere, hip hop artists Donte Thomas and Bocha create songs with head bobbing melodies and robust lyrics that fester long after your first listen. But these multifaceted artists are bringing more than their individual sounds to Portland’s creative scene. They are also a part of artist collective and store front Produce Portland, and record label Produce Organic Portland. They continuously bring more to their communities, so keep watching.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://produceportland.com/" target="_blank" noopener noreferrer aria-label="Visit Produce Portland's website") Produce Portland's Website
+					a.bhm-icon-insta(href="https://www.instagram.com/dontetheapple/" target="_blank" noopener noreferrer aria-label="Visit Donte Thomas on Instagram") dontetheapple Instagram
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/3Uyli9ZRk3FZa1jYkMrxhz" target="_blank" noopener noreferrer aria-label="Visit Bocha on Spotify") Bocha Spotify
+					a.bhm-icon-insta(href="https://www.instagram.com/bochafromgfe/" target="_blank" noopener noreferrer aria-label="Visit Bocha on Instagram") Bocha Instagram
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/3Uyli9ZRk3FZa1jYkMrxhz" target="_blank" noopener noreferrer aria-label="Visit Bocha on Spotify") Bocha Spotify
+
+
+
+		section.bhm-footer.call-to-action
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/oregonMESA.png" alt="Oregon MESA Logo" style="width:180px;margin-bottom:30px;")
+			p "Oregon Mesa provides students underrepresented in STEM (science, technology, engineering, and math) fields with the skills and opportunities to develop their talents, explore technology-based careers, enter college, and compete successfully in the workforce. In partnership with Langston, Dr. Martens is donating $5000 to Oregon Mesa as they provide future diversity in STEM leadership.
+			p As a thank you to Langston, Dr. Martens will donate $5000 to the charity of their choice. Langston has asked to support: Oregon MESA. Please consider joining us in our donation."
+			a.bhm-external(href="https://oregonmesa.org/" target="_blank" noopener noreferrer) Learn More
+
+	article#keiyaa
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") KeiyaA
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_keiyaA_01-Intro-Collage.jpg" alt="A film-style photo collage of KeiyaA with four photos: The top image she is wearing a black shirt and smiling while looking into the camera. The left image she is wearing a black shirt and holding a microphone while looking off to the left. The top right image is a close-up of a microphone. The bottom right image is a close-up of a pair of black Dr. Martens with two vintage TVs. ")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden KeiyaA
+				p Singer / songwriter Keiyaa was previously mentioned in this series by Phony Ppl as an artist to watch. Hooked by her presence and sound, we wanted to know more about her, Black artists who have shaped her music, and who she thinks you should be listening to.
+				.bhm-icon-list
+					a.bhm-icon-insta(href="https://www.instagram.com/keiyaa/" target="_blank" noopener noreferrer aria-label="Visit keiyaa on Instagram") keiyaa Instagram
+
+		+youtubeVideo("IsW1qDtpphQ", "Celebrating Black Voices | Keiyaa", "https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_keiyaA.jpg")
+		.bhm-video
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_keiyaA_02.jpg" role="img" aria-labe="A film-strip style photo collage of three photos of Brandy wearing a black shirt and black hat.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Brandy
+				p Brandy Rayana Norwood, better known by her stage name, Brandy is a creative powerhouse. As a Grammy-winning singer / songwriter she has put out multiple solo albums and been heavily featured on pop, R&B, and gospel albums. As a film, TV, and Broadway actress she has won many awards including NAACP Image awards for her show Moesha. Despite decades of commercial success, Brandy is still considered a perpetual innovator who is not afraid to experiment.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://4everbrandy.com/" target="_blank" noopener noreferrer aria-label="Visit Brandy's website") Brandy's Website
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_keiyaA_03.jpg" role="img" aria-labe="A black and white archival photo of Nina Simone singing while holding a microphone..")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Nina Simone
+				p Dubbed the High Priestess of Soul, Nina Simone was a musical virtuoso. Known not only as a classically gifted pianist, Simone is also known for weaving themes of racial injustice into her songs and performances. Protest songs like Mississippi God Damn about the 1968 bombing of a Black Baptist church in Alabama, left audiences reeling from the passion and anger with which Simone performed them. An activist and an artist, Simone’s music is both beautiful and haunting.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://www.ninasimone.com/" target="_blank" noopener noreferrer aria-label="Visit Nina Simone's website") Nina Simone's Website
+
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_keiyaA_04.jpg" role="img" aria-labe="A photo of Massai looking into the camera.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Massai
+				p Brooklyn native Maassi is a singer, producer and community organizer. With a musical style that is often described as hood Avante-Garde, Maassai has an innovative and evolving sound that's been compared to Lauryn Hill and Erykah Badu. Check out her 2021 album With The Shifts, and see for yourself.
+				.bhm-icon-list
+					a.bhm-icon-insta(href="https://www.instagram.com/maassai_/" target="_blank" noopener noreferrer aria-label="Visit Maassi on Instagram") Maassi Instagram
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/6Cjn6Iu1NYSu1QsRzjSJTV" target="_blank" noopener noreferrer aria-label="Visit Maassi on Spotify") Maassi Spotify
+
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_keiyaA_05.jpg" role="img" aria-labe="A photo of No Home wearing a black shirt and black pants while on stage holding a guitar and singing into a microphone.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 No Home
+				p London based, DIY, experimental artist No Home defies genre. Typically recording with just a guitar and their voice, No Home channels raw emotions with the intensity of an open nerve. With a string of EPs and albums filled with powerful vocals and rich storytelling, there is plenty to digest in every song.
+				.bhm-icon-list
+					a.bhm-icon-insta(href="https://www.instagram.com/charlie.nohome/" target="_blank" noopener noreferrer aria-label="Visit No Home on Instagram") No Home Instagram
+
+		section.bhm-quote
+			.bhm-quote-body Food Apartheid is something that effects our community in a deep way, but is not necessarily talked about or addressed. And so, I think The Central Brooklyn Food Coop is really important and deserves more support.
+			.bhm-quote-citation KeiyaA
+
+		section.bhm-footer.call-to-action
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBFC.png" style="width:180px;margin-bottom:30px;" alt="The Central Brooklyn Food Co-op")
+			p The Central Brooklyn Food Coop is a Black-led 100% working member-owned and –operated retail grocery slated to open in 2022. Their goal is to advance a culture of healthy food, resilience, and cooperative self-determination among long-term residents who are at risk of residential and commercial displacement in Central Brooklyn.
+			p As a thank you to KeiyaA, Dr. Martens will donate $5000 to the charity of their choice. KeiyaA has asked to support: The Central Brooklyn Food Co-op. Please consider joining us in our donation.
+			a.bhm-external(href="https://cbfood.org/" target="_blank" noopener noreferrer) Learn More
+
+	article#giovanni
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Giovanni
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_giovanni_01-Intro-Collage.jpg" alt="A photo of Giovanni Franco wearing a beige jacket and jeans while sitting in front of a white background holding a boom box to his ear.")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden Giovanni
+				p Giovanni Franco is the Assistant Store Manager at Dr. Martens TK NYC. With a desire to work in A&R, Gio is already honing his aptitude for defining what sets artists apart. Keep reading for an introduction to some of his favorite artists of the past and present. You'll find that like Gio, many of them share ties to the Dominican Republic.
+				.bhm-icon-list
+					a.bhm-icon-insta(href="https://www.instagram.com/gfranco112/" target="_blank" noopener noreferrer aria-label="Visit Giovanni on Instagram") Giovanni Instagram
+		
+		+youtubeVideo("SvGWQHrAFcY", "Celebrating Black Voices | Giovanni", "https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_giovanni.jpg")
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_giovanni_02.jpg" aria-description="Two photos of the musical group, Los Hermanos Franco. In the first image, four men are sitting in a recording studio. In the second image four men are on stage singing.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Los Hermanos Franco
+				p Los Hermanos Franco was a musical group of family members, whose sound celebrated the style of music and dance, the national dance of Dominican Republic. An inspiration to Gio and others, the group of brothers brought their sound from DR to NYC in the 1990s.
+		
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_giovanni_03.jpg" aria-description="A photo of Benny Slumz wearing a beige outfit and black hat while looking off to the right of the camera.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Benny Slumz
+				p Now is the perfect time to discover rap and R&B artist Benny Slums (BNYSLMS). He’s released a collection of singles over the past couple of years, but his latest track Preciosa has an unforgettable beat and energy.
+				.bhm-icon-list
+					a.bhm-icon-insta(href="https://www.instagram.com/bennyslums/" target="_blank" noopener noreferrer aria-label="Visit Benny Slums on Instagram") Benny Slums Instagram
+					a.bhm-icon-spotify(href="https://open.spotify.com/artist/2mO0hn4n3plMeA7JwNMI1h" target="_blank" noopener noreferrer aria-label="Visit Benny Slums on Spotify") Benny Slums Spotify
+		
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_giovanni_04.jpg" aria-description="A photo of Benny Slumz wearing a beige outfit and black hat while looking off to the right of the camera.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Jo Wayne
+				p Jo Wayne is the founder and creative force behind clothing brand et Sollertis (The Mastermind) in NYC. With the support of his mother, brother, and aunt; Wayne learned to sew and developed a business mindset that would allow him to build his brand without fear.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://byetsollertis.com/pages/our-story" target="_blank" noopener noreferrer aria-label="Visit Jo Wayne's website") Jo Wayne's Website
+		
+		section.bhm-footer.call-to-action
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/fortfourpark.png" alt="Fort Four Park website" style="width:180px;margin-bottom:30px;")
+			p “Sedgwick Park Friends Group" is a community-based organization that is centered around inspiring social recreation, resourceful information, and opportunities to the youth and young adults by activating park space spaces and igniting new ways for members to engage in their community
+			p As a thank you to Giovanni, Dr. Martens will donate $5000 to the charity of their choice. Giovanni has asked to support: Sedgwick Park Neighbors and Friends. Please consider joining us in our donation.
+			a.bhm-external(href="https://www.thefreeblackwomenslibrary.com/" target="_blank" noopener noreferrer) Learn More
+	
+	article#coco_breezy
+		header.bhm-article-header(aria-level="3")
+			h1.bhm-mobile(aria-hidden="true") Coco & Breezy
+			img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_coco-breezy_01-Intro-Collage.jpg" alt="A photo of Coco & Breezy wearing all black outfits and sunglasses while standing in front of a beige brick building.")
+			.bhm-article-header-content
+				h1.bhm-mobile-hidden Coco & Breezy
+				p Coco & Breezy are eyewear designers, DJs, business owners, music producers, and twin sisters. Their eponymous eyewear brand is celebrated by countless customers and celebrities, including musical legend Prince who they collaborated with to create their iconic Third Eye sunglasses. In the years since, Coco & Breezy have grown their business and expanded their music careers to bigger and broader audiences. An example of Black excellence, the twins credit their family for much of their success.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://cocoandbreezy.com/" target="_blank" noopener noreferrer aria-label="Visit Coco & Breezy's website") Coco & Breezy Website
+					a.bhm-icon-insta(href="https://www.instagram.com/cocoandbreezy/" target="_blank" noopener noreferrer aria-label="Visit Coco & Breezy on Instagram") Coco & Breezy Instagram
+		
+		.bhm-video
+		+youtubeVideo("98MPQCvjUn8", "Celebrating Black Voices | Coco & Breezy", "https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/video-thumbnail_coco_breezy.jpg")
+		section.bhm-quote
+			.bhm-quote-body Our dad grew up during segregation ... that's just one generation ago. Our parents let us have our self-expression because they weren't able to.
+			.bhm-quote-citation Coco
+		section.bhm-quote
+			.bhm-quote-body They broke generational curses allowing Coco and I to understand our individuality.
+			.bhm-quote-citation Breezy           
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_coco-breezy_02.jpg" aria-description="A photo of Coco & Breezy's mom and dad sitting at a table in a restaurant. Their mom is on the left and is wearing a grey shirt with gold hoop earrings. Their dad is on the left and is wearing a black shirt and white hat.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_coco-breezy_03.jpg" aria-description="A photo of a person wearing an orange shirt and black and white checkered hat looking off to the left of the camera. They are wearing gold earrings, a gold and silver necklace, and gold and silver rings.")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 Aziza Handcrafted
+				p Aziza-Abdullah Nicole is a Brooklyn-based sculptor, painter, and builder. Her jewelry brand Aziza Handcrafted is filled with love and intention. With pieces ranging from rings and necklaces to palm cuffs and custom grillz, Aziza offers customers a variety of ways to express their style through her thoughtful art.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://www.azizahandcrafted.com/" target="_blank" noopener noreferrer aria-label="Visit Aziza Handcrafted's website") Aziza Handcrafted Website
+					a.bhm-icon-insta(href="https://www.instagram.com/aziza.nicole/" target="_blank" noopener noreferrer aria-label="Visit Aziza Handcrafted on Instagram") Aziza Handcrafted Instagram
+
+		section.bhm-photo(data-src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV_coco-breezy_04.jpg" aria-description="A photo of Dynasty & Soull Ogun looking into the camera while standing in front of a turquoise background. ")
+			img.bhm-photo-image
+			.bhm-photo-cover
+				h2 L'enchanteur
+				p Dynasty & Soull Ogun are the talented twin sisters and designers behind clothing and jewelry brand L'enchanteur. The Brooklyn-based brand is known for craftsmanship and creating work that is both beautiful and unexpected. L'enchanteur counts Megan the Stallion, Erykah Badu, and Beyonce among their fans.
+				.bhm-icon-list
+					a.bhm-icon-website(href="https://www.lenchanteur.co/" target="_blank" noopener noreferrer aria-label="Visit L'enchanteur's website") L'enchanteur Website
+					a.bhm-icon-insta(href=" https://www.instagram.com/l_enchanteur/" target="_blank" noopener noreferrer aria-label="Visit L'enchanteur on Instagram") L'enchanteur 
+	article.bhm-footer.call-to-action.last-footer
+		img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/powerspeakslouder.png" alt="Power Speaks Louder (PSL) is a multidimensional non-profit organization that administers seven programs and services to educate, empower, and transform the lives of youth in crisis, low-income families, and the homeless.")
+		p Power Speaks Louder (PSL) is a multidimensional non-profit organization that administers seven programs and services to educate, empower, and transform the lives of youth in crisis, low-income families, and the homeless.
+		a.bhm-external(href="https://powerspeakslouder.org/about" target="_blank" noopener noreferrer) Learn More
+	footer.bhm-footer-pagination
+		.CBV-branding
+			a(href="https://drmartens.com/us/en/celebrating-black-voices/" aria-label="Return to Celebrating Black Voices")
+				img(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/CBV-logo.png" alt="Celebrating Black Voices" width="194")
+		.bhm-video-grid
+			.d-flex
+				.card
+					video(autoplay loop muted playsinline)
+						source(src="https://s3.us-west-2.amazonaws.com/dm-us-imgs/bhm/d5/intro_series-01.mp4")
+					a(href="https://drmartens.com/us/en/celebrating-black-voices/fredgy")
+						h4 Fredgy
+					p Fredgy Noël is a Haitian-American director and screenwriter in NYC. Her work is an extension of how she sees the world in all of its nuance, complexity, and beauty.     
+		.bhm-footer-pagination-bar
+			a(href="https://drmartens.com/us/en/celebrating-black-voices/")
+				i.fa.fa-chevron-left
+				span Back to Celebrating Black Voices

@@ -1,6 +1,26 @@
 include video-mixins
+mixin headerFeature(videoURL, videoALT, pageURL, title)
+	.fm-hero
+		.fm-hero-background
+			.fm-hero-video
+				video(loop autoplay muted playsinline)
+					source(src=`${videoURL}` type="video/mp4" alt=`${videoALT}`)
+					source(src=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/S2E6/teaser.mp4` type="video/mp4")
 
-block header
+			.fm-hero-fade
+			.fm-hero-tear
+		
+		.fm-hero-content
+			.fm-hero-title
+				h1!= title
+			.fm-hero-details
+
+				h2 S2 E6 &bull; Alternative Underground - NYC 
+				a.fm-hero-play(href="/us/en/dm-presents-alternative-underground-nyc") Watch Episode
+	
+	.fm-message
+		span This year, Dr. Martens Presents explores the evolution of local music communities with six different filmmakers in New York and Los Angeles. Artists, musicians, and die-hard fans show us the scenes they've created; where decades of young talent continue to experiment, inspire, and sharpen their sound.
+
 
 style
 	include shared.css
@@ -8,26 +28,17 @@ style
 	include episodeList.css
 
 .fm-container
-	.fm-hero
-		.fm-hero-background
-			.fm-hero-video
-				video(loop autoplay muted playsinline)
-					source(src=`https://dm-us-imgs.s3.amazonaws.com/AW21/L/DMPresents/S2E6/teaser.mp4` type="video/mp4")
-			.fm-hero-fade
-			.fm-hero-tear
-		
-		.fm-hero-content
-			.fm-hero-title
-				h1 Filmmaker Series
-			
-			.fm-hero-details
-				h2 S2 E6 &bull; Alternative Underground - NYC 
-				a.fm-hero-play(href="/us/en/dm-presents-alternative-underground-nyc") Watch Episode
-	
-	.fm-message
-		span This year, Dr. Martens Presents explores the evolution of local music communities with six different filmmakers in New York and Los Angeles. Artists, musicians, and die-hard fans show us the scenes they've created; where decades of young talent continue to experiment, inspire, and sharpen their sound.
-
+	+headerFeature("https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW22/DMpresent/S3E6-NYC/nyc_event_06_teaser_1920x1080.mp4", "dm-presents-february-nyc", "/us/en/dm-presents-february-nyc", "Black History Month - NYC")
+	img.fm-logo(src='https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E2/DMs-Presents-Logo.png' alt='DM Presents Logo' width='145')
+	.fm-message.text-center
+		span Dr. Martens Presents is back with free live shows. We're bringing some of our favorite bands, DJs, and performers to venues and Docs stores across LA, Chicago, NYC, and Austin. So, grab a friend, RSVP, and celebrate live music with us.
+	#upcoming_events.eb-events-list
+		h2 UPCOMING EVENTS
+		.eb-event
+	include eventList.pug	
 	include episodeList.pug
-
+script(src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous")
+script(type="text/javascript")
+	include eventbrite.js
 script(type="text/javascript")
 	include home.js

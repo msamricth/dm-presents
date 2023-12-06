@@ -1,0 +1,451 @@
+
+.collapse {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  }
+  .collapse.show, .collapse.in {
+    max-height: 99em;
+    transition: max-height 0.5s ease-in-out;
+  }
+  .block__content {
+    height: 100%;
+  }
+  .fm-container {
+	/* -60 bottom margin to compensate for something weird in the hybris template */
+	margin: 0px auto -60px;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+} 
+.nomarg {
+	margin-bottom:0 !important;
+	margin-top: 0;
+}
+.fm-hero-video {
+	position: relative;
+	width: 100%; 
+	/* This padding assumes a 16:9 video, adjust accordingly */
+	padding-bottom: 56.25%;
+	overflow: hidden;
+}
+	.fm-hero-video iframe, 
+	.fm-hero-video object, 
+	.fm-hero-video video, 
+	.fm-hero-video embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%; 
+		height: 100%;
+		margin: 0px auto;
+	} 
+
+.fm-episode-header-video { 
+	position: relative;
+	cursor: pointer;
+} 
+
+.fm-big-play-button {
+	position: absolute;
+	pointer-events: none;
+	left: 50%;
+	top: 50%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin: -32px 0 0 -32px;
+	background: rgb(255, 230, 0);
+	z-index: 1;
+	width: 64px;
+	height: 64px;
+	border-radius: 32px;
+}
+
+	.fm-big-play-button svg {
+		position: relative;
+		left: 2px;
+	}
+
+.fm-episode-details-container {
+	width: 100%;
+	background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@2x.jpg");
+	background-size: contain, 100%, cover;
+	/* NOTE(AJ): the position of the rip bg is set to 101% because 'bottom' sometimes caused a 1px gap 
+		Short on time, so that's the fix for now. If you have a better idea, by all means. :) 
+	*/
+	background-position: 0 101%, top, center;
+	background-repeat: no-repeat;
+	padding: 30px 40px 100px;
+	max-height: 400px;
+} 
+
+
+.fm-artist-block img {
+    max-width: 100%;
+}
+.fm-artist-block .fm-artist-header {
+	width: 100%;
+}
+.fm-artist-block .fm-artist-header h1 {
+	font-weight: 400;
+	margin-bottom: 12px;
+}
+.fm-artist-block .fm-artist-header h2 {
+	font-weight: 400;
+}
+.fm-artist-block .fm-artist-header .fm-artist-header-content {
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
+	padding-left: 32px;
+	padding-right: 32px;
+}
+.fm-artist-block .fm-artist-content {
+	margin: auto;
+	padding: 50px 32px 50px;
+}
+.fm-episode-details {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+cite { 
+	font-family: "Overpass", "Interstate Reg", sans-serif;
+	color: #b9b9b9;
+	display: block;
+	font-size: 14px; 
+	font-style: normal;
+	margin-top: 10px;
+}
+
+.fm-title {
+	margin-bottom: 10px;
+}
+
+.fm-title h1 {
+	background: #000;
+	color: #fff;
+	display: inline-block; 
+	padding: 8px 30px;
+	margin: 0 auto 0 8px;
+	width: auto;
+	position: relative;
+	left: -40px;
+}
+
+.fm-episode-details p {
+	width: 45%;
+	height: 90px;
+}
+
+.fm-episode-details h2 {
+	padding: 0 0 30px 0;
+}
+.block__content {
+    padding-top: 28px;
+}
+.fm-footer-text {
+	width: 61%;
+	margin: 25px 16px 125px;
+	max-width: 623px;
+    text-align: center;
+}
+.fm-episode-text {
+	margin: 0 16px;
+	padding: 75px 0 50px;
+	width: 61%;
+	max-width: 623px;
+}
+.fm-episode-text a {
+	color:white;
+	text-decoration: underline;
+    transition: 0.15s ease opacity;
+}
+.fm-episode-text a:hover {
+	opacity: 0.65;
+}
+.fm-episode-text p {
+    font-size: 17px;
+}
+.fm-episode-quote {
+	margin: 50px 16px;
+	width: 61%;
+	font-family: "DrMartensHandwritingRounder", serif;
+	font-weight: normal;
+	font-size: 48px;
+	text-align: center;
+	line-height: 1.25;
+	max-width: 800px;
+}
+.fm-spacer {
+	height: 50px;
+	width: 100%;
+}
+.fm-episode-big-image {
+/*	margin-bottom: 50px; */
+	display: block;
+}
+
+.fm-artist-content {
+    position: relative;
+    background-color: #000;
+    z-index: 12;
+}
+@media screen and (min-width: 480px) {
+	.fm-artist-block .fm-artist-header h1 {
+		margin-bottom: 20px;
+	}
+	.fm-artist-block .fm-artist-header .fm-artist-header-content {
+
+		padding-top:75px;
+	}
+	.fm-artist-block .fm-artist-content {
+		margin: auto;
+		padding-bottom: 75px;
+	}
+	.fm-footer-text {
+		margin: 37px 32px 150px;
+	}
+	.fm-episode-text {
+		margin: 0 32px;
+		padding: 100px 0 50px;
+	}
+	.fm-episode-quote {
+		margin: 75px 32px;
+	}
+	.fm-episode-big-image {
+		/*	margin-bottom: 75px; */
+	}
+}
+@media screen and (min-width: 768px) { 
+	.fm-artist-block .fm-artist-main {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.fm-artist-block .fm-artist-header { 
+		margin-top: -100px;
+	}
+	.fm-artist-block .fm-artist-content {
+		padding-bottom: 75px;
+	}
+	.fm-artist-block .fm-artist-header .fm-artist-header-content {
+		margin: 0 auto;
+		padding: 75px 60px 0;
+		background-color: #000;
+	}
+
+	.fm-spacer {
+		height: 75px;
+		width: 100%;
+	}
+	.fm-episode-text {
+		margin: 0 auto;
+		padding: 150px 0 75px;
+	}
+	.fm-episode-quote {
+		margin: 75px auto;
+	}
+	.fm-footer-text {
+		margin: 37px auto 150px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1290px){ 
+	.fm-episode-quote {
+		font-size: 40px;
+		line-height: 1.2;
+	}
+}
+
+@media screen and (min-width: 992px) { 
+	.fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
+		width: 66.66666667%;
+	}
+}
+@media screen and (min-width: 1024px) { 
+	
+	img.fm-episode-big-image:first-of-type {
+		position: relative;
+		margin-top: -30px;
+		z-index: 8;
+	}
+	.fm-episode-big-image {
+		display: inline-block; /* disables collapsing margin */
+	/*		margin-top: 75px; */
+	}
+	.fm-footer-text {
+		margin: 50px auto 225px;
+	}
+}
+
+@media screen and (min-width: 1290px) {
+	
+	.fm-artist-block .fm-artist-header { 
+		margin-top: -150px;
+	}
+	.fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
+		max-width: 715px;
+	}
+}
+img.fm-episode-big-image {
+	width: 100%;
+}
+.fm-event-btn {
+    margin-top: 20px;
+    padding: 12px 61px 10px;
+    background-color: rgb(255, 230, 0);
+    color: #000;
+    display: inline-block;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif;;
+    text-transform: uppercase;
+    transition: 0.15s ease background-color;
+}
+.fm-event-btn:hover{
+	background-color: rgb(205, 185, 3);
+}
+a.fm-episode-back {
+	background-color: rgb(255, 230, 0);
+	color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+	.fm-episode-back svg {
+		margin-right: 10px;
+		overflow: visible;
+		position: relative;
+		top: 1px;
+	}
+
+	.fm-episode-back span {
+		color: #000; 
+		font-family: "Oswald", "Trade Gothic Bold", sans-serif;
+		font-size: 18px;
+		letter-spacing: 0.05em; 
+	}
+@media screen and (min-width: 1440px) { 	
+	.fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
+		max-width: 950px;
+	}
+}
+@media screen and (min-width: 1441px) { 
+	.fm-episode-details {
+		width: 1210px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 1440px) { 
+	
+
+	.fm-episode-details-container {
+		padding: 30px 114px 100px;
+	} 
+
+	.fm-hero-content { 
+		left: 50%;
+		margin: 0px auto 0px -605px;
+	}
+	
+	.fm-message {
+		margin: 0px auto; 
+		padding: 0px;
+	} 
+} 
+
+@media screen and (max-width: 1290px) { 
+	.fm-episode-details-container {
+		padding: 30px 40px 100px;
+	} 
+}
+@media screen and (max-width: 1024px) { 
+	
+	
+	.fm-episode-details p {
+		width: 55%;
+	}
+}
+
+@media screen and (max-width: 767.9px) {
+	.fm-episode-text,.fm-episode-quote,.fm-footer-text {
+		max-width: none;
+		width: initial;
+	}
+	.fm-episode-header-video {
+		overflow: hidden;
+	}
+
+	.fm-hero-video.preview {
+		left: -25%;
+		width: 150%;
+	} 
+
+	.fm-episode-details-container {
+		padding: 30px 30px 100px;
+	} 
+
+	.fm-title h1 {
+		margin: 0px auto;
+		padding: 8px 38px 8px;
+	}
+
+	.fm-episode-details p {
+		width: 100%;
+	}
+	.fm-episode-quote {
+		font-size: 36px;
+		line-height: 1.22;
+	} 
+}
+@media screen and (min-width: 992px) and (max-width: 1144px) {
+	.fm-artist-block .fm-artist-header .fm-artist-header-content, .fm-artist-block .fm-artist-content {
+		max-width: 582px;
+	}
+}
+/* Hack to compensate for weirdness in hybris template */
+@media screen and (max-width: 767px) {
+	.fm-container {
+		margin-bottom: -90px;
+	} 
+}
+
+@media screen and (max-width: 480px) {
+	.fm-episode-details-container {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@2x.jpg");
+		padding: 30px 16px 100px; 
+	}
+
+	h1 {
+		font-size: 36px;
+	}
+
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
+	}
+
+	@media screen and (max-width: 480px) {
+		.fm-episode-details-container {
+			background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png"), linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0)), url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/scratchyBackground@3x.jpg");
+		}
+	}
+}

@@ -54,12 +54,14 @@ mixin episodeSelector(seasons)
 		each season, i in seasons
 			case i
 				when 0
-					h2(data-season=`${season.number}`) Season #{season.number}
+					h3(data-season=`${season.number}`) Season #{season.number}
 				default
-					h2.active(data-season=`${season.number}`) Season #{season.number}
+					h3.active(data-season=`${season.number}`) Season #{season.number}
 
 .fm-episodes
-	+episodeSelector(seasons)
+	.fm-episodes-header
+		h2 FILMMAKER SERIES
+		+episodeSelector(seasons)
 	.fm-episodes-collection
 		a.fm-episodes-p(href="#")
 			+svgLeftArrow()

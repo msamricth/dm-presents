@@ -1,9 +1,17 @@
+.fm-message {
+	font-size: 17px;
+	margin-bottom: 50px;
+} 
+
 .fm-hero {
 	position: relative;
 	margin-bottom: 50px;
 	min-height: 400px;
 }
-
+.fm-logo {
+    display: block;
+    margin: 0 auto 20px;
+}
 .fm-hero-background {
 	position: relative;
 	top: 0px;
@@ -12,61 +20,61 @@
 	height: 100%;
 	z-index: 0;
 	overflow: hidden;
-	max-height: 576px;
+	max-height: 660px;
 }
-	.fm-hero-video {
-		position: relative;
+.fm-hero-video {
+	position: relative;
+	width: 100%; 
+	/* This padding assumes a 16:9 video, adjust accordingly */
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	z-index: 0;
+}
+	.fm-hero-video video {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%; 
-		/* This padding assumes a 16:9 video, adjust accordingly */
-		padding-bottom: 56.25%;
-		overflow: hidden;
+		height: 100%;
+		min-width: 711px;
 		z-index: 0;
-	}
-		.fm-hero-video video {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%; 
-			height: 100%;
-			min-width: 711px;
-			z-index: 0;
-			margin: 0px auto;
-		} 
+		margin: 0px auto;
+	} 
 
-	.fm-hero-tear {
-		position: absolute;
-		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png");
-		background-size: 100%;
-		background-position: bottom;
-		background-repeat: no-repeat;
-		left: 0px;
-		bottom: 0px;;
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		image-rendering: crisp-edges;
-		image-rendering: -moz-crisp-edges;
-		image-rendering: -webkit-optimize-contrast;
-	}
+.fm-hero-tear {
+	position: absolute;
+	background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop.png");
+	background-size: 100%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	left: 0px;
+	bottom: 0px;;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	image-rendering: crisp-edges;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+}
 
-	.fm-hero-fade {
-		position: absolute;
-		z-index: 1;
-		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 255));
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: bottom, top;
-		width: 100%;
-		height: 100%;
-		top: 0px;
-		left: 0px;
-	}
+.fm-hero-fade {
+	position: absolute;
+	z-index: 1;
+	background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 255));
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom, top;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
 
 .fm-hero-content {
 	position: absolute;
 	z-index: 100;
 	width: 100%;
-	height: 100%;
+	height: 85%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-start;
@@ -75,63 +83,323 @@
 	left: 0;
 }
 
-	.fm-hero h1 {
-		background: #000;
-		color: #fff;
-		display: inline-block; 
-		padding: 8px 32px;
-		margin: 0 auto 0 8px;
-		width: auto;
+.fm-hero h1 {
+	background: #000;
+	color: #fff;
+	display: inline-block; 
+	padding: 8px 32px;
+	margin: 0 auto 0 8px;
+	width: auto;
+}
+
+.fm-hero-details {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px 40px;
+	margin-bottom: 40px;
+}
+
+	.fm-hero-details h2 {
+		display: inline-block;
+		margin-top: 10px;
+		height: 30px;
 	}
 
-	.fm-hero-details {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 0px 40px;
-		margin-bottom: 40px;
+	a.fm-hero-play {
+		background: rgb(255, 230, 0);
+		text-decoration: none;
+		color: #000;
+		display: block;
+		font-family: "Oswald", "Trade Gothic Bold", sans-serif;
+		font-size: 18px;
+		text-transform: uppercase;
+		padding: 10px 30px;
+		margin-top: 30px;
+		font-weight: 500;
 	}
-
-		.fm-hero-details h2 {
-			display: inline-block;
-			margin-top: 10px;
-			height: 30px;
-		}
-
-		a.fm-hero-play {
-			background: rgb(255, 230, 0);
-			text-decoration: none;
-			color: #000;
-			display: block;
-			font-family: "Oswald", "Trade Gothic Bold", sans-serif;
-			font-size: 18px;
-			text-transform: uppercase;
-			padding: 10px 30px;
-			margin-top: 30px;
-		}
-
-
-.fm-message {
-	padding-left: 40px;
-	font-size: 16px;
+.fm-container .fm-episodes {
+	margin-top: 0px;
+}
+.fm-message, .eb-events-list {
+	padding-left: 16px;
+	padding-right: 16px;
+	font-size: 17px;
 	line-height: 28px;
-	width: 50%;
 	font-family: "Overpass", "Interstate Reg", sans-serif;
+}
+.eb-events-list {
+	margin-bottom: 75px;
 } 
-
+.eb-events-list h2 {
+	margin-bottom: 40px;
+}
+.eb-events-list .eb-event .event-image {
+	padding-bottom: 20px;
+}
+.eb-events-list .eb-event .event-image img {
+    max-width: 100%;
+}
+.eb-events-list .eb-event {
+    width: 100%;
+	line-height: 1;
+}
+.eb-events-list .eb-event .event-content h3 {
+	font-size: 20px;
+	line-height: 1.875;
+	margin-top:0;
+}
+.eb-events-list .eb-event .event-meta {
+    flex-basis: 20%;
+	line-height: 1;
+	padding-left: 10px;
+}
+.eb-events-list .eb-event .event-meta h3 {
+	font-weight: 900;
+	margin:0;
+}
+.eb-events-list .eb-event .event-meta h1 {
+	margin-bottom: 12px;
+}
+.eb-events-list .eb-event .event-content p {
+	font-size: 15px;
+	line-height: 1.467;
+}
+.eb-events-list .eb-event .event-content .desc {
+	margin-bottom: 10px;
+}
+.eb-events-list .eb-event .event-content p, .eb-events-list .eb-event .event-meta span{
+    margin-bottom: 12px;
+}
+.eb-events-list .eb-event .event-meta span{
+    font-size: 12px;
+    line-height: 1.67;
+    color: #a8a8a8;
+}
+.eb-events-list .eb-event + hr {
+    margin: 20px 0 40px;
+    border: none;
+    border-top: 1px solid #191c1d;
+}
+.eb-events-list .eb-event .event-cta {
+    position: relative;
+    color: #ffe512;
+    line-height: 1.33;
+    transition: color 0.15s ease;
+	font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
+	text-transform: uppercase;
+	border-bottom:1px solid;
+}
+.eb-events-list .eb-event .event-cta:after {
+    content: "";
+    background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/AW21/L/DMPresents/S3E1/caret.png);
+    background-size: 10px 16px;
+    border: none;
+    width: 10px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: -14px;
+}
+.eb-events-list .eb-event a.event-cta:hover,.eb-events-list .eb-event a.event-cta:active,.eb-events-list .eb-event a.event-cta:focus {
+    color: white;
+}
+.eb-events-list .eb-event a.event-cta:hover:after,.eb-events-list .eb-event a.event-cta:active:after,.eb-events-list .eb-event a.event-cta:focus:after {
+    background-image: url(https://dm-us-imgs.s3.us-west-2.amazonaws.com/bhm/d1/icon-arrow.png);
+}
+.eb-hidden {
+	display: none !important;
+}
+.eb-shown.eb-hidden {
+	display: block !important;
+}
+.eb-events-list a.fm-hero-play {
+    margin-left: auto;
+    width: fit-content;
+    margin-right: auto;
+}
+span.mobile-date {
+    font-size: 17px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
 @media screen and (min-width: 2440px) { 
 	.fm-hero-tear {
 		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
 	}
 }
+@media screen and (min-width: 480px) {
+	.fm-message, .eb-events-list {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+	.fm-episodes h2, .fm-episodes h3{
+		margin-bottom: 30px;
+	}
+
+	.fm-episodes-header {
+		display: flex;
+		align-items: baseline;
+		margin-bottom: 20px;
+	}
+	
+	.fm-episodes-header h2 {
+		margin-right: 48px;
+	}
+	.eb-events-list {
+		margin-bottom: 100px;
+	}
+	.fm-episodes-header .fm-episodes-selector h3 {
+		line-height: 2;
+	}
+	.fm-message {
+		margin-bottom: 100px;
+	}
+}
+@media screen and (min-width: 768px) {
+	.eb-events-list .eb-event .event-content h3 {
+		margin-bottom: 12px;
+	}
+	span.mobile-date {
+		display: none;
+	}
+	.eb-events-list .eb-event .event-content {
+		flex-basis: 80%;
+		padding-right: 10px;
+	}
+	.fm-message, .eb-events-list {
+		padding-left: 122px;
+		padding-right: 122px;
+	}
+	.fm-episodes-header {
+		margin-bottom: 25px;
+	}
+
+	.eb-events-list {
+		margin-bottom: 125px;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.fm-logo {
+		width: 170px;
+		margin-bottom: 50px;
+		margin-top: 25px;
+	}
+	.fm-message, .eb-events-list {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	.eb-events-list {
+		margin-bottom: 150px;
+	}
+	.fm-message {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+		width: 524px;
+	}
+	.eb-events-list .eb-event + hr {
+		margin-bottom: 22px;
+	}
+    .eb-events-list .eb-event {
+        display:flex;
+    }
+    .eb-events-list .eb-event .event-image {
+        padding-right: 23px;
+		padding-bottom: 0px;
+		flex-basis:45%;
+    }
+    .eb-events-list .eb-event .event-details {
+        flex-basis: 77%;
+    }
+}
+@media screen and (min-width: 1290px) {
+	.fm-hero-background {
+		max-height: 726px;
+	}
+	.event-content p {
+		max-width: 360px;
+	}
+    .eb-events-list .eb-event .event-image {
+		flex-basis:33%;
+    }
+	.fm-message {
+		width: 800px;
+	}
+	.fm-message, .eb-events-list {
+		padding-left: 122px;
+		padding-right: 122px;
+	}
+}
 
 @media screen and (min-width: 1440px) {
-	.fm-hero-content,
+	.fm-logo {
+		padding-top: 50px;
+		margin-bottom: 0;
+		width: 195px;
+	}
+	.fm-hero-background {
+		max-height: 810px;
+	}
+	.fm-hero-content {
+		width: 1210px;
+		margin: 150px auto 75px; 
+	} 
+	
+	.eb-events-list {
+		width: 1210px;
+		margin: 100px auto 75px; 
+	} 
+	
 	.fm-message {
+		width: 1210px;
+		margin: 75px auto 0px
+	}
+} 
+@media screen and (min-width: 1920px) {
+	.fm-logo {
+		width: 220px;
+	}
+	.fm-hero-background {
+		max-height: 1080px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.eb-events-list .eb-event .event-meta {
+		display: none;
+	}
+	.fm-hero-background {
+		position: absolute;
+	}
+	.fm-hero-title {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 36px;
+	}
+	.fm-message {
+		padding: 0px 32px;
+		width: 100%;
+	} 
+} 
+.event-details {
+	display: flex;
+}
+@media screen and (min-width: 2440px) { 
+	.fm-hero-tear {
+		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
+	}
+}
+@media screen and (min-width: 1440px) {
+	.fm-hero-content{
 		width: 1210px;
 		margin: 150px auto 130px; 
 	} 
-
 	.fm-message span {
 		display: inline-block;
 		width: 492px;
@@ -140,15 +408,18 @@
 		left: 50%;
 		margin: 0px auto 0px -642px;
 	}
-	
-	.fm-message {
-		margin: 0px auto; 
-		padding: 0px;
-	} 
 } 
 
 @media screen and (max-width: 768px) {
-
+	.fm-hero-content {
+		height: 100%;
+	}
+	.fm-hero-tear {
+		display: none;
+	}
+	.fm-hero-content {
+		height: calc(100% + 60px);
+	}
 	.fm-hero-background {
 		position: absolute;
 	}
@@ -157,27 +428,20 @@
 		left: -25%;
 		width: 150%;
 	}
-
+	.fm-hero {
+		margin-bottom: 75px;
+	}
 	.fm-hero h1 {
 		margin: 0px auto;
 		padding: 8px 32px 8px 40px;
 	}
 
-	.fm-message {
-		width: 57%;
-	} 
 }
 
 @media screen and (max-width: 480px) {
 	h1 {
 		font-size: 36px;
 	}
-
-	.fm-message {
-		padding: 0px 32px;
-		width: 100%;
-	} 
-
 	.fm-hero-details {
 		padding: 0 32px;
 	}
@@ -185,10 +449,6 @@
 	.fm-hero h1 {
 		padding: 8px 32px;
 	}
-
-	.fm-hero-tear {
-		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile.png");
-	} 
 } 
 
 
@@ -199,23 +459,5 @@
 
 	.fm-hero-details h3 {
 		margin-top: 6px;
-	}
-}
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) { 
-	.fm-hero-tear {
-		background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripDesktop@2x.png");
-	}
-
-	@media screen and (max-width: 480px) {
-		.fm-hero-tear {
-			background-image: url("https://dm-us-imgs.s3.amazonaws.com/AW20/L/Supply%20DM%20Presents/Elements/ripMobile@2x.png");
-		}
 	}
 }
