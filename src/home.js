@@ -96,7 +96,50 @@ ready(function(){
 		var selectedSeason = e.currentTarget.dataset.season;
 		if(selectedSeason !== season) {
 			setSeason(selectedSeason);
+
 		}
+	};
+
+	var episodeSelectors = document.querySelectorAll(".fm-episodes-selector h2")
+	for(var i = 0; i < episodeSelectors.length; i++) {
+		episodeSelectors[i].addEventListener("click", handleEpisodeSelectorClick); 
+	}
+
+	var episodeItemContainer = null;
+	function setSeason(_season) {
+		season = _season;
+
+		// hide old container
+		var episodeItemContainers = document.querySelectorAll(".fm-episodes-hug");
+		for(var i = 0; i < episodeItemContainers.length; i++){
+			episodeItemContainers[i].style.display = "none";
+		}
+
+		episodeItemContainer = document.querySelector(".fm-episodes-hug[data-season='" + season + "']");
+		episodeItems = episodeItemContainer.querySelectorAll(".fm-episode");
+		realEpisodeItems = [];
+		for(var i = 0; i < episodeItems.length; i++) {
+			if(episodeItems[i].querySelector("video"))
+				realEpisodeItems.push(episodeItems[i]);
+		}
+		episodeItems = realEpisodeItems;
+		episodeCount = episodeItems.length;
+
+		// show new container
+		episodeItemContainer.style.display = "inline-flex";
+
+		var seasonLinks = document.querySelectorAll(".fm-episodes-selector h2");
+		for(var i = 0; i < seasonLinks.length; i++) {
+			var linkSeason = seasonLinks[i].dataset.season;
+			if(linkSeason === season) 
+				seasonLinks[i].classList.add("active");
+			else 
+				seasonLinks[i].classList.remove("active");
+		}
+
+		episodeIndex = 0;
+
+		handleResize();
 	};
 
 	var episodeSelectors = document.querySelectorAll(".fm-episodes-selector h3")
@@ -141,7 +184,6 @@ ready(function(){
 		handleResize();
 	};
 
-
 	// Attempt to get the season for this page
 	var season = "2";
 	if(episodeDetails && episodeDetails.dataset.season) {
@@ -156,12 +198,13 @@ ready(function(){
 
 	var episodeCount = 0;
 
-	var videosShown = window.innerWidth > 768 ? 3 : window.innerWidth > 390 ? 2 : 1;
+	var videosShown = window.innerWidth > 768 ? 3 : 2;
 
 
 
 	function moveEpisodeCarousel(direction) { 
-		var videosShown = window.innerWidth > 768 ? 3 :window.innerWidth > 390 ? 2 : 1;
+		var videosShown = window.innerWidth > 768 ? 3 : 2;
+
 		if(direction < 0)
 			episodeIndex = Math.max(0, episodeIndex - videosShown); 
 		else
@@ -180,9 +223,15 @@ ready(function(){
 		moveEpisodeCarousel(1);
 	}); 
 
-	
+
 	function adjustEpisodeCarouselArrows(delay) { 
 		delay = delay | 0;
+		if( window.innerWidth <= 480 || episodeCount <= videosShown ) {
+			nextArrow.style.display = "none";
+			prevArrow.style.display = "none";
+			episodeItemContainer.style.left = "0"; 
+		}
+		else {
 			var mo = 20 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
 			if(window.innerWidth < 480)
 				var mo = 7 * (episodeIndex); // margin offset, to account for the 20px margin in between each item
@@ -200,11 +249,13 @@ ready(function(){
 				episodeItemContainer.style.left = "calc(285px * " + (-episodeIndex).toString() + " - " + mo + "px)";  
 
 
+
 			episodeItemContainer.style.transition = "left ease-in-out 0.25s";
 
 			setTimeout(function() {
 				episodeItemContainer.style.transition = "none";
-				var videosShown = window.innerWidth > 768 ? 3 :window.innerWidth > 390 ? 2 : 1;
+
+				var videosShown = window.innerWidth > 768 ? 3 : 2;
 				var rect = episodeItems[episodeIndex].querySelector("video").getBoundingClientRect(); 
 				var lastIndex = Math.min(episodeCount-1, episodeIndex+(videosShown-1));
 				var endRect = episodeItems[lastIndex].querySelector("video").getBoundingClientRect(); 

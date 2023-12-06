@@ -60,29 +60,32 @@
 		left: 1px;
 	}
 
-	.fm-episodes-selector, .fm-events-selector{
+
+	.fm-episodes-selector {
 		display: flex;
 	}
 
-		.fm-episodes-selector h3, .fm-events-selector h3 {
+		.fm-episodes-selector h2 {
 			cursor: pointer;
-			font-family: "Oswald", "Trade Gothic Bold", sans-serif; 
-			font-weight: 400;
 		}
 
-		.fm-episodes-selector h3:not(last-child) {
+		.fm-episodes-selector h2:not(last-child) {
 			margin-right: 30px;
 		}
 
-		.fm-episodes-selector h3.active {
+		.fm-episodes-selector h2.active {
+
 			padding-bottom: 4px;
 			border-bottom: 3px solid rgb(255, 230, 0);
 		}
 
+
 	.fm-episodes-collection, .fm-events-collection{
+
 		overflow: hidden;
 		width: 100%;
 	}
+
 
 	a.fm-episodes-n, a.fm-episodes-p, a.fm-events-n, a.fm-events-p{
 		width: 42px;
@@ -95,6 +98,7 @@
 		align-items: center;
 		z-index: 1;
 	} 
+
 		a.fm-episodes-n svg, a.fm-episodes-p svg, a.fm-events-n svg, a.fm-events-p svg {
 			overflow: visible;
 		} 
@@ -112,7 +116,6 @@
 	}
 
 	.fm-episode, .fm-event {
-		
 		max-width: 33%;
 		cursor: pointer;
 		display: inline-block;
@@ -131,11 +134,13 @@
 		margin: -8px 0px 10px; 
 	}
 
+
 	.fm-episode p, .fm-event p {
 		color: rgb(168, 168, 168);
 		font-size: 12px;
 		line-height: 20px;
 	} 
+
 
 	a.fm-episode:hover p, .fm-event:hover p {
 		color: rgb(168, 168, 168);
@@ -154,7 +159,9 @@
 } 
 
 @media screen and (max-width: 1440px) {
+
 	.fm-episode, .fm-event {
+
 		min-width: calc(33.33vw - 46px);
 	}
 } 
@@ -172,6 +179,7 @@
 		margin: 150px 32px 130px;
 	} 
 
+
 	.fm-episode, .fm-event {
 		min-width: calc(50vw - 50px);
 	}
@@ -184,6 +192,7 @@
 		left: unset !important;
 		z-index: 9999;
 	}
+
 	a.fm-episodes-p, a.fm-events-p {
 		top: 152px !important;
 		position: absolute;
